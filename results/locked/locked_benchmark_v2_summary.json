@@ -1,0 +1,28 @@
+{
+  "benchmark_id": "NADI-X2026-LOCKED-V2-ADAPTIVE-FAIRNESS",
+  "generated_utc": "2026-11-18T11:13:26.837067+00:00",
+  "events_attempted": 120,
+  "events_evaluated": 120,
+  "abstentions": 0,
+  "primary_budget": 3,
+  "primary_metric": "coverage_at_k",
+  "strongest_fair_baseline": "adaptive_bayesian",
+  "strongest_baseline_mean": 0.6328703703703703,
+  "adaptive_mean": 0.6328703703703703,
+  "comparison": {
+    "mean_difference": 0.0,
+    "paired_bootstrap_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  "equivalent_within_margin": true,
+  "superiority_supported": false,
+  "gate": "PASS",
+  "config_sha256": "3C69155344690C6D8FEA8B2025B464CDD989E7FE5DD3BC167D99BE8F2D3E17BA",
+  "event_table_sha256": "8A2B140B21CBAD449B57A002413A16631477F438ED23CFEA59E02502C8134837",
+  "aggregate_sha256": "2C62EC1048432B28CFE913B2FEDAAD1EB47E3A897375C784A8D223F2D611877B",
+  "information_contract": "All policies receive the same calibrated risk interval, candidate nodes, reach ensemble, consequence weights, cutoff and budget. Adaptive SDAIF and adaptive Bayesian receive each result only after selecting that test.",
+  "claim_boundary": "Constructed E. coli-referenced risk plus public benchmark hydraulics; no field or municipal validation.",
+  "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately."
+}

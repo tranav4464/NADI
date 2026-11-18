@@ -1,0 +1,2 @@
+"""Deterministic source-specific ingestion."""
+

@@ -1,0 +1,28 @@
+{
+  "benchmark_id": "NADI-X2026-LOCKED-V1",
+  "generated_utc": "2026-11-18T11:08:52.860980+00:00",
+  "events_attempted": 120,
+  "events_evaluated": 120,
+  "abstentions": 0,
+  "primary_budget": 3,
+  "primary_metric": "coverage_at_k",
+  "strongest_fair_baseline": "inverse_probability_weighted",
+  "strongest_baseline_mean": 0.5958333333333333,
+  "adaptive_mean": 0.6328703703703703,
+  "comparison": {
+    "mean_difference": 0.03703703703703704,
+    "paired_bootstrap_95pct": [
+      0.02407407407407407,
+      0.05185185185185185
+    ]
+  },
+  "equivalent_within_margin": true,
+  "superiority_supported": true,
+  "gate": "PASS",
+  "config_sha256": "9E006079C7242B5A90F0D713FAB0A2FB87FFF387700D676AE4137501E0899A64",
+  "event_table_sha256": "F5A9647B6A6CB966A6E804EFFF608646096F036DD93DD4A2D89272446F597E25",
+  "aggregate_sha256": "180541F4148D2A4E14D73D53BB9CC2C8DE04BE7EA084A8A625982A4780E7FF9E",
+  "information_contract": "All policies receive the same calibrated risk interval, candidate nodes, reach ensemble, consequence weights, cutoff and budget. Only adaptive_sdaif receives results after\u2014not before\u2014each selected test.",
+  "claim_boundary": "Constructed E. coli-referenced risk plus public benchmark hydraulics; no field or municipal validation.",
+  "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately."
+}

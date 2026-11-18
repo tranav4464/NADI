@@ -1,0 +1,32 @@
+{
+  "benchmark_id": "NADI-X2026-LOCKED-V3-PDA-HYDRAULIC-ENSEMBLE",
+  "frozen_before_run": "2026-11-18",
+  "supersedes_for_headline": "NADI-X2026-LOCKED-V2-ADAPTIVE-FAIRNESS",
+  "change_reason": "V3 preserves V2's fair sequential comparator and replaces the historical six-scenario reference with 24 freshly generated EPANET/WNTR TRACE scenarios using pressure-dependent demand and explicit uncertainty in source, demand, tank state, and pipe closure.",
+  "event_count_per_seed": 40,
+  "seeds": [20261117, 20261118, 20261119],
+  "budgets": [1, 3, 5, 10],
+  "primary_budget": 3,
+  "primary_metric": "coverage_at_k",
+  "equivalence_margin": 0.02,
+  "bootstrap_repetitions": 2000,
+  "candidate_count": 12,
+  "policies": [
+    "random",
+    "routine",
+    "risk_only",
+    "context_only",
+    "anomaly_only",
+    "hydraulic_only",
+    "population_only",
+    "bayesian",
+    "adaptive_bayesian",
+    "inverse_probability_weighted",
+    "non_adaptive_robust",
+    "adaptive_sdaif"
+  ],
+  "information_contract": "All policies receive the same calibrated risk interval, 12 candidates, 24-scenario reach ensemble, consequence weights, cutoff and budget. Adaptive SDAIF and adaptive Bayesian receive a test result only after selecting that test.",
+  "hidden_truth_contract": "The hidden hydraulic scenario is sampled after all policy inputs are frozen and is never passed to a selector.",
+  "pass_rule": "At budget 3, adaptive SDAIF passes if its paired mean Coverage@3 is not more than 0.02 below the strongest declared fair baseline; superiority additionally requires the paired 95% bootstrap interval to be above zero.",
+  "claim_boundary": "E. coli-referenced surface-water risk evidence joined to a simulated public benchmark drinking-water network. Hydraulic parameters are benchmark assumptions, including PDA and stress scenarios; no Delhi-NCR, field, biological-sensor, or municipal validation."
+}

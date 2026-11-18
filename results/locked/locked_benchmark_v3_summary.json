@@ -1,0 +1,28 @@
+{
+  "benchmark_id": "NADI-X2026-LOCKED-V3-PDA-HYDRAULIC-ENSEMBLE",
+  "generated_utc": "2026-11-18T11:23:13.584558+00:00",
+  "events_attempted": 120,
+  "events_evaluated": 120,
+  "abstentions": 0,
+  "primary_budget": 3,
+  "primary_metric": "coverage_at_k",
+  "strongest_fair_baseline": "adaptive_bayesian",
+  "strongest_baseline_mean": 0.6860524891774893,
+  "adaptive_mean": 0.6860524891774893,
+  "comparison": {
+    "mean_difference": 0.0,
+    "paired_bootstrap_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  "equivalent_within_margin": true,
+  "superiority_supported": false,
+  "gate": "PASS",
+  "config_sha256": "2CA1F47F26D6B66A555BF84D0EC02E2BD4CCB25CC74AC590C8053327804773F5",
+  "event_table_sha256": "0186FC8D8BFAE3D6DCC447C6F2576E2CA5FE12204F14F0940596436A88005042",
+  "aggregate_sha256": "8A415B7160B1AE647355EA7AAD796190200656CEBEF9B392F278F3CF32F4C4DA",
+  "information_contract": "All policies receive the same calibrated risk interval, 12 candidates, 24-scenario reach ensemble, consequence weights, cutoff and budget. Adaptive SDAIF and adaptive Bayesian receive a test result only after selecting that test.",
+  "claim_boundary": "E. coli-referenced surface-water risk evidence joined to a simulated public benchmark drinking-water network. Hydraulic parameters are benchmark assumptions, including PDA and stress scenarios; no Delhi-NCR, field, biological-sensor, or municipal validation.",
+  "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately."
+}

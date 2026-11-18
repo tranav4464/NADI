@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nadi-water-safety"
+version = "0.1.0"
+description = "Software-first Network-Adaptive Decision Intelligence for water-safety testing"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+  "numpy==2.2.6",
+  "scipy==1.15.3",
+  "pandas==2.3.3",
+  "scikit-learn==1.7.2",
+  "joblib==1.5.2",
+  "wntr==1.5.0",
+  "Flask==3.1.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2"]
+
+[project.scripts]
+nadi = "nadi.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

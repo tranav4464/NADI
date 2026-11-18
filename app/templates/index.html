@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NADI Decision Console</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">NETWORK-ADAPTIVE DECISION INTELLIGENCE</span><h1>Where should confirmatory testing begin?</h1></div>
+    <div class="status"><span class="dot"></span><span id="origin">Loading evidence…</span></div>
+  </header>
+  <main>
+    <section class="controls panel">
+      <label>Scenario seed <input id="seed" type="number" value="20261117"></label>
+      <label>Test budget <input id="budget" type="number" min="1" max="10" value="3"></label>
+      <button id="run">Run reproducible decision</button>
+      <button id="unsupported" class="secondary">Test unsupported transfer</button>
+    </section>
+
+    <section class="hero-grid">
+      <article class="panel risk">
+        <span class="eyebrow">24-HOUR E. COLI-REFERENCED CONTEXT</span>
+        <div class="metric"><strong id="risk">—</strong><small>calibrated probability</small></div>
+        <div class="interval"><div id="interval-fill"></div></div>
+        <p id="interval-label">—</p>
+        <p class="boundary">This is a context-risk estimate, not direct E. coli detection.</p>
+      </article>
+      <article class="panel action">
+        <span class="eyebrow">ADAPTIVE SDAIF DECISION</span>
+        <h2 id="action">—</h2>
+        <div class="badges"><span id="certificate"></span><span id="regret"></span></div>
+        <p id="abstention"></p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><div><span class="eyebrow">PLAUSIBLE AFFECTED REGION</span><h2>Network reach ensemble</h2></div><span class="label simulated">SIMULATED NET3</span></div>
+      <div id="nodes" class="nodes"></div>
+    </section>
+
+    <section class="two-col">
+      <article class="panel">
+        <span class="eyebrow">SEQUENTIAL EVIDENCE</span><h2>Tests selected before each result</h2>
+        <ol id="steps"></ol>
+      </article>
+      <article class="panel">
+        <span class="eyebrow">LOCKED V2 BENCHMARK</span><h2 id="gate">—</h2>
+        <div id="comparison"></div>
+        <p class="boundary">120 constructed events; same information and budget; no municipal field-validation claim.</p>
+      </article>
+    </section>
+
+    <section class="panel evidence">
+      <span class="eyebrow">EVIDENCE AND LIMITS</span>
+      <div id="labels"></div>
+      <p id="claim"></p>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+

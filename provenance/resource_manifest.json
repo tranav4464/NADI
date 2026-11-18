@@ -1,0 +1,138 @@
+{
+  "schema_version": "0.1.0",
+  "generated_utc": "2026-11-18T11:29:18.609831+00:00",
+  "records": [
+    {
+      "resource_id": "WQP_MARION_ECOLI",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\WQP_Marion_IN_Ecoli_2003_2022\\wqp_marion_in_ecoli_2003_2022.zip",
+      "sha256": "4C042D6AD80481EEF044783BFC247ADBA74F6E9F77E4DDF740A9BAD1202701B0",
+      "bytes": 128260,
+      "origin": "US Water Quality Portal frozen query",
+      "domain": "SURFACE_WATER_CONTEXT",
+      "allowed_inference": "E. coli-referenced model reconstruction",
+      "prohibited_inference": "drinking-network validation",
+      "evidence_kind": "LAB_CONFIRMED",
+      "version": null
+    },
+    {
+      "resource_id": "WQP_MARION_STATIONS",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\WQP_Marion_IN_Ecoli_2003_2022\\wqp_marion_in_ecoli_stations_2003_2022.zip",
+      "sha256": "1B630C4FC8B0080611FA17D460205FE90E76ADBAB8CBC03A98263B0B957821AC",
+      "bytes": 3841,
+      "origin": "US Water Quality Portal frozen query",
+      "domain": "SURFACE_WATER_CONTEXT",
+      "allowed_inference": "monitoring-location metadata",
+      "prohibited_inference": "utility topology",
+      "evidence_kind": "OBSERVED",
+      "version": null
+    },
+    {
+      "resource_id": "NOAA_INDIANAPOLIS",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\NOAA_Indianapolis_GHCND\\USW00093819.csv.gz",
+      "sha256": "E672719A4564C8A4C0EFE6FB489C200C911B8DC151A4688FD25D05C7E41B05EE",
+      "bytes": 1744744,
+      "origin": "NOAA GHCN-D",
+      "domain": "WEATHER",
+      "allowed_inference": "past-only weather covariates",
+      "prohibited_inference": "microbial truth",
+      "evidence_kind": "OBSERVED",
+      "version": null
+    },
+    {
+      "resource_id": "BANGLADESH_MICS",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\existing_verified\\replication_data.sav",
+      "sha256": "441F2CD18674C1A51CC6CA99B1D74C9B032F404CF8C2B21944EAA3971464F8A9",
+      "bytes": 1706629,
+      "origin": "Bangladesh MICS/Figshare replication snapshot",
+      "domain": "HOUSEHOLD_DRINKING_WATER",
+      "allowed_inference": "household/source drinking-water transfer stress",
+      "prohibited_inference": "pipe-network localisation",
+      "evidence_kind": "LAB_CONFIRMED",
+      "version": null
+    },
+    {
+      "resource_id": "WDSEVENTDB",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\existing_verified\\WDSEventDB_zenodo_17547955.zip",
+      "sha256": "D1452C4A311F2C3132DDDA1B78CAAB4C782F5C658553C5E32266CEE230DB459C",
+      "bytes": 2265766,
+      "origin": "WDSEventDB Zenodo record 17547955",
+      "domain": "PHYSICAL_TESTBED",
+      "allowed_inference": "telemetry/event ingestion",
+      "prohibited_inference": "E. coli detection",
+      "evidence_kind": "OBSERVED",
+      "version": null
+    },
+    {
+      "resource_id": "BATTLEDIM_LTOWN",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\BattLeDIM_4017659\\L-TOWN.inp",
+      "sha256": "A7551B86745F4CC3433C78E60023077FA1386947D4D35372FFD3A0405622B436",
+      "bytes": 412200,
+      "origin": "BattLeDIM Zenodo record 4017659",
+      "domain": "SIMULATED_NETWORK",
+      "allowed_inference": "hydraulic/anomaly benchmark",
+      "prohibited_inference": "field validation",
+      "evidence_kind": "SIMULATED",
+      "version": null
+    },
+    {
+      "resource_id": "GECCO_2019_TRAIN",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\GECCO\\gecco2019_train_water_quality.csv",
+      "sha256": "05BBE6DEA804B6FC6B2BF8ECC35F37C404FF3AE3503C47CF69301EDF61C8B4B9",
+      "bytes": 10787236,
+      "origin": "GECCO/Zenodo record 4304080",
+      "domain": "INDUSTRIAL_WATER_PROCESS",
+      "allowed_inference": "anomaly benchmark",
+      "prohibited_inference": "microbial truth",
+      "evidence_kind": "OBSERVED",
+      "version": null
+    },
+    {
+      "resource_id": "EPANET",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\repositories\\EPANET2.2",
+      "sha256": null,
+      "bytes": null,
+      "origin": "USEPA GitHub",
+      "domain": "SOFTWARE",
+      "allowed_inference": "method/software replication",
+      "prohibited_inference": "new empirical validation",
+      "evidence_kind": "MODEL_ESTIMATE",
+      "version": "598ee6cd214de07a0d62e7dafc1bdbf09173645a"
+    },
+    {
+      "resource_id": "WNTR",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\repositories\\WNTR",
+      "sha256": null,
+      "bytes": null,
+      "origin": "USEPA GitHub",
+      "domain": "SOFTWARE",
+      "allowed_inference": "method/software replication",
+      "prohibited_inference": "new empirical validation",
+      "evidence_kind": "MODEL_ESTIMATE",
+      "version": "39e6b34f37d4b2d074f107d822752c989bf108aa"
+    },
+    {
+      "resource_id": "OPEN_ECOLI_MODELS",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\repositories\\Open-Ecoli-Models",
+      "sha256": null,
+      "bytes": null,
+      "origin": "Cognizant RDMAI GitHub",
+      "domain": "SURFACE_WATER_CONTEXT",
+      "allowed_inference": "method/software replication",
+      "prohibited_inference": "new empirical validation",
+      "evidence_kind": "MODEL_ESTIMATE",
+      "version": "4bca9807a0b62ee83df97d68b52430a3b1cda3b9"
+    },
+    {
+      "resource_id": "WATER_BENCHMARK_HUB",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\repositories\\WaterBenchmarkHub",
+      "sha256": null,
+      "bytes": null,
+      "origin": "WaterFutures GitHub",
+      "domain": "SIMULATED_NETWORK",
+      "allowed_inference": "method/software replication",
+      "prohibited_inference": "new empirical validation",
+      "evidence_kind": "MODEL_ESTIMATE",
+      "version": "d70736ddec28e9a0c3a0f232c5b8832b77cc0fc3"
+    }
+  ]
+}

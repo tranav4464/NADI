@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "project_seed": 20261117,
+  "forecast_horizon_hours": 24,
+  "risk_endpoint": "surface-water E. coli count at or above 1000 MPN-or-CFU per 100 mL; non-regulatory context endpoint",
+  "risk_model": {
+    "train_end": "2018-12-31",
+    "calibration_end": "2020-12-31",
+    "test_end": "2022-12-31",
+    "threshold": 1000.0,
+    "alpha": 0.10
+  },
+  "transfer": {
+    "minimum_support": 0.55,
+    "maximum_psi": 0.40,
+    "required_domain": "SURFACE_WATER_CONTEXT"
+  },
+  "hydraulics": {
+    "trace_threshold_percent": 1.0,
+    "candidate_count": 12,
+    "network_label": "EPA Net3 public benchmark",
+    "scenario_origin": "SIMULATED"
+  },
+  "decision": {
+    "default_budget": 3,
+    "epsilon_regret": 0.15,
+    "test_cost": 0.02,
+    "false_reassurance_penalty": 1.0
+  },
+  "locked_seeds": [20261117, 20261118, 20261119],
+  "locked_budgets": [1, 3, 5, 10]
+}
+

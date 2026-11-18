@@ -1,0 +1,16 @@
+{
+  "allowed": [
+    "E. coli-referenced surface-water risk is estimated from public laboratory observations and weather.",
+    "Public benchmark-network scenarios estimate plausible affected regions under declared assumptions.",
+    "Adaptive SDAIF prioritises confirmatory tests under a fixed budget and exposes worst-case regret.",
+    "Unsupported domain transfer produces an explicit abstention."
+  ],
+  "prohibited": [
+    "Ordinary physicochemical sensors directly detect E. coli.",
+    "The benchmark represents Delhi or Ghaziabad's actual distribution network.",
+    "NADI has been municipally or clinically validated.",
+    "NADI has already reduced illness or exposure.",
+    "Global mathematical novelty has been independently established."
+  ]
+}
+
