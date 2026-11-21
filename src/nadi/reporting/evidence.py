@@ -17,7 +17,7 @@ def _bar_svg(rows: pd.DataFrame, target: Path) -> None:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="#f8fbfc"/>',
         '<style>text{font-family:Arial,sans-serif;fill:#12343b}.label{font-size:14px}.value{font-size:13px;font-weight:bold}.title{font-size:20px;font-weight:bold}</style>',
-        '<text x="20" y="28" class="title">Locked V3: Coverage@3 by policy</text>',
+        '<text x="20" y="28" class="title">Locked V4: Coverage@3 on nonempty simulated events</text>',
     ]
     for i, row in enumerate(rows.itertuples(index=False)):
         y = top + i * (bar_h + gap)
@@ -34,14 +34,17 @@ def _bar_svg(rows: pd.DataFrame, target: Path) -> None:
 
 def build() -> dict:
     locked = RESULTS_ROOT / "locked"
-    summary = json.loads((locked / "locked_benchmark_v3_summary.json").read_text(encoding="utf-8"))
+    v5_path = locked / "benchmark_v5_no_placeholders_summary.json"
+    summary_path = v5_path if v5_path.exists() else locked / "locked_benchmark_v4_summary.json"
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
     risk = json.loads((PROCESSED_ROOT / "risk_model_card.json").read_text(encoding="utf-8"))
     hydraulic = json.loads((PROCESSED_ROOT / "hydraulic_ensemble.json").read_text(encoding="utf-8"))
-    aggregate = pd.read_csv(locked / "locked_benchmark_v3_aggregate.csv")
+    aggregate_name = "benchmark_v5_no_placeholders_aggregate.csv" if v5_path.exists() else "locked_benchmark_v4_aggregate.csv"
+    aggregate = pd.read_csv(locked / aggregate_name)
     primary = aggregate[aggregate.budget == summary["primary_budget"]].copy()
     figure_dir = RESULTS_ROOT / "figures"
     figure_dir.mkdir(parents=True, exist_ok=True)
-    svg = figure_dir / "locked_v3_coverage_at_3.svg"
+    svg = figure_dir / ("locked_v5_coverage_at_3.svg" if v5_path.exists() else "locked_v4_coverage_at_3.svg")
     _bar_svg(primary, svg)
     report = f"""# NADI Technical Evidence Summary
 
@@ -59,12 +62,15 @@ When confirmatory microbiological tests are limited, NADI decides which network 
 - Forecast untouched test: n={risk['forecast_24h']['untouched_test']['n']}, ROC AUC={risk['forecast_24h']['untouched_test']['roc_auc']:.3f}, AP={risk['forecast_24h']['untouched_test']['average_precision']:.3f}, ECE={risk['forecast_24h']['untouched_test']['ece_10']:.3f}.
 - Geographic audit: {risk['geographic_transfer_audit']['heldout_site_count']} unseen sites, n={risk['geographic_transfer_audit']['test_rows']}, ROC AUC={risk['geographic_transfer_audit']['metrics']['roc_auc']:.3f}, ECE={risk['geographic_transfer_audit']['metrics']['ece_10']:.3f}.
 - Hydraulics: {hydraulic['scenario_count']} EPANET/WNTR TRACE scenarios with source, demand, tank and pipe-state uncertainty. These are simulated benchmark scenarios, not pathogen concentrations or a city twin.
-- Locked V3: {summary['events_evaluated']} events; SDAIF Coverage@3={summary['adaptive_mean']:.3f}; strongest fair baseline `{summary['strongest_fair_baseline']}`={summary['strongest_baseline_mean']:.3f}.
+- Locked benchmark ({'V5 no-placeholder policy set' if v5_path.exists() else 'V4'}): {summary['nonempty_events_evaluated']} nonempty simulated events ({summary['empty_events_evaluated']} empty events excluded from affected-node coverage); SDAIF Coverage@3={summary['adaptive_mean']:.3f}; strongest fair baseline `{summary['strongest_fair_baseline']}`={summary['strongest_baseline_mean']:.3f}.
 - Result: `{summary['gate']}` for equivalence margin 0.02. Superiority supported: `{summary['superiority_supported']}`.
+- Bristol operational telemetry and local-normal audit: 209,584 five-minute records, seven channels, no event or biological labels; evidence is proxy-only.
+- Location adaptation uses training-only robust median/MAD baselines with sparse-group global fallback; see `src/nadi/telemetry/normal.py`.
+- SDAIF component ablations and the complete non-biological domain coverage map are maintained in `docs/SDAIF_ABLATION_EVIDENCE.md` and `docs/NON_BIOLOGICAL_COVERAGE_MATRIX.md`.
 
 ## Interpretation
 
-SDAIF matches the strongest fair sequential comparator and adds a worst-case regret certificate, an adversarial witness, abstention, and the value of each next test. The frozen benchmark does **not** establish superiority, direct E. coli detection, Delhi-NCR performance, field validation, or prevented illness.
+SDAIF matches the strongest fair sequential comparator. The initial regret bound applies only to the enumerated risk and hydraulic scenarios; it is not a real-world safety guarantee. The frozen benchmark does **not** establish superiority, direct E. coli detection, Delhi-NCR performance, field validation, or prevented illness.
 
 ## Traceability
 

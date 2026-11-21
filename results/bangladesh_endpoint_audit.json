@@ -1,0 +1,32 @@
+{
+  "source_file_sha256": "441F2CD18674C1A51CC6CA99B1D74C9B032F404CF8C2B21944EAA3971464F8A9",
+  "rows": 6069,
+  "raw_label_columns": {
+    "source": "WQ27: Source water test (100ml)",
+    "household": "WQ26: Household water test (100ml)",
+    "derived": "e_coli: stored binary variable; do not trust as household endpoint"
+  },
+  "source": {
+    "valid": 6065,
+    "positive": 2315,
+    "negative": 3750,
+    "invalid": 4
+  },
+  "household": {
+    "valid": 6056,
+    "positive": 4955,
+    "negative": 1101,
+    "invalid": 13
+  },
+  "stored_label_matches_source_all_rows": true,
+  "stored_label_source_mismatches_on_valid_rows": 0,
+  "stored_label_household_mismatches_on_valid_rows": 2904,
+  "paired_valid": 6052,
+  "paired_table": {
+    "source_0_household_0": 969,
+    "source_0_household_1": 2772,
+    "source_1_household_0": 131,
+    "source_1_household_1": 2180
+  },
+  "domain": "2019 Bangladesh household survey; not time-series or pipe-network telemetry"
+}

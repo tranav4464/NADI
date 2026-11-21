@@ -1,0 +1,26 @@
+original_path,role,evidence_track,generation_status,safe_to_move,archive_status,reason
+docs/V4_DATA_AND_EVIDENCE_GATE.md,Documentation,cross-track,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/audit_resources.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/demo.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/freeze_resources.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/generate_hydraulics.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/locked_benchmark.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/locked_benchmark_v2.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/prepare.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+logs/train_risk.log,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/figures/locked_v3_coverage_at_3.svg,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/figures/locked_v4_coverage_at_3.svg,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/locked_benchmark_v3_aggregate.csv,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/locked_benchmark_v3_events.csv,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/locked_benchmark_v3_summary.json,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/locked_benchmark_v4_aggregate.csv,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/locked_benchmark_v4_events.csv,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/locked_benchmark_v4_summary.json,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/regression_v4_delay_engine_aggregate.csv,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/regression_v4_delay_engine_comparison.json,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/regression_v4_delay_engine_events.csv,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/locked/regression_v4_delay_engine_summary.json,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+results/ltown_placement_holdout_v3.json,Historical result,hydraulic/simulation/other,historical,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+temp.bin,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+temp.inp,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv
+temp.rpt,Temporary artifact,operational,unknown,unverified,RETAINED_AT_ORIGINAL_PATH,Preserved pending hash-checked consumer migration; see reports/migration_manifest.csv

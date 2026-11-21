@@ -1,0 +1,275 @@
+{
+  "manifest_id": "NADI-REPRODUCIBILITY-V1",
+  "generated_utc": "2026-11-19T12:55:52.565530+00:00",
+  "test_command": ".venv/Scripts/python.exe -m pytest -q --ignore tests/test_repro_manifest.py --ignore tests/test_dashboard.py --ignore tests/test_claim_boundaries.py",
+  "test_exit_code": 0,
+  "test_summary": ".................................................................        [100%]",
+  "files": {
+    "configs/locked_benchmark_v4.json": {
+      "bytes": 1666,
+      "sha256": "299624C9603395189AFC23CC256FDB28882A27EE7F1D5C942824EA4956280226"
+    },
+    "configs/benchmark_v5_no_placeholders.json": {
+      "bytes": 1560,
+      "sha256": "BB47452800F4E9791D1F698F213E65C42C358637EFD5A640A678EBDDD80304F2"
+    },
+    "data_processed/risk_model_card.json": {
+      "bytes": 9809,
+      "sha256": "6529E5390BD609AB56B4F1B0FCB63ED4A6694BB5DCD67137D1BA6622028C4F98"
+    },
+    "data_processed/hydraulic_ensemble.json": {
+      "bytes": 51573,
+      "sha256": "44331A2C244229FFA4012B4EBD35CC3360EAA9D65A5453F22DBEE290A0D48F47"
+    },
+    "results/locked/benchmark_v5_no_placeholders_summary.json": {
+      "bytes": 1665,
+      "sha256": "9E26E937FEF7F3A3E93A94EAC84198F6583088993F7432A76295475C496FBC5E"
+    },
+    "results/locked/benchmark_v5_no_placeholders_aggregate.csv": {
+      "bytes": 3557,
+      "sha256": "2EE61579D9BCA4C596A39F68245DC0CDD8706AAA0987447870D8933A1FA05A18"
+    },
+    "results/locked/benchmark_v5_no_placeholders_events.csv": {
+      "bytes": 786229,
+      "sha256": "F83E889A2D9A4CCC7EBE3C7F8AE14A8C49A7B501709853059DB9B82E24C68016"
+    },
+    "results/bristol_telemetry_audit_v1.json": {
+      "bytes": 1814,
+      "sha256": "4BEEB39B2829FA4997460695CDDD86E184036EFA5153E1B00B1EC29BC311D1E9"
+    },
+    "results/performance_matrix_v1.json": {
+      "bytes": 6361,
+      "sha256": "2E495C0D77D302FDA7169F6AE0BDF3BFF3326234C8873E5063839C5762DB04A4"
+    },
+    "results/sdaif_ablations_v1.json": {
+      "bytes": 1406,
+      "sha256": "B871EB2EA452175B1F6EDDE63DD5CE9C26663ED91133D9B8F284EBE4B6CFAB27"
+    },
+    "results/prior_art_repository_audit_v1.json": {
+      "bytes": 2964,
+      "sha256": "7D42A30FAF6068CA9F6DD65AF58C718795EC1817E622B7BE3B61F1AA2F8F965F"
+    },
+    "results/authentic_prior_art_replication_v1.json": {
+      "bytes": 1015,
+      "sha256": "5E6F44F3E52C6AC8CE34B385708AF8F4A5D38FFEC2C2210288A5FA1CEB109B76"
+    },
+    "results/open_ecoli_real_data_reconstruction_v1.json": {
+      "bytes": 2684,
+      "sha256": "78521552F05A008628255B321AF8452CE1591393E6547B42FC0A83ED2A555529"
+    },
+    "results/ea_ecoli_authentic_baseline_v1.json": {
+      "bytes": 1261,
+      "sha256": "814DC8D19E733D2303F737E476EB0C9ED1820877FF28B8852DED53B2CB3537D8"
+    },
+    "results/ea_ecoli_physchem_panel_v1.json": {
+      "bytes": 7022,
+      "sha256": "8EFDD4F4C7F742C6124C60A306D4CDC24CBF480884C930723E6B1FD404EFBAFD"
+    },
+    "results/authentic_build_status_v1.json": {
+      "bytes": 3114,
+      "sha256": "BC1992A8A66A1878390770126FE848075296D302C1CF68EAA3A17B809ECA367D"
+    },
+    "results/lira_piped_water_audit.json": {
+      "bytes": 1207,
+      "sha256": "F5ED4712AC59F95792508AACA5BF4EB479CA5828E028C215F01A5DC5B3681F62"
+    },
+    "results/authentic_locked/authentic_experiment_report.json": {
+      "bytes": 22390,
+      "sha256": "E955E68181604CDB270C2B1B801FEAAE319CE35D7C0066C78006ECB2493B22F9"
+    },
+    "results/authentic_locked/authentic_test_summary.csv": {
+      "bytes": 1124,
+      "sha256": "B57D90A76D25037011D10D56FDDE977374DC773CBA067885C17BAB8815A110E2"
+    },
+    "results/authentic_locked/authentic_test_events.csv": {
+      "bytes": 35370,
+      "sha256": "A90F9A72D953E1545EE37D7BE18B50138E7D2C80668FF27D7E7A2139F207266A"
+    },
+    "results/authentic_locked/authentic_locked_site_predictions_and_zones.csv": {
+      "bytes": 385986,
+      "sha256": "CDF68FB64055F12F5FA88169C5863B81976B157E1C594E18D4377136AA1CD531"
+    },
+    "results/wdseventdb_event_holdout_v1.json": {
+      "bytes": 3178,
+      "sha256": "A6CEA5A64557C2A4E172896A384024D9A59A249683176089BD221B7D93BBD81F"
+    },
+    "results/open_ecoli_prior_art_adaptation_v1.json": {
+      "bytes": 1333,
+      "sha256": "F19E521E38EA0DB5FB445ECE054A966C335085EBFFEC8CD246092374906E57E6"
+    },
+    "results/ea_ecoli_physchem_geographic_holdout_v1.json": {
+      "bytes": 1080,
+      "sha256": "55944ADEE1B4A1B564F4BD62B5D4C3CC1ABBFE7873D0027D51E957371BB58EBE"
+    },
+    "provenance/resource_manifest.json": {
+      "bytes": 8841,
+      "sha256": "91501D5AE6ACBDE9F02E9B7663476C598568E0A6B3186C99693F17FDDF036C28"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_ecoli_confirmed_mf_2024.csv": {
+      "bytes": 6070892,
+      "sha256": "7095A77B2BB5A7996108C7B31AB9E19A59E6ACA40BD4F9DEB2573A83C85C307D"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_ecoli_confirmed_mf_2024.json": {
+      "bytes": 764,
+      "sha256": "DD3A35EAC33CC6ADE06ABC1D97B64A367DAA1AD0A875C8243DCB3E46F4FF8968"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_ecoli_physchem_panel_q1_2024.csv": {
+      "bytes": 132711,
+      "sha256": "1A75603B0ECBCC31AC4DD41E3437D0B602AA5DA21412DAED0F4339A63EEF34D4"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_ecoli_physchem_panel_q1_2024.json": {
+      "bytes": 1358,
+      "sha256": "C2E4C70BD825EC6344E0651EB6580A8F5E7753D2B53C617174E1D05FC9DF912E"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ecoli_2348_q1_2024.csv": {
+      "bytes": 276187,
+      "sha256": "4A3FF6BC266A7B6EE77F35E34055F52D35DE23885FEFE1450F2380519BEF2E95"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ph_0061_q1_2024.csv": {
+      "bytes": 6244945,
+      "sha256": "230D6D83CBB00D764CD1B9564EFE059D698B4619F39B290E3911F572C1A7187B"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/temperature_0076_q1_2024.csv": {
+      "bytes": 7401569,
+      "sha256": "5A005B21D81A51F1BCBA46919D952875B22C34EFFD667AA3D3E9EE09ECCFF952"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/conductivity_0077_q1_2024.csv": {
+      "bytes": 5191481,
+      "sha256": "425CBB8211A9FFD583F6E4E6A955F26CF2EE943959337BA7914D044ABA3356DD"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_openmeteo_weather_panel_q1_2024.csv": {
+      "bytes": 1017932,
+      "sha256": "8C9966DD77AC34D9663BC464F840D07634FC137CA867A160860A574FD3EACD05"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_openmeteo_weather_panel_q1_2024.json": {
+      "bytes": 648,
+      "sha256": "1098C64FF67899AF214D06DC905390EA785F474CFB58DB8549E0A02B98A202E4"
+    },
+    "results/ea_weather_enriched_holdout_v1.json": {
+      "bytes": 937,
+      "sha256": "2C602456235FC613801DD4AAB9D3496687A06D72509FDC246D7588FEA3E3C6B6"
+    },
+    "results/texas_physical_pressure_v1.json": {
+      "bytes": 2869,
+      "sha256": "86339BCED91909EEE8F1AC7E0BB01E930D63E8684033F8FAE8F870A11B477BD1"
+    },
+    "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ammoniacal_n_0111_q1_2024.csv": {
+      "bytes": 9169803,
+      "sha256": "C88BDCFAE9A166C36B5D98E2287A7D52FF02F5CB04BD6C5454D50D6481FDDD54"
+    },
+    "src/nadi/sdaif/engine.py": {
+      "bytes": 8469,
+      "sha256": "8E283A248927A4FEEFAEFB3B0CCCD12B6B6752CFE3C052E7B48A482CD742FCCA"
+    },
+    "src/nadi/sdaif/fusion.py": {
+      "bytes": 2100,
+      "sha256": "1C13A225258031D1C4E933A5EB29657F2D4EF0F8BB80DD84B1C7132B78509500"
+    },
+    "src/nadi/telemetry/normal.py": {
+      "bytes": 2704,
+      "sha256": "A1B42E123C32C1223C64E2D35A7C2D1633F51A65C74FED81DF3180D26DCB1D28"
+    },
+    "src/nadi/hazards/intrusion.py": {
+      "bytes": 3791,
+      "sha256": "55F61B6B6B16FA65D8CA68337157D597E8346BC23E7E34E06F4F353E08B71DBA"
+    },
+    "src/nadi/hydraulics/pressure_features.py": {
+      "bytes": 2782,
+      "sha256": "51D2BFFAE56E41F1942C1C81ADB4179E291FAF7974779A8FD5E2C8BDD77ED210"
+    },
+    "src/nadi/decision/actions.py": {
+      "bytes": 2309,
+      "sha256": "982E1C5D7FF5CA78EFD0DB84B653E990AEF4A6270231E55BDC5E3519A18BD587"
+    },
+    "src/nadi/authentic/models.py": {
+      "bytes": 7446,
+      "sha256": "BB50084EFE0441BA558AC912D53641DA8F2DD15860E59873AAF4E853DB6A6698"
+    },
+    "src/nadi/authentic/policy.py": {
+      "bytes": 9520,
+      "sha256": "E6FBB9296C4E26B42988C4A5A37A5B8765563F0C7F611A26666241783020FC85"
+    },
+    "src/nadi/authentic/benchmark.py": {
+      "bytes": 6948,
+      "sha256": "E3D35CAB5834A6C968279DADDA5039F6A819B5334774DB7C091158DD7E02D7F0"
+    },
+    "src/nadi/pilot/schema.py": {
+      "bytes": 6620,
+      "sha256": "367E19DD8C5E212B8880B2623CE9DDFC94283B8A3D7B2C31621C66772BD8E425"
+    },
+    "src/nadi/microbial_risk/lira.py": {
+      "bytes": 4845,
+      "sha256": "FBDD46942C400E3C76CCF9934A2F274F1E683CB3C8A39FE880C28A9F48CAC8EA"
+    },
+    "scripts/run_authentic_xylem_experiment.py": {
+      "bytes": 10692,
+      "sha256": "D9B8BF2C9D2A917EE84EDE4CCCE6D35023267AB4EC688CADD7BC736B21A481EB"
+    },
+    "scripts/audit_lira_piped_water.py": {
+      "bytes": 582,
+      "sha256": "89C4235E13C1735E4FB04BCBB1CD3A16CA2EA97F1B13ED18B6EF2C2B2355CF86"
+    },
+    "scripts/audit_xylem_submission_pack.py": {
+      "bytes": 3262,
+      "sha256": "C69D26B8A1987D98F3853C15DBEFFB5834803EC394AD74CDCADC56F65901FCA4"
+    },
+    "scripts/audit_prospective_pilot_bundle.py": {
+      "bytes": 1369,
+      "sha256": "9EA24D0300643EA08E9BB313270C68323A11FDDA1120568E7962E4FF91931EA6"
+    },
+    "scripts/evaluate_texas_physical_pressure.py": {
+      "bytes": 5362,
+      "sha256": "EBD188A6D63AA3279E6DC133667981B71E50E5A78C280315DD57FFF1EBBCED97"
+    },
+    "app/server.py": {
+      "bytes": 8645,
+      "sha256": "2CE23FB6C1CC7AA36D1F38C4DD16BF07B0BFD284617DE9F2582AEB300F057612"
+    },
+    "app/templates/authentic.html": {
+      "bytes": 2590,
+      "sha256": "024FE79DF26AB2D6749F33B4E2AEE469C10F8106C5421B5C1D51A78E25EBF455"
+    },
+    "app/static/authentic.js": {
+      "bytes": 5196,
+      "sha256": "089D95D60650454684F62F0A00EE0D3E797CC9C80C3757604148CA3BCD4A1242"
+    },
+    "docs/MATHEMATICAL_ASSURANCE_CASE.md": {
+      "bytes": 4424,
+      "sha256": "30016966D0DA5E57E8A82AD4A4FA7DC738A636F013670A3A60356B370C5539A4"
+    },
+    "docs/XYLEM_APPLICATION_DRAFT.md": {
+      "bytes": 4980,
+      "sha256": "5139CEF4772F21792B5442656DA153EC0D048947679026C8A22BE1BC7803DBB8"
+    },
+    "docs/XYLEM_EVIDENCE_PACK.md": {
+      "bytes": 5763,
+      "sha256": "8B19DE9DC2EBDA0A1C100C16D6CA786EBC8C2BD8671AABFBE60040D58E88E74A"
+    },
+    "docs/XYLEM_FINAL_HANDOFF.md": {
+      "bytes": 3917,
+      "sha256": "D24031BE1EF1D52F6ECFFD2B3F68C3A4B12BC780868CA9F8E87FD83CA08A5B9A"
+    },
+    "docs/PROSPECTIVE_AUTHENTIC_PILOT_PROTOCOL.md": {
+      "bytes": 3363,
+      "sha256": "F4BB7456D43BBB5E07E2F1A3D46D7F14ABF1033216BAE461E77A2FB22DF99873"
+    },
+    "docs/AUTHENTIC_BUILD_COMPLETION_AUDIT.md": {
+      "bytes": 3430,
+      "sha256": "DA925906EEC92729AE9A1A53E203F47328AE6A35B50F7832103CE876C8FD8476"
+    },
+    "docs/TEXAS_PHYSICAL_NETWORK_EVIDENCE.md": {
+      "bytes": 1131,
+      "sha256": "368AC9C73F15B556ECB1D803E1EDCA615FE3DEE7E507C92487E06585E7AED6EE"
+    },
+    "docs/FINAL_GOAL_REQUIREMENTS_AUDIT.md": {
+      "bytes": 3895,
+      "sha256": "DA752FD30712325DF82F24EBFF4F0D04DB025D9875F58BCE2CAA040AE9F841E8"
+    },
+    "docs/PARTNER_DATA_REQUEST.md": {
+      "bytes": 3705,
+      "sha256": "812875F711CABE25E02CD04EDEB6B8410A56C1820EF9C6FD70469E2D9FB15AD0"
+    }
+  },
+  "missing_expected_files": [],
+  "claim_boundary": "Hashes prove artifact identity and test reproducibility only; they do not establish field or biological validity."
+}

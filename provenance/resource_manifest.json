@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "generated_utc": "2026-11-18T11:29:18.609831+00:00",
+  "generated_utc": "2026-11-21T06:45:42.000132+00:00",
   "records": [
     {
       "resource_id": "WQP_MARION_ECOLI",
@@ -82,6 +82,54 @@
       "origin": "GECCO/Zenodo record 4304080",
       "domain": "INDUSTRIAL_WATER_PROCESS",
       "allowed_inference": "anomaly benchmark",
+      "prohibited_inference": "microbial truth",
+      "evidence_kind": "OBSERVED",
+      "version": null
+    },
+    {
+      "resource_id": "EA_ECOLI_2024",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\EA_ECOLI_AUTHENTIC\\ea_ecoli_confirmed_mf_2024.csv",
+      "sha256": "7095A77B2BB5A7996108C7B31AB9E19A59E6ACA40BD4F9DEB2573A83C85C307D",
+      "bytes": 6070892,
+      "origin": "Environment Agency official observation API",
+      "domain": "SURFACE_WATER_CONTEXT",
+      "allowed_inference": "E. coli surface-water replication",
+      "prohibited_inference": "Delhi-NCR drinking-network validation",
+      "evidence_kind": "LAB_CONFIRMED",
+      "version": null
+    },
+    {
+      "resource_id": "EA_ECOLI_PHYSCHEM_PANEL_Q1_2024",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\EA_ECOLI_AUTHENTIC\\ea_ecoli_physchem_panel_q1_2024.csv",
+      "sha256": "1A75603B0ECBCC31AC4DD41E3437D0B602AA5DA21412DAED0F4339A63EEF34D4",
+      "bytes": 132711,
+      "origin": "Environment Agency official observation API, sample-URI join",
+      "domain": "SURFACE_WATER_CONTEXT",
+      "allowed_inference": "sample-matched physicochemical benchmark",
+      "prohibited_inference": "direct sensor detection and drinking-network validation",
+      "evidence_kind": "LAB_CONFIRMED",
+      "version": null
+    },
+    {
+      "resource_id": "EA_OPENMETEO_WEATHER_PANEL_Q1_2024",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\EA_ECOLI_AUTHENTIC\\ea_openmeteo_weather_panel_q1_2024.csv",
+      "sha256": "8C9966DD77AC34D9663BC464F840D07634FC137CA867A160860A574FD3EACD05",
+      "bytes": 1017932,
+      "origin": "Open-Meteo historical weather API, coordinates transformed from EA sampling points",
+      "domain": "WEATHER",
+      "allowed_inference": "past-only weather covariates",
+      "prohibited_inference": "microbial truth",
+      "evidence_kind": "OBSERVED",
+      "version": null
+    },
+    {
+      "resource_id": "BRISTOL_POU_TELEMETRY",
+      "local_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\Bristol_POU_Telemetry\\extracted\\data\\pou-dwts_operationaltelemetrydata_uk_nov2019-sep2022_1.csv",
+      "sha256": "B088DB9DFB0828DE94ADC32134A534A33FE17255AF772FE16891FA41A3270564",
+      "bytes": 10249314,
+      "origin": "Bristol operational telemetry archive",
+      "domain": "OPERATIONAL_TELEMETRY",
+      "allowed_inference": "regime/anomaly evidence",
       "prohibited_inference": "microbial truth",
       "evidence_kind": "OBSERVED",
       "version": null

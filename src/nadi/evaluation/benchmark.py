@@ -57,7 +57,9 @@ def _bootstrap_difference(adaptive: np.ndarray, comparator: np.ndarray, repeats:
     }
 
 
-def run_locked(config: dict, benchmark_config: dict, output_name: str = "locked_benchmark_v1") -> dict:
+def run_locked(
+    config: dict, benchmark_config: dict, output_name: str = "locked_benchmark_v1", output_dir: Path | None = None,
+) -> dict:
     data = _records()
     bundle = load_bundle()
     ensemble = load_reference_ensemble(benchmark_config["candidate_count"])
@@ -84,7 +86,10 @@ def run_locked(config: dict, benchmark_config: dict, output_name: str = "locked_
                 baselines = select_all(candidates, reach, ensemble.consequence_weights, vertices, budget, seed + event_index, config["decision"]["test_cost"], propensities)
                 engine = AdaptiveSDAIF(config["decision"]["epsilon_regret"], config["decision"]["test_cost"])
                 selected, _, initial, _ = _adaptive_sequence(engine, candidates, vertices, ensemble.consequence_weights, budget, affected)
-                plans = {**baselines, "adaptive_sdaif": selected}
+                plans = {name: plan for name, plan in baselines.items()
+                         if name in benchmark_config["policies"]}
+                if "adaptive_sdaif" in benchmark_config["policies"]:
+                    plans["adaptive_sdaif"] = selected
                 if "adaptive_bayesian" in benchmark_config["policies"]:
                     plans["adaptive_bayesian"] = adaptive_bayesian_sequence(
                         candidates, vertices, ensemble.consequence_weights, budget, affected
@@ -103,27 +108,32 @@ def run_locked(config: dict, benchmark_config: dict, output_name: str = "locked_
                         "selected": "|".join(plan),
                         **metrics,
                         "true_regret": _decision_regret(plan, affected, ensemble.consequence_weights, budget),
-                        "safe_certificate": bool(initial.get("certified", False)) if policy == "adaptive_sdaif" else False,
+                        "scenario_conditional_initial_certificate": bool(initial.get("certified", False)) if policy == "adaptive_sdaif" else False,
                     })
     table = pd.DataFrame(rows)
     if table.empty:
         raise RuntimeError("Locked benchmark produced no supported events")
-    output_dir = RESULTS_ROOT / "locked"
+    output_dir = output_dir or (RESULTS_ROOT / "locked")
     output_dir.mkdir(parents=True, exist_ok=True)
     table_path = output_dir / f"{output_name}_events.csv"
     table.to_csv(table_path, index=False, lineterminator="\n")
     aggregate = table.groupby(["budget", "policy"], as_index=False).agg(
         events=("event_id", "nunique"),
+        nonempty_events=("empty_event", lambda x: int((~x).sum())),
+        empty_events=("empty_event", "sum"),
         mean_coverage=("coverage_at_k", "mean"),
         mean_population_coverage=("population_weighted_coverage", "mean"),
         missed_event_rate=("missed_positive_event", "mean"),
         mean_true_regret=("true_regret", "mean"),
-        certificate_rate=("safe_certificate", "mean"),
+        initial_certificate_rate=("scenario_conditional_initial_certificate", "mean"),
     )
     aggregate_path = output_dir / f"{output_name}_aggregate.csv"
     aggregate.to_csv(aggregate_path, index=False, lineterminator="\n")
     primary = table[table["budget"] == benchmark_config["primary_budget"]]
-    pivot = primary.pivot(index="event_id", columns="policy", values=benchmark_config["primary_metric"])
+    nonempty = primary[~primary["empty_event"]]
+    pivot = nonempty.pivot(index="event_id", columns="policy", values=benchmark_config["primary_metric"])
+    if pivot.empty or pivot.isna().any().any():
+        raise RuntimeError("Primary metric requires complete nonempty paired events")
     baseline_names = [name for name in benchmark_config["policies"] if name != "adaptive_sdaif"]
     baseline_means = {name: float(pivot[name].mean()) for name in baseline_names}
     strongest = max(baseline_means, key=lambda name: (baseline_means[name], name))
@@ -139,6 +149,8 @@ def run_locked(config: dict, benchmark_config: dict, output_name: str = "locked_
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "events_attempted": len(benchmark_config["seeds"]) * benchmark_config["event_count_per_seed"],
         "events_evaluated": int(primary["event_id"].nunique()),
+        "nonempty_events_evaluated": int(nonempty["event_id"].nunique()),
+        "empty_events_evaluated": int(primary["event_id"].nunique() - nonempty["event_id"].nunique()),
         "abstentions": abstentions,
         "primary_budget": benchmark_config["primary_budget"],
         "primary_metric": benchmark_config["primary_metric"],
@@ -155,6 +167,7 @@ def run_locked(config: dict, benchmark_config: dict, output_name: str = "locked_
         "information_contract": benchmark_config["information_contract"],
         "claim_boundary": benchmark_config["claim_boundary"],
         "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately.",
+        "certificate_boundary": "Initial next-test regret bound only, conditional on enumerated scenarios and risk interval; not a biological or real-world safety certificate.",
     }
     (output_dir / f"{output_name}_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary

@@ -1,0 +1,12 @@
+{
+  "protocol_id": "NADI-POLICY-SET-V5-NO-PLACEHOLDER-MODELS",
+  "frozen_before_run": "2026-11-18",
+  "retained_real_comparators": [
+    "random", "routine", "hydraulic_only", "population_only", "bayesian",
+    "adaptive_bayesian", "inverse_probability_weighted", "non_adaptive_robust",
+    "adaptive_sdaif"
+  ],
+  "excluded_until_implemented": ["risk_only", "context_only", "anomaly_only"],
+  "reason": "The excluded names currently map to fixed candidate orders and do not run independent risk/context/anomaly models. GECCO event scores are not E. coli labels and cannot be substituted as a biological ranking.",
+  "next_comparison": "Use the retained policies for any new benchmark; preserve V4 as a frozen historical result and require new component models before adding their names back."
+}

@@ -1,0 +1,44 @@
+{
+  "status": "DIAGNOSTIC_ONLY_TEST_LABELS_ALREADY_SEEN",
+  "target": 0.85,
+  "model": "preregistered authentic-locked XGBoost probabilities",
+  "records": 545,
+  "threshold_independent_roc_auc": 0.8659853479853479,
+  "all_core_metrics_at_or_above_target_is_feasible": false,
+  "number_of_feasible_thresholds": 0,
+  "core_metrics": [
+    "accuracy",
+    "balanced_accuracy",
+    "f1",
+    "precision",
+    "sensitivity"
+  ],
+  "oracle_best_f1": {
+    "threshold": 0.4,
+    "accuracy": 0.8073394495412844,
+    "balanced_accuracy": 0.7602930402930403,
+    "f1": 0.8605577689243028,
+    "precision": 0.8039702233250621,
+    "sensitivity": 0.9257142857142857,
+    "minimum_core_metric": 0.7602930402930403
+  },
+  "oracle_best_balanced_accuracy": {
+    "threshold": 0.6910000000000001,
+    "accuracy": 0.7908256880733945,
+    "balanced_accuracy": 0.801941391941392,
+    "f1": 0.8240740740740741,
+    "precision": 0.8959731543624161,
+    "sensitivity": 0.7628571428571429,
+    "minimum_core_metric": 0.7628571428571429
+  },
+  "oracle_maximin_threshold": {
+    "threshold": 0.644,
+    "accuracy": 0.7853211009174312,
+    "balanced_accuracy": 0.784029304029304,
+    "f1": 0.8251121076233184,
+    "precision": 0.8652037617554859,
+    "sensitivity": 0.7885714285714286,
+    "minimum_core_metric": 0.784029304029304
+  },
+  "interpretation": "No value in this file may replace the validation-selected threshold. The oracle rows quantify the separability limit of the existing locked scores."
+}

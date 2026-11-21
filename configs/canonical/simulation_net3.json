@@ -1,0 +1,11 @@
+{
+  "workflow": "run_simulation",
+  "input": "configs/benchmark_v5_no_placeholders.json",
+  "input_sha256": "bb47452800f4e9791d1f698f213e65c42c358637efd5a640a678ebddd80304f2",
+  "runtime_config": "configs/default.json",
+  "runtime_config_sha256": "f28f990a8f7753f7fb7b065dd812c216de93c9af93b1120fe7d0987c482e15dd",
+  "output_root": "results/canonical/simulation",
+  "evidence_class": "SIMULATED",
+  "domain": "NET3_SIMULATED_TRACER_EVENT",
+  "seed": 20261118
+}

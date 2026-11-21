@@ -1,0 +1,10 @@
+{
+  "workflow": "build_report",
+  "input": "results/canonical/authentic/audit_20261120_07/run_manifest.json",
+  "input_sha256": "ddd32508497aaa167b57d383cc61cb2f13ddfadb5c6b769e2aa7f8e43cf2c95d",
+  "hydraulic_manifest": "results/canonical/hydraulics/audit_20261120_01/run_manifest.json",
+  "output_root": "results/canonical/report",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "NADI_EVIDENCE_SEPARATED_SYSTEM",
+  "seed": 2026
+}

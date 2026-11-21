@@ -1,0 +1,86 @@
+{
+  "dataset": "TEXAS_PHYSICAL_PIPE_NETWORK_DYNAMIC_PRESSURE",
+  "data_origin": "AUTHENTIC_OBSERVED_CONTROLLED_PHYSICAL_TESTBED",
+  "files": 40,
+  "features": [
+    "pressure_mean",
+    "pressure_std",
+    "pressure_span",
+    "pressure_q01",
+    "pressure_q05",
+    "pressure_q25",
+    "pressure_q50",
+    "pressure_q75",
+    "pressure_q95",
+    "pressure_q99",
+    "pressure_change_std",
+    "pressure_abs_change_mean",
+    "spectral_centroid_hz",
+    "spectral_flatness",
+    "spectral_total_power",
+    "spectral_power_0_100hz",
+    "spectral_power_100_500hz",
+    "spectral_power_500_1000hz",
+    "spectral_power_1000_3000hz",
+    "spectral_power_3000_6000hz",
+    "spectral_power_6000_10000hz"
+  ],
+  "endpoint": "Controlled leak-present versus no-leak physical run; label from experimental file condition",
+  "split": "5-fold StratifiedGroupKFold across whole physical-run condition groups; P1 only, so paired P1/P2 signals never cross folds",
+  "folds": [
+    {
+      "fold": 0,
+      "train_conditions": 32,
+      "test_conditions": 8,
+      "test_positive_conditions": 6,
+      "test_group_sha256": "64B5711931BAD4212D575D8BF9CDFB571E83988939D1711935B14E6B276E2F95"
+    },
+    {
+      "fold": 1,
+      "train_conditions": 32,
+      "test_conditions": 8,
+      "test_positive_conditions": 6,
+      "test_group_sha256": "6461DD0DED90D4238FC1FC0A729B5548B3E017038FD80D4C3A4597D64320B72B"
+    },
+    {
+      "fold": 2,
+      "train_conditions": 32,
+      "test_conditions": 8,
+      "test_positive_conditions": 7,
+      "test_group_sha256": "628E0E7036E58B7088701E6ECC0D5D5A603B710697ED6771A11AFB0A30285B0F"
+    },
+    {
+      "fold": 3,
+      "train_conditions": 32,
+      "test_conditions": 8,
+      "test_positive_conditions": 7,
+      "test_group_sha256": "64EA116CAB63F399E2AD1AB79C4A174179FB4F45FAC8CA8424682A75773E65EB"
+    },
+    {
+      "fold": 4,
+      "train_conditions": 32,
+      "test_conditions": 8,
+      "test_positive_conditions": 6,
+      "test_group_sha256": "3A4A1729B62F3F761E48CDC559579E49D45FA251425DE79A85A062BCC37F575F"
+    }
+  ],
+  "out_of_fold_metrics": {
+    "records": 40,
+    "positive_leak_conditions": 32,
+    "prevalence": 0.8,
+    "threshold": 0.5,
+    "accuracy": 0.8,
+    "precision": 0.8333333333333334,
+    "recall": 0.9375,
+    "f1": 0.8823529411764706,
+    "balanced_accuracy": 0.59375,
+    "roc_auc": 0.826171875,
+    "average_precision": 0.954273017008851
+  },
+  "always_leak_baseline": {
+    "accuracy": 0.8,
+    "f1": 0.8888888888888888,
+    "balanced_accuracy": 0.5
+  },
+  "claim_boundary": "This verifies pressure-wave discrimination on a controlled physical pipe network only. It is not E. coli detection, a microbial-risk model, a drinking-water field validation, a municipal topology model, or evidence of avoided exposure."
+}

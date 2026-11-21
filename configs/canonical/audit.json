@@ -1,0 +1,12 @@
+{
+  "workflow": "audit",
+  "input": "data_processed/ea_authentic_site_rounds_2024.csv",
+  "input_sha256": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+  "output_root": "results/canonical/audit",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "seed": 2026,
+  "authentic_manifest": "results/canonical/authentic/audit_20261120_07/run_manifest.json",
+  "hydraulic_manifest": "results/canonical/hydraulics/audit_20261120_01/run_manifest.json"
+  ,"simulation_manifest": "results/canonical/simulation/audit_20261120_01/run_manifest.json"
+}

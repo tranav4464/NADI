@@ -35,9 +35,25 @@
       </article>
     </section>
 
+    <section class="panel outcome-panel">
+      <div class="section-head"><div><span class="eyebrow">OPERATIONAL OUTCOME</span><h2 id="outcome-status">—</h2></div><span class="label advisory">AUTHORITY DECISION SUPPORT</span></div>
+      <div class="two-col">
+        <div><strong>Probable affected region</strong><p id="outcome-zone">—</p></div>
+        <div><strong>First laboratory tests</strong><p id="outcome-tests">—</p></div>
+      </div>
+      <p><strong>Recommended first response:</strong> <span id="outcome-action">—</span></p>
+      <p id="outcome-note" class="boundary">—</p>
+    </section>
+
     <section class="panel">
       <div class="section-head"><div><span class="eyebrow">PLAUSIBLE AFFECTED REGION</span><h2>Network reach ensemble</h2></div><span class="label simulated">SIMULATED NET3</span></div>
       <div id="nodes" class="nodes"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><div><span class="eyebrow">PROTECTIVE-ACTION SUPPORT</span><h2>Operator-reviewed response options</h2></div><span class="label advisory">ADVISORY ONLY</span></div>
+      <div id="actions" class="nodes"></div>
+      <p class="boundary">Actions are ranked mathematically from consequence, coverage, cost and delay. They are not automatic actuation and require utility and laboratory review.</p>
     </section>
 
     <section class="two-col">
@@ -46,15 +62,23 @@
         <ol id="steps"></ol>
       </article>
       <article class="panel">
-        <span class="eyebrow">LOCKED V2 BENCHMARK</span><h2 id="gate">—</h2>
+        <span class="eyebrow">LOCKED V5 BENCHMARK</span><h2 id="gate">—</h2>
         <div id="comparison"></div>
         <p class="boundary">120 constructed events; same information and budget; no municipal field-validation claim.</p>
       </article>
     </section>
 
+    <section class="panel">
+      <div class="section-head"><div><span class="eyebrow">AUTHENTIC OBSERVED DATA</span><h2>Independent biological benchmark</h2></div><span class="label observed">OBSERVED · NOT SIMULATION</span></div>
+      <div id="authentic-metrics" class="nodes"><div class="node"><small>Loading authentic metrics…</small></div></div>
+      <p id="authentic-boundary" class="boundary"></p>
+    </section>
+
     <section class="panel evidence">
       <span class="eyebrow">EVIDENCE AND LIMITS</span>
       <div id="labels"></div>
+      <p id="intrusion"></p>
+      <p id="fusion"></p>
       <p id="claim"></p>
     </section>
   </main>

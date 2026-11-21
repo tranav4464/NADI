@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "checks": {
+    "rows": 13405,
+    "sites": 920,
+    "dates": 285,
+    "duplicate_site_dates": 0,
+    "feature_cutoff_on_or_after_round": 0,
+    "unexpected_origins": [],
+    "invalid_binary_labels": 0
+  },
+  "findings": [],
+  "limitations": [
+    "The CSV cannot establish actual laboratory-result release times.",
+    "This check does not validate UK EA sampling selection or transfer to drinking-water networks."
+  ]
+}

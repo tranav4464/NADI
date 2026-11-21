@@ -1,0 +1,25 @@
+{
+  "command": "evaluate-sdaif",
+  "run_id": "audit_20261120_02",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:53:11.380569+00:00",
+  "finished_utc": "2026-11-20T12:53:11.448156+00:00",
+  "seed": 2026,
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\authentic\\audit_20261120_07\\authentic_test_events.csv",
+  "input_sha256": "a90f9a72d953e1545ee37d7be18b50138e7d2c80668ff27d7e7a2139f207266a",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\evaluate_sdaif.json",
+  "config_sha256": "eb5da06db3e6beb892669368df6d753b75e8926111d8a58b719bd81c0389497a",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "0d01682cf122775d52150f53bcea84a3f1e995c3f748338d057e4997a9b79bca",
+    "src/nadi/authentic/benchmark.py": "e3d35cab5834a6c968279dadda5039f6a819b5334774db7c091158dd7e02d7f0",
+    "src/nadi/authentic/policy.py": "e6fbb9296c4e26b42988c4a5a37a5b8765563f0c7f611a26666241783020fc85"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\decision\\audit_20261120_02",
+  "outputs_sha256": {
+    "sdaif_evaluation.json": "25cdacc2e740f032ca8e31a6eccc66eea8ab303cb90b05b8268ca5e173f0fc31"
+  },
+  "summary_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\authentic\\audit_20261120_07\\authentic_test_summary.csv",
+  "summary_sha256": "b57d90a76d25037011d10d56fdde977374dc773cba067885c17bab8815a110e2"
+}

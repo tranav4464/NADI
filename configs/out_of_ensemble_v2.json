@@ -1,0 +1,24 @@
+{
+  "protocol_id": "NET3-OUT-OF-ENSEMBLE-V2-UNSEEN-SOURCES-AND-DELAY",
+  "frozen_before_run": "2026-11-18",
+  "purpose": "Stress test unseen tracer sources and delayed results, beyond V1's parameter-only shift",
+  "candidate_count": 12,
+  "budget": 3,
+  "risk_mode": "unit_reach_only_no_biological_claim",
+  "hidden_cases": [
+    {"source": "10", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "10", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "60", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "60", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "121", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "121", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "167", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "167", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "203", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "203", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "601", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "601", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"}
+  ],
+  "comparators": ["random", "routine", "hydraulic_only", "bayesian", "adaptive_bayesian", "adaptive_sdaif", "delayed_sdaif_1"],
+  "claim_boundary": "All hidden results are EPANET/WNTR tracer reach, not E. coli observations. No field transport, city or health validation. Unseen source cases may yield no affected candidate, reported separately."
+}

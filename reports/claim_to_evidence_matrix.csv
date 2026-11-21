@@ -1,0 +1,9 @@
+claim,status,evidence_artifact,evidence_class,permitted_wording,prohibited_extension
+Retrospective high-E. coli test prioritization,Demonstrated,results/canonical/authentic/audit_20261120_07/authentic_test_summary.csv,LAB_CONFIRMED,"prioritized observed UK EA monitoring sites retrospectively","live drinking-water alert"
+Locked environmental-water classification,Demonstrated,results/canonical/authentic/audit_20261120_07/authentic_experiment_report.json,LAB_CONFIRMED,"mixed environmental-water E. coli risk model","pipe E. coli detector"
+SDAIF decision comparison,Tie not superiority,results/canonical/decision/audit_20261120_02/sdaif_evaluation.json,LAB_CONFIRMED,"ties adaptive Bayesian and best single model","outperforms all baselines"
+BWFLnet pressure reconstruction,Demonstrated,results/canonical/hydraulics/audit_20261120_01/hydraulic_evaluation.json,OBSERVED+MODEL_ESTIMATE,"reconstructs observed pressure","reconstructs pathogen movement"
+Net3 decision stress,Demonstrated in simulation,results/canonical/simulation/audit_20261120_01/net3_simulation_summary.json,SIMULATED,"simulated test-selection benchmark","field validation"
+L-TOWN transfer,Negative result,results/ltown_decision_stress_v1.json,SIMULATED,"negative network-transfer stress result","universal transfer"
+Direct E. coli detection,Not established,reports/evidence_track_boundaries.md,No paired biological-sensor data,"requires laboratory confirmation","sensor detects E. coli"
+Delhi-NCR deployment,Not established,reports/phase_1_dossier_code_reconciliation.md,No local paired data,"future pilot requirement","validated in Delhi/Ghaziabad"

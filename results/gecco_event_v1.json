@@ -1,0 +1,112 @@
+{
+  "protocol": {
+    "protocol_id": "GECCO-2019-CHRONOLOGICAL-EVENT-V1",
+    "frozen_before_run": "2026-11-18",
+    "endpoint": "GECCO Event boolean: drinking-water sensor event, not E. coli",
+    "features": [
+      "Tp",
+      "pH",
+      "Cond",
+      "Turb",
+      "SAC",
+      "PFM"
+    ],
+    "training": "July-September 2017 original train split",
+    "validation": "October-November 8 2017 original validation split; model and threshold selection",
+    "test": "November 8-29 2017 original untouched test split",
+    "models": [
+      "robust_distance",
+      "isolation_forest",
+      "random_forest"
+    ],
+    "selection_metric": "validation positive F1",
+    "threshold_grid": "validation score quantiles 0.001 to 0.999 plus predicted-score boundaries",
+    "claim_boundary": "Sensor-event anomaly benchmark only; does not detect or predict E. coli and is not Delhi-NCR data."
+  },
+  "files_sha256": {
+    "train": "05BBE6DEA804B6FC6B2BF8ECC35F37C404FF3AE3503C47CF69301EDF61C8B4B9",
+    "validation": "D451142A969F5972278CBFA53D840B04805AB683B81CAD092BDA30820EC2E424",
+    "test": "AD509D0C1C656D3E48DC4E52011DA5232D292997E6F7CE08EEDD5F6194E3369F"
+  },
+  "calibration": {
+    "robust_distance": {
+      "rows": 54750,
+      "positive_rows": 225,
+      "prevalence": 0.00410958904109589,
+      "threshold": 55.67342816500825,
+      "accuracy": 0.9954520547945206,
+      "precision": 0.4562043795620438,
+      "recall": 0.5555555555555556,
+      "positive_f1": 0.501002004008016,
+      "roc_auc": 0.8398582097916348,
+      "average_precision": 0.3404422204065849,
+      "tn": 54376,
+      "fp": 149,
+      "fn": 100,
+      "tp": 125,
+      "true_event_runs": 12,
+      "event_runs_with_any_alert": 7,
+      "event_recall": 0.5833333333333334
+    },
+    "isolation_forest": {
+      "rows": 54750,
+      "positive_rows": 225,
+      "prevalence": 0.00410958904109589,
+      "threshold": 0.7181792001138182,
+      "accuracy": 0.995689497716895,
+      "precision": 0.4666666666666667,
+      "recall": 0.3422222222222222,
+      "positive_f1": 0.39487179487179486,
+      "roc_auc": 0.7878190024963065,
+      "average_precision": 0.35475690530508847,
+      "tn": 54437,
+      "fp": 88,
+      "fn": 148,
+      "tp": 77,
+      "true_event_runs": 12,
+      "event_runs_with_any_alert": 6,
+      "event_recall": 0.5
+    },
+    "random_forest": {
+      "rows": 54750,
+      "positive_rows": 225,
+      "prevalence": 0.00410958904109589,
+      "threshold": 0.7327960395082125,
+      "accuracy": 0.9961643835616438,
+      "precision": 0.6363636363636364,
+      "recall": 0.15555555555555556,
+      "positive_f1": 0.25,
+      "roc_auc": 0.9136751948647409,
+      "average_precision": 0.18563724516939561,
+      "tn": 54505,
+      "fp": 20,
+      "fn": 190,
+      "tp": 35,
+      "true_event_runs": 12,
+      "event_runs_with_any_alert": 1,
+      "event_recall": 0.08333333333333333
+    }
+  },
+  "selected_model": "robust_distance",
+  "untouched_test": {
+    "rows": 31650,
+    "positive_rows": 191,
+    "prevalence": 0.006034755134281201,
+    "threshold": 55.67342816500825,
+    "accuracy": 0.9924170616113744,
+    "precision": 0.41025641025641024,
+    "recall": 0.5863874345549738,
+    "positive_f1": 0.4827586206896552,
+    "roc_auc": 0.9369783890575434,
+    "average_precision": 0.4452530039713948,
+    "tn": 31298,
+    "fp": 161,
+    "fn": 79,
+    "tp": 112,
+    "true_event_runs": 12,
+    "event_runs_with_any_alert": 8,
+    "event_recall": 0.6666666666666666
+  },
+  "always_negative_test_accuracy": 0.9939652448657188,
+  "claim_boundary": "Sensor-event anomaly benchmark only; does not detect or predict E. coli and is not Delhi-NCR data."
+}

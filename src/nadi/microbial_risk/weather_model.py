@@ -11,8 +11,14 @@ import joblib
 import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
+from sklearn.ensemble import ExtraTreesClassifier, GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import average_precision_score, brier_score_loss, log_loss, roc_auc_score
+from sklearn.metrics import accuracy_score, average_precision_score, brier_score_loss, f1_score, log_loss, precision_score, recall_score, roc_auc_score
+from sklearn.tree import DecisionTreeClassifier
+try:
+    from xgboost import XGBClassifier
+except Exception:  # optional dependency; the remaining families remain usable
+    XGBClassifier = None
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -56,6 +62,57 @@ def _logit(p: np.ndarray) -> np.ndarray:
     return np.log(p / (1 - p)).reshape(-1, 1)
 
 
+def _candidate_models() -> dict[str, Pipeline]:
+    """Model families disclosed by the ISEF reconstruction, kept in one selector.
+
+    Selection is performed on the calibration partition only; the final test is
+    never used to choose a family or a threshold.
+    """
+    common = {"imputer": SimpleImputer(strategy="median", add_indicator=True)}
+    candidates = {
+        "logistic": Pipeline([("impute", common["imputer"]), ("scale", StandardScaler()),
+                              ("model", LogisticRegression(max_iter=2000, class_weight="balanced", C=0.5, random_state=20261117))]),
+        "random_forest": Pipeline([("impute", common["imputer"]),
+                                    ("model", RandomForestClassifier(n_estimators=300, min_samples_leaf=3, class_weight="balanced_subsample", random_state=20261117, n_jobs=-1))]),
+        "extra_trees": Pipeline([("impute", SimpleImputer(strategy="median", add_indicator=True)),
+                                  ("model", ExtraTreesClassifier(n_estimators=300, min_samples_leaf=2, class_weight="balanced", random_state=20261117, n_jobs=-1))]),
+        "decision_tree": Pipeline([("impute", SimpleImputer(strategy="median", add_indicator=True)),
+                                    ("model", DecisionTreeClassifier(max_depth=6, min_samples_leaf=8, class_weight="balanced", random_state=20261117))]),
+        "gradient_boosting": Pipeline([("impute", SimpleImputer(strategy="median", add_indicator=True)),
+                                        ("model", GradientBoostingClassifier(n_estimators=200, learning_rate=0.04, max_depth=2, random_state=20261117))]),
+    }
+    if XGBClassifier is not None:
+        candidates["xgboost"] = Pipeline([("impute", SimpleImputer(strategy="median", add_indicator=True)),
+                                           ("model", XGBClassifier(n_estimators=160, learning_rate=0.05, max_depth=3,
+                                                                    subsample=0.85, colsample_bytree=0.85,
+                                                                    eval_metric="logloss", random_state=20261117,
+                                                                    n_jobs=1, tree_method="hist"))])
+    return candidates
+
+
+def _f1_threshold(y: np.ndarray, p: np.ndarray) -> float:
+    thresholds = np.unique(np.concatenate(([0.05], np.linspace(0.05, 0.95, 181), [0.95])))
+    scores = [(f1_score(y, p >= threshold, zero_division=0), -threshold, float(threshold)) for threshold in thresholds]
+    return float(max(scores)[2])
+
+
+def _thresholded_metrics(y: np.ndarray, p: np.ndarray, threshold: float) -> dict[str, float | int]:
+    prediction = p >= threshold
+    tp = int(np.sum((y == 1) & prediction))
+    tn = int(np.sum((y == 0) & ~prediction))
+    fp = int(np.sum((y == 0) & prediction))
+    fn = int(np.sum((y == 1) & ~prediction))
+    return {
+        "threshold": float(threshold),
+        "accuracy": float(accuracy_score(y, prediction)),
+        "precision": float(precision_score(y, prediction, zero_division=0)),
+        "recall": float(recall_score(y, prediction, zero_division=0)),
+        "positive_f1": float(f1_score(y, prediction, zero_division=0)),
+        "n": int(len(y)), "positives": int(y.sum()), "prevalence": float(y.mean()),
+        "tn": tn, "fp": fp, "fn": fn, "tp": tp,
+    }
+
+
 @dataclass
 class CalibratedRiskHead:
     mode: str
@@ -67,6 +124,7 @@ class CalibratedRiskHead:
     support_high: dict[str, float]
     endpoint: str
     version: str
+    selected_model: str = "logistic"
 
     def _frame(self, record: dict[str, Any]) -> pd.DataFrame:
         return pd.DataFrame([{name: record.get(name, np.nan) for name in self.features}])
@@ -110,16 +168,22 @@ def _fit_head(train: pd.DataFrame, calibration: pd.DataFrame, test: pd.DataFrame
     y_train = train["elevated_ecoli"].to_numpy(dtype=int)
     y_cal = calibration["elevated_ecoli"].to_numpy(dtype=int)
     y_test = test["elevated_ecoli"].to_numpy(dtype=int)
-    base = Pipeline([
-        ("impute", SimpleImputer(strategy="median", add_indicator=True)),
-        ("scale", StandardScaler()),
-        ("model", LogisticRegression(max_iter=2000, class_weight="balanced", C=0.5, random_state=20261117)),
-    ])
-    base.fit(train[features], y_train)
-    p_cal_raw = base.predict_proba(calibration[features])[:, 1]
-    calibrator = LogisticRegression(C=1e6, max_iter=1000, random_state=20261117)
-    calibrator.fit(_logit(p_cal_raw), y_cal)
-    p_cal = calibrator.predict_proba(_logit(p_cal_raw))[:, 1]
+    comparisons: dict[str, dict[str, float | None]] = {}
+    fitted: dict[str, tuple[Pipeline, LogisticRegression, np.ndarray, float]] = {}
+    for name, candidate in _candidate_models().items():
+        candidate.fit(train[features], y_train)
+        p_cal_raw = candidate.predict_proba(calibration[features])[:, 1]
+        calibrator_candidate = LogisticRegression(C=1e6, max_iter=1000, random_state=20261117)
+        calibrator_candidate.fit(_logit(p_cal_raw), y_cal)
+        p_cal_candidate = calibrator_candidate.predict_proba(_logit(p_cal_raw))[:, 1]
+        threshold = _f1_threshold(y_cal, p_cal_candidate)
+        metrics = _metrics(y_cal, p_cal_candidate)
+        metrics["positive_f1"] = float(f1_score(y_cal, p_cal_candidate >= threshold, zero_division=0))
+        metrics["f1_threshold"] = threshold
+        comparisons[name] = metrics
+        fitted[name] = (candidate, calibrator_candidate, p_cal_candidate, threshold)
+    selected_model = max(comparisons, key=lambda name: (float(comparisons[name]["positive_f1"] or 0.0), -float(comparisons[name]["brier"] or 1.0), name == "logistic"))
+    base, calibrator, p_cal, selected_threshold = fitted[selected_model]
     p_test = calibrator.predict_proba(_logit(base.predict_proba(test[features])[:, 1]))[:, 1]
     # This is uncertainty for the calibrated probability, not a prediction
     # interval for the future binary outcome.  The latter would be nearly
@@ -136,13 +200,18 @@ def _fit_head(train: pd.DataFrame, calibration: pd.DataFrame, test: pd.DataFrame
         support_low={name: float(train[name].quantile(0.01)) for name in features},
         support_high={name: float(train[name].quantile(0.99)) for name in features},
         endpoint=endpoint,
-        version=f"wqp-weather-{mode}-v1",
+        version=f"wqp-weather-{mode}-{selected_model}-v2",
+        selected_model=selected_model,
     )
     report = {
         "mode": mode,
         "features": features,
+        "model_comparison": comparisons,
+        "selected_model": selected_model,
+        "selected_validation_threshold": selected_threshold,
         "calibration": _metrics(y_cal, p_cal),
         "untouched_test": _metrics(y_test, p_test),
+        "untouched_test_thresholded": _thresholded_metrics(y_test, p_test, selected_threshold),
         "probability_uncertainty_radius": radius,
         "uncertainty_method": "1.96*sqrt(0.25/n_calibration) + validation ECE; probability uncertainty, not a Bernoulli outcome interval",
         "claim_boundary": "Surface-water E. coli context model; not direct sensor detection and not drinking-network validation",

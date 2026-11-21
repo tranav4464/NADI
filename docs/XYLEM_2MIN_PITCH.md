@@ -1,29 +1,13 @@
-# Two-minute Xylem pitch
+# Two-minute Xylem pitch — authentic-evidence version
 
-When faecal contamination may be moving through a water network, authorities
-cannot immediately test every outlet. The dangerous delay is not only finding
-that risk exists; it is deciding where a limited test team should go first.
+When contamination is invisible, authorities depend on laboratory testing. But they cannot collect and process every possible sample at the same time. The real decision is: **with only three tests available now, which locations should we check first?**
 
-NADI is a software-first mathematical decision system for that bottleneck. It
-combines E. coli-referenced evidence with uncertain water movement. Instead of
-giving one confident-looking map, it asks: across every risk and network
-scenario still compatible with the evidence, which next test protects the
-decision from the worst avoidable mistake?
+NADI is an applied-mathematical system for that decision. It learns how each location behaved in earlier laboratory tests, how its region behaved, and how risk changes with season and place. Three different calibrated models estimate the chance of a serious E. coli result. They do not always agree, and NADI does not hide that disagreement.
 
-First, a calibrated model produces a current or next-day risk interval. Second,
-EPANET/WNTR simulations estimate which nodes could be reached and when under
-different sources, demands, tank levels and pipe states. Third, SDAIF uses
-minimax regret to select a test. After that result arrives, it removes
-incompatible scenarios and chooses again. It also reports its worst-case
-regret, the scenario that challenges the decision, and when evidence is too
-weak to act—then it abstains.
+Our SDAIF mathematics converts those probabilities and disagreements into a testing list. A mixed-integer optimisation chooses the combination that balances good average performance with protection against the model that could make the list look worst. The most informative site in that list is tested first. After its real laboratory result arrives, NADI updates which model is credible and recalculates the remaining locations.
 
-We tested the full pipeline on 120 locked simulated network events. At a budget
-of three tests, SDAIF matched the strongest fair adaptive Bayesian comparator
-at 68.6% affected-node coverage, while adding a decision certificate and
-adversarial explanation. It substantially exceeded random testing in this
-benchmark. We do not claim direct E. coli detection or a Delhi digital twin:
-laboratory confirmation and local network calibration remain necessary.
+We tested this using 13,405 authentic Environment Agency records from 920 monitoring sites. Every prediction used only information available before that day's result. Training, calibration, model selection and the final test period were separated chronologically.
 
-NADI's value is simple: it turns limited evidence and limited testing capacity
-into a transparent, mathematically defensible first-response list.
+On the untouched final period, our selected model achieved F1 0.838, ROC-AUC 0.866 and PR-AUC 0.916. More importantly, across 41 real sampling rounds, with the same budget of three tests, NADI found 114 confirmed high-E.-coli results. Random testing found 80 and routine-frequency priority found 84. NADI did not miss any round that contained a positive site.
+
+This is not a claim that ordinary sensors directly detect E. coli, and it is not a claimed municipal pipe deployment. It is a reproducible demonstration that authentic historical evidence plus transparent decision mathematics can direct a limited testing team toward more confirmed contamination. Our next step is prospective validation with a monitoring authority.

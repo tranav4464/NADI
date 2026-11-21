@@ -1,0 +1,18 @@
+{
+  "protocol_id": "LTOWN-DECISION-STRESS-V1",
+  "frozen_before_run": "2026-11-18",
+  "purpose": "Test SDAIF test choices on a second public hydraulic network with parameter-held-out scenarios and one-round delayed feedback",
+  "network_path": "../nadi_resources/datasets/BattLeDIM_4017659/L-TOWN.inp",
+  "ensemble_path": "data_processed/ltown_hydraulic_ensemble.json",
+  "candidate_count": 12,
+  "budget": 3,
+  "risk_mode": "unit_reach_only_no_biological_claim",
+  "hidden_cases": [
+    {"source": "R1", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": null},
+    {"source": "R1", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": null},
+    {"source": "R2", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": null},
+    {"source": "R2", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": null}
+  ],
+  "comparators": ["random", "routine", "hydraulic_only", "bayesian", "adaptive_bayesian", "adaptive_sdaif", "delayed_sdaif_1"],
+  "claim_boundary": "L-TOWN scenarios and test outcomes are simulated hydraulic tracer reach. This is neither E. coli detection nor field transfer validation."
+}

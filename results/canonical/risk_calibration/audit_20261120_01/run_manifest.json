@@ -1,0 +1,25 @@
+{
+  "command": "calibrate-risk",
+  "run_id": "audit_20261120_01",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:42:34.078422+00:00",
+  "finished_utc": "2026-11-20T12:42:38.525047+00:00",
+  "seed": 2026,
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\data_processed\\ea_authentic_site_rounds_2024.csv",
+  "input_sha256": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\calibrate_risk.json",
+  "config_sha256": "01ecad6b082ac86a667a9e702f9b6ecb1745a3c027c809a2bf33e46e6d2237b7",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "13493566559886d90d97133acbeed6e1a325e91a421c5e0393a005d7a42e3da6",
+    "src/nadi/authentic/models.py": "bb50084efe0441ba558ac912d53641da8f2dd15860e59873aaf4e853db6a6698"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\risk_calibration\\audit_20261120_01",
+  "outputs_sha256": {
+    "calibrated_models.joblib": "1f34e73a6a8ed1bd87defbfe42f6ecde4f96f085a119346dd01c2b5124010297",
+    "calibration_report.json": "c70ec2566ca7d0195ed7a9a6fd42e1d30a0ccb8bf92a53e3a928cc3b2102f726"
+  },
+  "training_manifest_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\risk_training\\audit_20261120_01\\run_manifest.json",
+  "training_manifest_sha256": "f3890e9e3960d93991b9c78e30be0a16e77367e9fbe50ab102c607a05fc27ac6"
+}

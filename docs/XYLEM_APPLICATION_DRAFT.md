@@ -1,79 +1,54 @@
-# NADI — Xylem Application Draft
+# NADI — Xylem Application Draft (Authentic-Evidence Version)
 
 ## One-sentence solution
 
-NADI is an applied-mathematics decision system that combines calibrated
-E. coli-referenced risk, uncertain water-network movement and limited testing
-capacity to decide where confirmatory water testing should begin.
+NADI is an applied-mathematical water-quality decision system that estimates location-specific E. coli risk from earlier authentic observations and decides which real monitoring locations should be tested first when testing capacity is limited.
 
 ## Problem and user
 
-Faecal contamination is invisible, laboratory confirmation takes time, and a
-water utility cannot immediately sample every tank, branch and outlet. During a
-suspected event, the operational bottleneck is choosing which locations to test
-first before the potentially affected boundary is known. The immediate user is
-a utility sampling or incident-response team operating under a fixed test budget.
+Water authorities collect laboratory samples, but cannot test every possible location at once. Serious contamination may remain unconfirmed while teams follow a fixed routine or choose sites without a quantified priority. NADI addresses the decision bottleneck: **given only information already available, where should the next limited tests begin to find severe contamination sooner?** The immediate user is a water-quality monitoring or sampling team.
 
 ## How NADI works
 
-1. A calibrated model produces a nowcast or 24-hour E. coli-risk interval from
-   historical microbiology and past-only environmental evidence.
-2. A transfer gate measures support, widens uncertainty and abstains for an
-   unsupported target rather than presenting false confidence.
-3. EPANET/WNTR simulations estimate reach and arrival intervals across uncertain
-   source, demand, tank and pipe-state scenarios.
-4. SDAIF minimises worst-case avoidable decision loss and selects the next test.
-5. After a result is revealed, incompatible scenarios are removed and the next
-   location is recalculated.
-6. The decision card reports the test order, regret bound, adversarial scenario,
-   dominant uncertainty and evidence that would be most valuable next.
+1. It turns each authentic site's earlier laboratory history, regional history, season and location into strictly past-only features.
+2. Logistic regression, histogram gradient boosting and an XGBoost prior-art family produce calibrated probabilities.
+3. SDAIF treats disagreement among those calibrated models as mathematical uncertainty. A mixed-integer optimisation balances posterior expected regret and worst-case regret to choose a test list under a fixed budget.
+4. Within that robust list, the most informative result is requested first. Only after the actual historical laboratory outcome is revealed are model weights and the remaining list recomputed.
+5. Real coordinates connect predicted high-risk monitoring sites into clearly labelled monitoring zones. These are not represented as pipe routes.
 
 ## Innovation
 
-Most monitoring tools end with a risk score, alert or map. NADI carries
-uncertainty through to a constrained action and makes the evidence-acquisition
-sequence adaptive. It can also refuse unsupported transfer. The innovation
-claim is this coupled, auditable uncertainty-to-action workflow—not a claim of
-direct E. coli sensing or globally new mathematics.
+Most forecasting studies stop at a probability or colour-coded map. NADI continues from calibrated predictions to a constrained testing decision. It keeps model uncertainty visible, optimises an auditable operational objective, updates after each real result, and reports how it compares with random, routine, historical-risk, single-model and Bayesian policies.
 
-## Prototype and measured result
+## Authentic experiment
 
-The working software ingests frozen public resources, trains calibrated
-nowcast/forecast heads, generates a 24-scenario public benchmark network,
-executes adaptive decisions and serves the output through a dashboard. In a
-locked set of 120 simulated network events with three tests, SDAIF achieved
-0.686 Coverage@3, exactly matching the strongest fair adaptive Bayesian
-baseline. It did not demonstrate superiority. It additionally returned a
-finite-set regret certificate, adversarial witness and explicit abstention.
+The experiment uses 13,405 authentic 2024 site-day records from the UK Environment Agency E. coli monitoring data, representing 920 sites and 285 sampling dates. No generated contamination label, generated laboratory result, or generated pipeline event is used. Features for every date are frozen before any result from that date updates history.
 
-## Impact pathway
+The chronology is fixed: training through 31 May; probability calibration from 1 June to 15 July; model and policy selection from 16 July to 30 September; and locked testing from 1 October onward.
 
-If validated locally, a utility could use NADI to avoid blind city-wide
-sampling, send limited teams to the most decision-relevant outlets, update the
-affected boundary after each confirmed result, and identify when evidence is
-too weak for a recommendation. Impact will be measured first as fewer tests or
-less time to find an independently confirmed affected location—not as assumed
-illness prevention.
+## Locked result
 
-## Feasibility and scale
+On 545 untouched site-day records, the selected XGBoost model achieved F1 **0.838**, ROC-AUC **0.866**, PR-AUC **0.916**, sensitivity **0.966**, balanced accuracy **0.678**, and Brier score **0.141**. The always-positive comparator had F1 0.782 but balanced accuracy 0.500 and specificity 0.000, showing why F1 alone would be misleading.
 
-The software framework is network-agnostic. A new city package would provide a
-bounded topology, operating states, local weather/context, calibration history
-and independent microbiology. The same mathematics then runs with local
-uncertainty. Until minimum support is met, NADI abstains. A utility pilot should
-start with one pressure zone, not an entire city.
+Across 41 untouched authentic sampling rounds containing 5–25 simultaneously observed sites, with a budget of three tests:
 
-## Current limitations
+- adaptive SDAIF found **114** confirmed high-E.-coli results;
+- deterministic random testing found **80**;
+- routine sampling-frequency priority found **84**;
+- SDAIF missed no positive round; random and routine each missed 4.9%.
 
-- Microbial evidence is from surface water, not a paired intermittent drinking network.
-- Net3 is simulated and not Delhi/Ghaziabad infrastructure.
-- No direct E. coli assay or field installation is claimed.
-- The locked benchmark establishes equivalence, not superiority.
-- Prospective utility and independent laboratory validation remain future work.
+SDAIF equalled the strongest single-model, fixed-ensemble and adaptive-Bayesian policies on total positives found in this holdout. This supports non-inferiority to the strongest comparator, not superiority over it.
 
-## Ask from Xylem
+An explicit transfer stress test contained 50 records from 31 sites that had supplied no model-training labels. Performance fell to F1 0.722, ROC-AUC 0.705 and balanced accuracy 0.555. We therefore do not claim plug-and-play geographic transfer; local calibration remains necessary.
 
-Technical mentorship on distribution-network calibration, access to a bounded
-anonymised pilot topology/operating scenario, and review of the decision metric
-would enable the next decisive test: whether NADI’s prospective ranking finds
-independently confirmed affected locations sooner than routine sampling.
+## Practical output
+
+For each real monitoring date, NADI outputs calibrated risk, an ordered three-site test list, uncertainty across model families, the posterior/robust decision objective, the actual laboratory result revealed after selection, comparison with routine and random policies, and model-estimated monitoring zones based on authentic coordinates.
+
+## Claim boundary
+
+This experiment validates retrospective prioritisation in an authentic UK surface-water monitoring programme. It does **not** establish direct E. coli detection by ordinary sensors, drinking-water-pipeline tracing, a contaminated branch, Delhi-NCR performance, prospective deployment, or illness reduction.
+
+## Scale pathway and ask
+
+A prospective partner would provide its historical laboratory table and location metadata; NADI would retrain, calibrate locally, pass a transfer-support gate, and be evaluated against the partner's existing sampling order. We seek Xylem mentorship and access to a bounded prospective monitoring programme so the next experiment can measure whether a frozen NADI ranking finds independent laboratory positives sooner than routine sampling in live operation.

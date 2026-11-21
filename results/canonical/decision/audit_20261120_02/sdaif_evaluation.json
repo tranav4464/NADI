@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "rounds": 41,
+  "budget": 3,
+  "policies": [
+    "adaptive_bayesian",
+    "adaptive_sdaif",
+    "best_single_model",
+    "fixed_ensemble",
+    "historical_positive_rate",
+    "random",
+    "routine_sampling_frequency"
+  ],
+  "total_positives_found": {
+    "adaptive_bayesian": 114,
+    "adaptive_sdaif": 114,
+    "best_single_model": 114,
+    "fixed_ensemble": 114,
+    "historical_positive_rate": 111,
+    "random": 80,
+    "routine_sampling_frequency": 84
+  },
+  "sdaif_ties_best_single": true,
+  "sdaif_ties_adaptive_bayesian": true,
+  "sdaif_vs_random_difference": 34,
+  "sdaif_vs_routine_difference": 30,
+  "errors": [],
+  "limitations": [
+    "This is retrospective replay using a same-round outcome-reveal assumption.",
+    "It does not establish superiority: SDAIF ties the best single model and adaptive Bayesian policy on total positives.",
+    "The random policy is one deterministic hash order, not a permutation uncertainty distribution."
+  ]
+}

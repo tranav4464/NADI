@@ -1,0 +1,671 @@
+{
+  "experiment": "NADI_XYLEM_AUTHENTIC_ONLY_V1",
+  "data_policy": {
+    "observed_records_only": true,
+    "synthetic_records_used": false,
+    "simulated_records_used": false,
+    "endpoint": "laboratory E. coli result >=500 in the authentic EA record",
+    "domain": "UK Environment Agency surface-water monitoring; not drinking-water pipes"
+  },
+  "source": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\data_processed\\ea_authentic_site_rounds_2024.csv",
+  "model_bundle": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\risk_calibration\\audit_20261120_01\\calibrated_models.joblib",
+  "processed_input_sha256": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+  "chronological_splits": {
+    "train_through": "2024-05-31",
+    "calibration": "2024-06-01/2024-07-15",
+    "validation": "2024-07-16/2024-09-30",
+    "locked_test": "2024-10-01/2024-12-31",
+    "counts": {
+      "train": 3270,
+      "calibration": 3641,
+      "validation": 5949,
+      "locked_test": 545
+    }
+  },
+  "leakage_control": "Features for every date were frozen before any laboratory result from that date updated history.",
+  "model_reports": {
+    "logistic": {
+      "threshold_selected_on_validation": 0.9149999999999999,
+      "validation": {
+        "n": 5949,
+        "prevalence": 0.2731551521264078,
+        "threshold": 0.9149999999999999,
+        "f1": 0.5755973778811588,
+        "sensitivity": 0.8375384615384616,
+        "specificity": 0.5969010175763182,
+        "precision": 0.4384664948453608,
+        "npv": 0.9072056239015818,
+        "balanced_accuracy": 0.7172197395573898,
+        "mcc": 0.38752240607856986,
+        "roc_auc": 0.7839592969472711,
+        "pr_auc": 0.5226670745424558,
+        "brier": 0.42328394931440805,
+        "ece_10": 0.48144447033954185,
+        "confusion_matrix": {
+          "tn": 2581,
+          "fp": 1743,
+          "fn": 264,
+          "tp": 1361
+        }
+      },
+      "locked_test": {
+        "n": 545,
+        "prevalence": 0.6422018348623854,
+        "threshold": 0.9149999999999999,
+        "f1": 0.7821229050279329,
+        "sensitivity": 1.0,
+        "specificity": 0.0,
+        "precision": 0.6422018348623854,
+        "npv": 0.0,
+        "balanced_accuracy": 0.5,
+        "mcc": 0.0,
+        "roc_auc": 0.5378315018315019,
+        "pr_auc": 0.6604232138677869,
+        "brier": 0.35564860223287464,
+        "ece_10": 0.35621835279819436,
+        "confusion_matrix": {
+          "tn": 0,
+          "fp": 195,
+          "fn": 0,
+          "tp": 350
+        }
+      }
+    },
+    "xgboost": {
+      "threshold_selected_on_validation": 0.20999999999999996,
+      "validation": {
+        "n": 5949,
+        "prevalence": 0.2731551521264078,
+        "threshold": 0.20999999999999996,
+        "f1": 0.8173214797820476,
+        "sensitivity": 0.8769230769230769,
+        "specificity": 0.898936170212766,
+        "precision": 0.7653061224489796,
+        "npv": 0.9510643503792513,
+        "balanced_accuracy": 0.8879296235679215,
+        "mcc": 0.7455217339010708,
+        "roc_auc": 0.9407843876752295,
+        "pr_auc": 0.8623313521059728,
+        "brier": 0.08065970492074268,
+        "ece_10": 0.04651339158671085,
+        "confusion_matrix": {
+          "tn": 3887,
+          "fp": 437,
+          "fn": 200,
+          "tp": 1425
+        }
+      },
+      "locked_test": {
+        "n": 545,
+        "prevalence": 0.6422018348623854,
+        "threshold": 0.20999999999999996,
+        "f1": 0.8376703841387856,
+        "sensitivity": 0.9657142857142857,
+        "specificity": 0.38974358974358975,
+        "precision": 0.7396061269146609,
+        "npv": 0.8636363636363636,
+        "balanced_accuracy": 0.6777289377289377,
+        "mcc": 0.4630629482880105,
+        "roc_auc": 0.8659853479853479,
+        "pr_auc": 0.9157279663098918,
+        "brier": 0.14149408425824672,
+        "ece_10": 0.07294110789730647,
+        "confusion_matrix": {
+          "tn": 76,
+          "fp": 119,
+          "fn": 12,
+          "tp": 338
+        }
+      }
+    },
+    "hist_gradient": {
+      "threshold_selected_on_validation": 0.19999999999999996,
+      "validation": {
+        "n": 5949,
+        "prevalence": 0.2731551521264078,
+        "threshold": 0.19999999999999996,
+        "f1": 0.7954674220963173,
+        "sensitivity": 0.864,
+        "specificity": 0.8841350601295097,
+        "precision": 0.7370078740157481,
+        "npv": 0.945351137487636,
+        "balanced_accuracy": 0.8740675300647549,
+        "mcc": 0.7144905178524044,
+        "roc_auc": 0.9323811997438268,
+        "pr_auc": 0.8519524146503971,
+        "brier": 0.0888276441239797,
+        "ece_10": 0.04699965114072137,
+        "confusion_matrix": {
+          "tn": 3823,
+          "fp": 501,
+          "fn": 221,
+          "tp": 1404
+        }
+      },
+      "locked_test": {
+        "n": 545,
+        "prevalence": 0.6422018348623854,
+        "threshold": 0.19999999999999996,
+        "f1": 0.8351920693928129,
+        "sensitivity": 0.9628571428571429,
+        "specificity": 0.38461538461538464,
+        "precision": 0.737417943107221,
+        "npv": 0.8522727272727273,
+        "balanced_accuracy": 0.6737362637362637,
+        "mcc": 0.4526602563334777,
+        "roc_auc": 0.8552893772893773,
+        "pr_auc": 0.9001153306525101,
+        "brier": 0.15114570478782832,
+        "ece_10": 0.09080559442118359,
+        "confusion_matrix": {
+          "tn": 75,
+          "fp": 120,
+          "fn": 13,
+          "tp": 337
+        }
+      }
+    }
+  },
+  "classification_baselines": {
+    "always_positive": {
+      "n": 545,
+      "prevalence": 0.6422018348623854,
+      "threshold": 0.5,
+      "f1": 0.7821229050279329,
+      "sensitivity": 1.0,
+      "specificity": 0.0,
+      "precision": 0.6422018348623854,
+      "npv": 0.0,
+      "balanced_accuracy": 0.5,
+      "mcc": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.6422018348623854,
+      "brier": 0.3577981651376147,
+      "ece_10": 0.35779816513761464,
+      "confusion_matrix": {
+        "tn": 0,
+        "fp": 195,
+        "fn": 0,
+        "tp": 350
+      }
+    },
+    "training_prevalence_constant": {
+      "n": 545,
+      "prevalence": 0.6422018348623854,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "precision": 0.0,
+      "npv": 0.3577981651376147,
+      "balanced_accuracy": 0.5,
+      "mcc": 0.0,
+      "roc_auc": 0.5,
+      "pr_auc": 0.6422018348623854,
+      "brier": 0.35110409711116725,
+      "ece_10": 0.3483180428134557,
+      "confusion_matrix": {
+        "tn": 195,
+        "fp": 0,
+        "fn": 350,
+        "tp": 0
+      }
+    }
+  },
+  "model_uncertainty_weights_from_validation_log_loss": {
+    "logistic": 0.09620396394105751,
+    "xgboost": 0.4561872609365235,
+    "hist_gradient": 0.4476087751224191
+  },
+  "best_model_selected_on_validation": "xgboost",
+  "transfer_and_subgroup_audit": {
+    "model_disagreement_cutoff_selected_as_validation_95th_percentile": 0.453306171987749,
+    "subgroups": {
+      "supported_by_validation_disagreement_gate": {
+        "records": 524,
+        "coverage": 0.9614678899082569,
+        "metrics": {
+          "n": 524,
+          "prevalence": 0.666030534351145,
+          "threshold": 0.20999999999999996,
+          "f1": 0.8387096774193549,
+          "sensitivity": 0.9684813753581661,
+          "specificity": 0.32,
+          "precision": 0.7396061269146609,
+          "npv": 0.835820895522388,
+          "balanced_accuracy": 0.644240687679083,
+          "mcc": 0.4074309497950471,
+          "roc_auc": 0.8533278755628326,
+          "pr_auc": 0.9164933473703986,
+          "brier": 0.14532596518887061,
+          "ece_10": 0.07509584061625094,
+          "confusion_matrix": {
+            "tn": 56,
+            "fp": 119,
+            "fn": 11,
+            "tp": 338
+          }
+        }
+      },
+      "sites_unseen_during_model_training": {
+        "records": 50,
+        "unique_sites": 31,
+        "metrics": {
+          "n": 50,
+          "prevalence": 0.56,
+          "threshold": 0.20999999999999996,
+          "f1": 0.7222222222222222,
+          "sensitivity": 0.9285714285714286,
+          "specificity": 0.18181818181818182,
+          "precision": 0.5909090909090909,
+          "npv": 0.6666666666666666,
+          "balanced_accuracy": 0.5551948051948052,
+          "mcc": 0.16862291518235775,
+          "roc_auc": 0.7045454545454546,
+          "pr_auc": 0.7492368282169154,
+          "brier": 0.23625411765179608,
+          "ece_10": 0.23562225732603306,
+          "confusion_matrix": {
+            "tn": 4,
+            "fp": 18,
+            "fn": 2,
+            "tp": 26
+          }
+        }
+      }
+    },
+    "regions_with_at_least_20_records_and_both_classes": {
+      "Anglian": {
+        "n": 139,
+        "prevalence": 0.4172661870503597,
+        "threshold": 0.20999999999999996,
+        "f1": 0.75,
+        "sensitivity": 0.9310344827586207,
+        "specificity": 0.6049382716049383,
+        "precision": 0.627906976744186,
+        "npv": 0.9245283018867925,
+        "balanced_accuracy": 0.7679863771817794,
+        "mcc": 0.5441417626827091,
+        "roc_auc": 0.8416347381864623,
+        "pr_auc": 0.7793976353589808,
+        "brier": 0.15859591666186937,
+        "ece_10": 0.0473667608688011,
+        "confusion_matrix": {
+          "tn": 49,
+          "fp": 32,
+          "fn": 4,
+          "tp": 54
+        }
+      },
+      "NorthWest": {
+        "n": 129,
+        "prevalence": 0.7751937984496124,
+        "threshold": 0.20999999999999996,
+        "f1": 0.8622222222222222,
+        "sensitivity": 0.97,
+        "specificity": 0.034482758620689655,
+        "precision": 0.776,
+        "npv": 0.25,
+        "balanced_accuracy": 0.5022413793103448,
+        "mcc": 0.010795912380986195,
+        "roc_auc": 0.8113793103448276,
+        "pr_auc": 0.9281649169262164,
+        "brier": 0.15076987415352494,
+        "ece_10": 0.1232102441743213,
+        "confusion_matrix": {
+          "tn": 1,
+          "fp": 28,
+          "fn": 3,
+          "tp": 97
+        }
+      },
+      "SouthWest": {
+        "n": 115,
+        "prevalence": 0.6521739130434783,
+        "threshold": 0.20999999999999996,
+        "f1": 0.8295454545454546,
+        "sensitivity": 0.9733333333333334,
+        "specificity": 0.3,
+        "precision": 0.7227722772277227,
+        "npv": 0.8571428571428571,
+        "balanced_accuracy": 0.6366666666666667,
+        "mcc": 0.3981333152700971,
+        "roc_auc": 0.8708333333333333,
+        "pr_auc": 0.913021405213067,
+        "brier": 0.14250242352378725,
+        "ece_10": 0.1382874754710699,
+        "confusion_matrix": {
+          "tn": 12,
+          "fp": 28,
+          "fn": 2,
+          "tp": 73
+        }
+      },
+      "Southern": {
+        "n": 157,
+        "prevalence": 0.732484076433121,
+        "threshold": 0.20999999999999996,
+        "f1": 0.8682170542635659,
+        "sensitivity": 0.9739130434782609,
+        "specificity": 0.2619047619047619,
+        "precision": 0.7832167832167832,
+        "npv": 0.7857142857142857,
+        "balanced_accuracy": 0.6179089026915114,
+        "mcc": 0.36628414665330783,
+        "roc_auc": 0.8898550724637682,
+        "pr_auc": 0.958748406329623,
+        "brier": 0.12009314198466436,
+        "ece_10": 0.0750338581090195,
+        "confusion_matrix": {
+          "tn": 11,
+          "fp": 31,
+          "fn": 3,
+          "tp": 112
+        }
+      }
+    },
+    "interpretation": "Unseen-site rows have local past-history features but their sites supplied no model-training labels."
+  },
+  "sdaif_tuning_on_validation_only": [
+    {
+      "policy": "adaptive_sdaif",
+      "rounds": 12,
+      "mean_positives_found_at_budget": 2.0833333333333335,
+      "total_positives_found": 25,
+      "mean_positive_discovery_regret": 0.25,
+      "mean_tests_to_first_positive_positive_rounds": 1.3636363636363635,
+      "missed_positive_round_rate": 0.09090909090909091,
+      "mean_fraction_available_positives_found": 0.5202479338842975,
+      "data_origin": "AUTHENTIC_OBSERVED",
+      "robustness_weight": 0.5
+    },
+    {
+      "policy": "adaptive_sdaif",
+      "rounds": 12,
+      "mean_positives_found_at_budget": 2.0833333333333335,
+      "total_positives_found": 25,
+      "mean_positive_discovery_regret": 0.25,
+      "mean_tests_to_first_positive_positive_rounds": 1.3636363636363635,
+      "missed_positive_round_rate": 0.09090909090909091,
+      "mean_fraction_available_positives_found": 0.5202479338842975,
+      "data_origin": "AUTHENTIC_OBSERVED",
+      "robustness_weight": 0.75
+    },
+    {
+      "policy": "adaptive_sdaif",
+      "rounds": 12,
+      "mean_positives_found_at_budget": 2.0833333333333335,
+      "total_positives_found": 25,
+      "mean_positive_discovery_regret": 0.25,
+      "mean_tests_to_first_positive_positive_rounds": 1.3636363636363635,
+      "missed_positive_round_rate": 0.09090909090909091,
+      "mean_fraction_available_positives_found": 0.5202479338842975,
+      "data_origin": "AUTHENTIC_OBSERVED",
+      "robustness_weight": 1.0
+    },
+    {
+      "policy": "adaptive_sdaif",
+      "rounds": 12,
+      "mean_positives_found_at_budget": 2.0,
+      "total_positives_found": 24,
+      "mean_positive_discovery_regret": 0.3333333333333333,
+      "mean_tests_to_first_positive_positive_rounds": 1.4545454545454546,
+      "missed_positive_round_rate": 0.09090909090909091,
+      "mean_fraction_available_positives_found": 0.5050964187327824,
+      "data_origin": "AUTHENTIC_OBSERVED",
+      "robustness_weight": 0.0
+    },
+    {
+      "policy": "adaptive_sdaif",
+      "rounds": 12,
+      "mean_positives_found_at_budget": 2.0,
+      "total_positives_found": 24,
+      "mean_positive_discovery_regret": 0.3333333333333333,
+      "mean_tests_to_first_positive_positive_rounds": 1.4545454545454546,
+      "missed_positive_round_rate": 0.09090909090909091,
+      "mean_fraction_available_positives_found": 0.5050964187327824,
+      "data_origin": "AUTHENTIC_OBSERVED",
+      "robustness_weight": 0.25
+    }
+  ],
+  "selected_sdaif_robustness_weight": 0.5,
+  "locked_policy_summary": [
+    {
+      "policy": "adaptive_bayesian",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 2.7804878048780486,
+      "total_positives_found": 114,
+      "mean_positive_discovery_regret": 0.1951219512195122,
+      "mean_tests_to_first_positive_positive_rounds": 1.0731707317073171,
+      "missed_positive_round_rate": 0.0,
+      "mean_fraction_available_positives_found": 0.46585447073251957,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    },
+    {
+      "policy": "adaptive_sdaif",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 2.7804878048780486,
+      "total_positives_found": 114,
+      "mean_positive_discovery_regret": 0.1951219512195122,
+      "mean_tests_to_first_positive_positive_rounds": 1.1219512195121952,
+      "missed_positive_round_rate": 0.0,
+      "mean_fraction_available_positives_found": 0.46585447073251957,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    },
+    {
+      "policy": "best_single_model",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 2.7804878048780486,
+      "total_positives_found": 114,
+      "mean_positive_discovery_regret": 0.1951219512195122,
+      "mean_tests_to_first_positive_positive_rounds": 1.048780487804878,
+      "missed_positive_round_rate": 0.0,
+      "mean_fraction_available_positives_found": 0.46585447073251957,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    },
+    {
+      "policy": "fixed_ensemble",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 2.7804878048780486,
+      "total_positives_found": 114,
+      "mean_positive_discovery_regret": 0.1951219512195122,
+      "mean_tests_to_first_positive_positive_rounds": 1.0731707317073171,
+      "missed_positive_round_rate": 0.0,
+      "mean_fraction_available_positives_found": 0.46585447073251957,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    },
+    {
+      "policy": "historical_positive_rate",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 2.707317073170732,
+      "total_positives_found": 111,
+      "mean_positive_discovery_regret": 0.2682926829268293,
+      "mean_tests_to_first_positive_positive_rounds": 1.0731707317073171,
+      "missed_positive_round_rate": 0.0,
+      "mean_fraction_available_positives_found": 0.4580549531769045,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    },
+    {
+      "policy": "random",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 1.951219512195122,
+      "total_positives_found": 80,
+      "mean_positive_discovery_regret": 1.024390243902439,
+      "mean_tests_to_first_positive_positive_rounds": 1.4146341463414633,
+      "missed_positive_round_rate": 0.04878048780487805,
+      "mean_fraction_available_positives_found": 0.323799506726336,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    },
+    {
+      "policy": "routine_sampling_frequency",
+      "rounds": 41,
+      "mean_positives_found_at_budget": 2.048780487804878,
+      "total_positives_found": 84,
+      "mean_positive_discovery_regret": 0.926829268292683,
+      "mean_tests_to_first_positive_positive_rounds": 1.5365853658536586,
+      "missed_positive_round_rate": 0.04878048780487805,
+      "mean_fraction_available_positives_found": 0.3453732581781362,
+      "data_origin": "AUTHENTIC_OBSERVED"
+    }
+  ],
+  "locked_round_bootstrap_95_intervals": {
+    "adaptive_bayesian": {
+      "positives_found": {
+        "estimate": 2.7804878048780486,
+        "lower_95": 2.6341463414634148,
+        "upper_95": 2.902439024390244
+      },
+      "positive_discovery_regret": {
+        "estimate": 0.1951219512195122,
+        "lower_95": 0.07317073170731707,
+        "upper_95": 0.3170731707317073
+      },
+      "missed_positive_round": {
+        "estimate": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0
+      }
+    },
+    "adaptive_sdaif": {
+      "positives_found": {
+        "estimate": 2.7804878048780486,
+        "lower_95": 2.6341463414634148,
+        "upper_95": 2.902439024390244
+      },
+      "positive_discovery_regret": {
+        "estimate": 0.1951219512195122,
+        "lower_95": 0.07317073170731707,
+        "upper_95": 0.3170731707317073
+      },
+      "missed_positive_round": {
+        "estimate": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0
+      }
+    },
+    "best_single_model": {
+      "positives_found": {
+        "estimate": 2.7804878048780486,
+        "lower_95": 2.6341463414634148,
+        "upper_95": 2.902439024390244
+      },
+      "positive_discovery_regret": {
+        "estimate": 0.1951219512195122,
+        "lower_95": 0.07317073170731707,
+        "upper_95": 0.3170731707317073
+      },
+      "missed_positive_round": {
+        "estimate": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0
+      }
+    },
+    "fixed_ensemble": {
+      "positives_found": {
+        "estimate": 2.7804878048780486,
+        "lower_95": 2.6341463414634148,
+        "upper_95": 2.902439024390244
+      },
+      "positive_discovery_regret": {
+        "estimate": 0.1951219512195122,
+        "lower_95": 0.07317073170731707,
+        "upper_95": 0.3170731707317073
+      },
+      "missed_positive_round": {
+        "estimate": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0
+      }
+    },
+    "historical_positive_rate": {
+      "positives_found": {
+        "estimate": 2.707317073170732,
+        "lower_95": 2.5365853658536586,
+        "upper_95": 2.8536585365853657
+      },
+      "positive_discovery_regret": {
+        "estimate": 0.2682926829268293,
+        "lower_95": 0.14634146341463414,
+        "upper_95": 0.4146341463414634
+      },
+      "missed_positive_round": {
+        "estimate": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0
+      }
+    },
+    "random": {
+      "positives_found": {
+        "estimate": 1.951219512195122,
+        "lower_95": 1.6829268292682926,
+        "upper_95": 2.1951219512195124
+      },
+      "positive_discovery_regret": {
+        "estimate": 1.024390243902439,
+        "lower_95": 0.7804878048780488,
+        "upper_95": 1.268902439024387
+      },
+      "missed_positive_round": {
+        "estimate": 0.04878048780487805,
+        "lower_95": 0.0,
+        "upper_95": 0.12195121951219512
+      }
+    },
+    "routine_sampling_frequency": {
+      "positives_found": {
+        "estimate": 2.048780487804878,
+        "lower_95": 1.8048780487804879,
+        "upper_95": 2.292682926829268
+      },
+      "positive_discovery_regret": {
+        "estimate": 0.926829268292683,
+        "lower_95": 0.6829268292682927,
+        "upper_95": 1.170731707317073
+      },
+      "missed_positive_round": {
+        "estimate": 0.04878048780487805,
+        "lower_95": 0.0,
+        "upper_95": 0.12195121951219512
+      }
+    }
+  },
+  "locked_paired_policy_comparisons": [
+    {
+      "policy_a": "adaptive_sdaif",
+      "policy_b": "random",
+      "metric": "positives_found",
+      "rounds": 41,
+      "estimate_a_minus_b": 0.8292682926829268,
+      "lower_95": 0.6091463414634146,
+      "upper_95": 1.0731707317073171
+    },
+    {
+      "policy_a": "adaptive_sdaif",
+      "policy_b": "routine_sampling_frequency",
+      "metric": "positives_found",
+      "rounds": 41,
+      "estimate_a_minus_b": 0.7317073170731707,
+      "lower_95": 0.4878048780487805,
+      "upper_95": 0.975609756097561
+    },
+    {
+      "policy_a": "adaptive_sdaif",
+      "policy_b": "best_single_model",
+      "metric": "positives_found",
+      "rounds": 41,
+      "estimate_a_minus_b": 0.0,
+      "lower_95": 0.0,
+      "upper_95": 0.0
+    },
+    {
+      "policy_a": "adaptive_sdaif",
+      "policy_b": "adaptive_bayesian",
+      "metric": "positives_found",
+      "rounds": 41,
+      "estimate_a_minus_b": 0.0,
+      "lower_95": 0.0,
+      "upper_95": 0.0
+    }
+  ],
+  "claim_boundary": "This experiment validates retrospective prioritisation among authentically sampled surface-water sites. It does not validate direct E. coli detection, a drinking-water pipeline, a contaminated branch, or Delhi-NCR deployment."
+}

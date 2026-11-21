@@ -1,0 +1,11 @@
+{
+  "workflow": "evaluate_hydraulics",
+  "input": "results/bwflnet_full_hybrid/heldout_predictions.csv",
+  "input_sha256": "9869ff82196ada5986b08d0075082446b75968ce9cb3d761e90bf3d574570e9a",
+  "baseline": "results/bwflnet_full_hybrid/per_logger_metrics.csv",
+  "baseline_sha256": "c6bd8bc33c6630100f085eefc918bc2217e7b0ca260271e81ef54279e9daa5fb",
+  "output_root": "results/canonical/hydraulics",
+  "evidence_class": "OBSERVED",
+  "domain": "BWFLNET_MEASURED_PRESSURE",
+  "seed": 2026
+}

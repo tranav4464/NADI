@@ -1,0 +1,51 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "authentic_manifest": {
+      "path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\authentic\\audit_20261120_06\\run_manifest.json",
+      "sha256": "ce8c8cca94c180060107242b23964b84799b30b3114d1c28286911202bf85026",
+      "passed": false,
+      "command": [
+        "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\.venv_clean\\Scripts\\python.exe",
+        "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\scripts\\run_authentic_xylem_experiment.py",
+        "--input",
+        "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\data_processed\\ea_authentic_site_rounds_2024.csv",
+        "--output-dir",
+        "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\authentic\\audit_20261120_06",
+        "--budget",
+        "3",
+        "--model-bundle",
+        "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\risk_calibration\\audit_20261120_01\\calibrated_models.joblib"
+      ],
+      "evidence_class": "LAB_CONFIRMED",
+      "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI"
+    },
+    "hydraulic_manifest": {
+      "path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\hydraulics\\audit_20261120_01\\run_manifest.json",
+      "sha256": "e87fa4f594bbba636985e4a6504f95dbe0f13bd3be0333a2b530a26466ff5145",
+      "passed": true,
+      "command": "evaluate-hydraulics",
+      "evidence_class": "OBSERVED",
+      "domain": "BWFLNET_MEASURED_PRESSURE"
+    },
+    "simulation_manifest": {
+      "path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\simulation\\audit_20261120_01\\run_manifest.json",
+      "sha256": "95265748c275857bda3d02273748b524e009ecc4210307ee5a352264d24f8ab6",
+      "passed": true,
+      "command": "run-simulation",
+      "evidence_class": "SIMULATED",
+      "domain": "NET3_SIMULATED_TRACER_EVENT"
+    }
+  },
+  "failures": [
+    "authentic_manifest has wrong status, command, evidence class or domain"
+  ],
+  "approved_system_boundary": "Retrospective UK EA mixed environmental-water testing prioritization; separate measured BWFLnet pressure reconstruction; separate Net3 simulation.",
+  "prohibited_inferences": [
+    "Direct E. coli detection from ordinary sensors",
+    "Drinking-water contamination localization",
+    "Delhi/Ghaziabad validation",
+    "Illness reduction",
+    "Integrated biological-hydraulic field validation"
+  ]
+}

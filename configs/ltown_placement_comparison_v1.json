@@ -1,0 +1,12 @@
+{
+  "protocol_id": "LTOWN-SOURCE-PLACEMENT-V1",
+  "frozen_before_run": "2026-11-18",
+  "reference_ensemble": "data_processed/ltown_hydraulic_ensemble.json",
+  "network_path": "../nadi_resources/datasets/BattLeDIM_4017659/L-TOWN.inp",
+  "hidden_protocol": "configs/ltown_decision_stress_v1.json",
+  "candidate_budget": 12,
+  "testing_budget": 3,
+  "strategies": ["original_round_robin", "greedy_cross_source_pair_cover"],
+  "metrics": ["cross_source_pairs_distinguished", "coverage_at_3", "source_top1", "out_of_model_count"],
+  "claim_boundary": "Greedy placement is known set-cover mathematics applied to simulated tracer sources. Same four held-out cases were already inspected in prior analysis, so this is a development comparison, not independent validation."
+}

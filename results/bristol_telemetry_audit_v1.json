@@ -1,0 +1,58 @@
+{
+  "protocol_id": "BRISTOL-POU-OPERATIONAL-AUDIT-V1",
+  "source_sha256": "B088DB9DFB0828DE94ADC32134A534A33FE17255AF772FE16891FA41A3270564",
+  "rows": 209584,
+  "columns": [
+    "Flow_Rate",
+    "Discharge_Pressure",
+    "TMP",
+    "ORP",
+    "FAC",
+    "Filtration_Flux",
+    "UF_ MP"
+  ],
+  "time_range": [
+    "2019-11-01 00:00:00",
+    "2022-09-27 16:30:00"
+  ],
+  "partition": {
+    "train": 125750,
+    "calibration": 41917,
+    "test": 41917
+  },
+  "missing_fraction_by_feature": {
+    "Flow_Rate": 0.005654057561645927,
+    "Discharge_Pressure": 0.005654057561645927,
+    "TMP": 0.08194804946942515,
+    "ORP": 0.06739064050690892,
+    "FAC": 0.00010496984502633789,
+    "Filtration_Flux": 0.0,
+    "UF_ MP": 0.0
+  },
+  "cadence_minutes": {
+    "median": 5.0,
+    "p05": 5.0,
+    "p95": 5.0,
+    "duplicate_or_nonpositive_fraction": 0.00010974172523534829
+  },
+  "robust_distance": {
+    "calibration_threshold_q995": 36.38502930287633,
+    "test_flag_rate": 0.0,
+    "test_flag_count": 0
+  },
+  "location_adaptive_normalisation": {
+    "group": "operating_hour",
+    "training_only": true,
+    "calibration_threshold_q995": 26.0736543909348,
+    "test_flag_rate": 0.0,
+    "test_flag_count": 0,
+    "claim_boundary": "Regime-adaptive operational anomaly evidence only; no E. coli label or accuracy/F1 claim."
+  },
+  "isolation_forest": {
+    "calibration_threshold_q995": 0.13095929331252187,
+    "test_flag_rate": 0.001121263449197223,
+    "test_flag_count": 47
+  },
+  "claim_boundary": "Operational telemetry audit and unsupervised anomaly evidence only; no E. coli labels, no accuracy/F1 claim, no hydraulic-network validation.",
+  "next_use": "Use anomaly scores only as typed proxy evidence after sensor-health and domain-support gating."
+}

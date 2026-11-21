@@ -1,0 +1,36 @@
+{
+  "dataset": "EA_ECOLI_AUTHENTIC",
+  "data_origin": "AUTHENTIC_OBSERVED",
+  "domain": "surface_water_laboratory_observations",
+  "endpoint": "confirmed_numeric_E_coli_detection_vs_lab_non_detect_qualifier",
+  "records": 14069,
+  "positive_prevalence": 0.6381405927926648,
+  "temporal_split": {
+    "train_fraction": 0.8,
+    "test_fraction": 0.2,
+    "ordered_by": "phenomenonTime"
+  },
+  "models": {
+    "logistic": {
+      "accuracy": 0.28429282160625446,
+      "precision": 0.7113821138211383,
+      "recall": 0.0826251180358829,
+      "f1": 0.14805414551607446,
+      "roc_auc": 0.5420736869525578,
+      "average_precision": 0.762577122538364
+    },
+    "hist_gradient_boosting": {
+      "accuracy": 0.7953091684434968,
+      "precision": 0.8633364750235627,
+      "recall": 0.8649669499527857,
+      "f1": 0.8641509433962264,
+      "roc_auc": 0.8376073855187609,
+      "average_precision": 0.9383330418464755
+    }
+  },
+  "limitations": [
+    "No drinking-water network telemetry or E. coli paired sensor stream.",
+    "Features are time and sampling coordinates only; this is a reproducibility baseline, not causal inference.",
+    "Do not transfer this threshold or metric to Delhi-NCR without local labels."
+  ]
+}

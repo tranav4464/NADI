@@ -1,0 +1,21 @@
+{
+  "command": "build-manifest",
+  "run_id": "audit_20261120_01",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:47:56.388876+00:00",
+  "finished_utc": "2026-11-20T12:47:56.421657+00:00",
+  "seed": 2026,
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "NADI_EVIDENCE_SEPARATED_SYSTEM",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\authentic\\audit_20261120_06\\run_manifest.json",
+  "input_sha256": "ce8c8cca94c180060107242b23964b84799b30b3114d1c28286911202bf85026",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\build_manifest.json",
+  "config_sha256": "881a379517f852a5356b9c627fed1839e27978f3e62129c7281216517acd639c",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "3cf8fb5053edad9a7d63b62a83e48c682a1e11cfe683300414bff6a580e2e775"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\manifest\\audit_20261120_01",
+  "outputs_sha256": {
+    "canonical_artifact_manifest.json": "e65d458c0d028884d0538d5facf2af7908871e729de493382ff32a98186ff4d7"
+  }
+}

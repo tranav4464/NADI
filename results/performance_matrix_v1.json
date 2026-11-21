@@ -1,0 +1,152 @@
+{
+  "protocol_id": "NADI-PERFORMANCE-MATRIX-V1",
+  "target_note": "85% is an aspirational target, not a result; each endpoint keeps its own metric and claim boundary.",
+  "rows": [
+    {
+      "track": "canonical_locked_authentic_ea_risk",
+      "endpoint": "This experiment validates retrospective prioritisation among authentically sampled surface-water sites. It does not validate direct E. coli detection, a drinking-water pipeline, a contaminated branch, or Delhi-NCR deployment.",
+      "metric": "positive_f1",
+      "value": 0.8376703841387856,
+      "accuracy": 0.7596330275229358,
+      "precision": 0.7396061269146609,
+      "recall": 0.9657142857142857,
+      "balanced_accuracy": 0.6777289377289377,
+      "auc": 0.8659853479853479,
+      "pr_auc": 0.9157279663098918,
+      "prevalence": 0.6422018348623854,
+      "status": "CANONICAL_AUTHENTIC_LOCKED_SURFACE_WATER"
+    },
+    {
+      "track": "surface_water_nowcast",
+      "endpoint": "Surface-water E. coli context model; not direct sensor detection and not drinking-network validation",
+      "metric": "positive_f1",
+      "value": 0.47030105777054515,
+      "accuracy": 0.6889632107023411,
+      "precision": 0.41374373657838226,
+      "recall": 0.5447690857681433,
+      "auc": 0.6838142130065976,
+      "prevalence": 0.2534639273769709,
+      "false_negatives": 483,
+      "true_positives": 578,
+      "calibration_ece": 0.12897281733425656,
+      "recall_wilson_95": [
+        0.5146958114198473,
+        0.5745193356968695
+      ],
+      "status": "MEASURED_NOT_85"
+    },
+    {
+      "track": "surface_water_24h_forecast",
+      "endpoint": "Surface-water E. coli context model; not direct sensor detection and not drinking-network validation",
+      "metric": "positive_f1",
+      "value": 0.43910577243910576,
+      "accuracy": 0.5984233158146202,
+      "precision": 0.33987603305785125,
+      "recall": 0.6201696512723845,
+      "auc": 0.6518491988689916,
+      "prevalence": 0.2534639273769709,
+      "false_negatives": 403,
+      "true_positives": 658,
+      "calibration_ece": 0.12271999786008862,
+      "recall_wilson_95": [
+        0.5905812106708643,
+        0.6488910263266383
+      ],
+      "status": "MEASURED_NOT_85"
+    },
+    {
+      "track": "gecco_sensor_event",
+      "endpoint": "Sensor-event anomaly benchmark only; does not detect or predict E. coli and is not Delhi-NCR data.",
+      "metric": "positive_f1",
+      "value": 0.4827586206896552,
+      "accuracy": 0.9924170616113744,
+      "precision": 0.41025641025641024,
+      "recall": 0.5863874345549738,
+      "auc": 0.9369783890575434,
+      "prevalence": 0.006034755134281201,
+      "false_negatives": 79,
+      "true_positives": 112,
+      "recall_wilson_95": [
+        0.5155112533471692,
+        0.6538570950958736
+      ],
+      "status": "MEASURED_PROXY_ONLY"
+    },
+    {
+      "track": "sdaif_simulated_decision",
+      "endpoint": "Surface-water microbial context and simulated Net3 reach are separate evidence tracks. No paired drinking-water E. coli, real-city performance, or field validation.",
+      "metric": "coverage_at_3",
+      "value": 0.6149122807017544,
+      "baseline": 0.6149122807017544,
+      "status": "EQUIVALENT_NOT_SUPERIOR"
+    },
+    {
+      "track": "ltown_decision_transfer",
+      "endpoint": "L-TOWN scenarios and test outcomes are simulated hydraulic tracer reach. This is neither E. coli detection nor field transfer validation.",
+      "metric": "coverage_at_3",
+      "value": 0.256547619047619,
+      "status": "TRANSFER_STRESS_NEGATIVE"
+    },
+    {
+      "track": "ea_authentic_surface_water_ecoli",
+      "endpoint": "Authentic England surface-water laboratory E. coli; not drinking-network validation",
+      "metric": "positive_f1",
+      "value": 0.8641509433962264,
+      "accuracy": 0.7953091684434968,
+      "precision": 0.8633364750235627,
+      "recall": 0.8649669499527857,
+      "auc": 0.8376073855187609,
+      "prevalence": 0.6381405927926648,
+      "status": "AUTHENTIC_OBSERVED_SURFACE_WATER"
+    },
+    {
+      "track": "ea_authentic_physchem_xgb",
+      "endpoint": "Sample-matched pH/temperature/conductivity and laboratory E. coli detection; surface water only",
+      "metric": "positive_f1",
+      "value": 0.9338842975206612,
+      "accuracy": 0.8769230769230769,
+      "precision": 0.875968992248062,
+      "recall": 1.0,
+      "auc": 0.7532535137948985,
+      "prevalence": 0.8688271604938271,
+      "status": "AUTHENTIC_OBSERVED_PRIOR_ART_ADAPTATION"
+    },
+    {
+      "track": "ea_authentic_unseen_site_xgb",
+      "endpoint": "Unseen-location surface-water transfer check only; 500 CFU/100 ml is a recreational-water convention and this does not validate Delhi-NCR drinking-network performance.",
+      "metric": "positive_f1",
+      "value": 0.7374301675977654,
+      "accuracy": 0.6642857142857143,
+      "precision": 0.6226415094339622,
+      "recall": 0.9041095890410958,
+      "auc": 0.7134532815375179,
+      "status": "AUTHENTIC_OBSERVED_UNSEEN_LOCATION"
+    },
+    {
+      "track": "ea_authentic_unseen_site_weather_xgb",
+      "endpoint": "Authentic England surface-water transfer check with observed weather covariates; not drinking-network validation, direct sensor detection or bit-for-bit full Open E. coli reproduction.",
+      "metric": "positive_f1",
+      "value": 0.7329192546583851,
+      "accuracy": 0.6928571428571428,
+      "precision": 0.6704545454545454,
+      "recall": 0.8082191780821918,
+      "auc": 0.7499488857084441,
+      "status": "AUTHENTIC_OBSERVED_WEATHER_ENRICHED"
+    },
+    {
+      "track": "texas_physical_pipe_pressure",
+      "endpoint": "Controlled leak-present versus no-leak physical run; label from experimental file condition",
+      "metric": "roc_auc",
+      "value": 0.826171875,
+      "accuracy": 0.8,
+      "precision": 0.8333333333333334,
+      "recall": 0.9375,
+      "f1": 0.8823529411764706,
+      "balanced_accuracy": 0.59375,
+      "baseline_f1": 0.8888888888888888,
+      "baseline_balanced_accuracy": 0.5,
+      "status": "AUTHENTIC_OBSERVED_PHYSICAL_HYDRAULIC_ONLY"
+    }
+  ],
+  "global_claim_boundary": "No row establishes direct E. coli detection, Delhi-NCR field performance, reduced illness or municipal validation."
+}

@@ -1,0 +1,26 @@
+{
+  "command": "run-simulation",
+  "run_id": "audit_20261120_01",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:48:08.475533+00:00",
+  "finished_utc": "2026-11-20T12:49:38.535192+00:00",
+  "seed": 20261118,
+  "evidence_class": "SIMULATED",
+  "domain": "NET3_SIMULATED_TRACER_EVENT",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\benchmark_v5_no_placeholders.json",
+  "input_sha256": "bb47452800f4e9791d1f698f213e65c42c358637efd5a640a678ebddd80304f2",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\simulation_net3.json",
+  "config_sha256": "b8a8948e8d8f842dc2ca9a755272f93ace1a60dfe76e63854838b62dd0f9ee76",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "3cf8fb5053edad9a7d63b62a83e48c682a1e11cfe683300414bff6a580e2e775",
+    "src/nadi/evaluation/benchmark.py": "ebc5b7636b35c76814c700e368aa97f878ad02a4f4ad15188db98b95340a838b"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\simulation\\audit_20261120_01",
+  "outputs_sha256": {
+    "net3_simulation_summary.json": "1ddf5d6113861138792e8495c2995a5b6396909113bf2fc9e17fb77189cfd7d6",
+    "net3_simulation_events.csv": "f83e889a2d9a4ccc7ebe3c7f8ae14a8c49a7b501709853059db9b82e24c68016",
+    "net3_simulation_aggregate.csv": "2ee61579d9bca4c596a39f68245dc0cdd8706aaa0987447870d8933a1fa05a18"
+  },
+  "runtime_config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\default.json",
+  "runtime_config_sha256": "f28f990a8f7753f7fb7b065dd812c216de93c9af93b1120fe7d0987c482e15dd"
+}

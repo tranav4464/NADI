@@ -1,0 +1,29 @@
+{
+  "replication_id": "OPEN-ECOLI-XGB-AUTHENTIC-SUBSET-V1",
+  "data_origin": "AUTHENTIC_OBSERVED",
+  "repository": "Cognizant-RDMAI/Open-Ecoli-Models",
+  "repository_commit": "4bca9807a0b62ee83df97d68b52430a3b1cda3b9",
+  "records": 648,
+  "feature_columns": [
+    "ph_0061",
+    "temperature_0076",
+    "conductivity_0077"
+  ],
+  "endpoint": "E. coli >= 500 CFU/100 ml",
+  "split": "ordered temporal 80/20",
+  "model": "XGBClassifier (core prior-art family)",
+  "metrics": {
+    "accuracy": 0.5615384615384615,
+    "precision": 0.532608695652174,
+    "recall": 0.7777777777777778,
+    "f1": 0.632258064516129,
+    "roc_auc": 0.5440653873489695
+  },
+  "status": "CONTROLLED_AUTHENTIC_SUBSET_ADAPTATION",
+  "differences_from_full_prior_art": [
+    "Uses 648 official EA Q1-2024 surface-water samples rather than the repository's full multi-agency EA/NRW/SEPA corpus.",
+    "Uses sample-matched pH, water temperature and conductivity only; weather, CORINE and MODIS features are unavailable in this bounded panel.",
+    "500 CFU/100 ml is a recreational-water convention, not a drinking-water standard."
+  ],
+  "claim_boundary": "Demonstrates the prior-art XGBoost method on authentic EA observations; it is not bit-for-bit reproduction, direct sensor detection or Delhi-NCR drinking-network validation."
+}

@@ -1,0 +1,9 @@
+{
+  "workflow": "run_tests",
+  "input": "pyproject.toml",
+  "input_sha256": "f48c02cb2eece493cab22fb9c5dcf98d85cf9e0b157a473a3fe1d8248206e791",
+  "output_root": "results/canonical/tests",
+  "evidence_class": "ASSUMED",
+  "domain": "NADI_SOURCE_AND_TEST_ENVIRONMENT",
+  "seed": 2026
+}

@@ -1,0 +1,23 @@
+{
+  "command": "run-tests",
+  "run_id": "audit_20261120_isolated_04",
+  "status": "PASS",
+  "started_utc": "2026-11-20T17:47:43.010425+00:00",
+  "finished_utc": "2026-11-20T17:48:06.315464+00:00",
+  "seed": 2026,
+  "evidence_class": "ASSUMED",
+  "domain": "NADI_SOURCE_AND_TEST_ENVIRONMENT",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\pyproject.toml",
+  "input_sha256": "f48c02cb2eece493cab22fb9c5dcf98d85cf9e0b157a473a3fe1d8248206e791",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\run_tests.json",
+  "config_sha256": "03827b6efc356b6d080f66f77010d044f285028757cb8b2dcbb8fd812dcd33bd",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "a81341d33481866c9caad5958c2aa49fa2abc2b3564f3b04c62780e2671c4f20"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\tests\\audit_20261120_isolated_04",
+  "outputs_sha256": {
+    "pytest.stdout.log": "313371485fed020e13f092bee5c31edc25596a8b0c59b188fe2abc9ec53aa33f",
+    "pytest.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "returncode": 0
+}

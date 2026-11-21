@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "train_rows": 3270,
+  "train_sites": 834,
+  "train_dates": [
+    "2024-01-02",
+    "2024-05-31"
+  ],
+  "models": [
+    "hist_gradient",
+    "logistic",
+    "xgboost"
+  ],
+  "calibration": "NOT_FITTED",
+  "endpoint": "E_COLI_GE_500_PER_100ML_PROJECT_HIGH_COUNT",
+  "evidence_class": "LAB_CONFIRMED",
+  "claim_boundary": "Chronological mixed environmental-water model training; not pipe contamination detection."
+}

@@ -1,0 +1,8 @@
+{
+  "rows": 5760,
+  "selected_sequences_identical": true,
+  "coverage_at_k_identical": true,
+  "max_population_weighted_coverage_abs_delta": 3.3306690738754696e-16,
+  "max_true_regret_abs_delta": 9.71445146547012e-17,
+  "interpretation": "V4 decisions and primary metric unchanged after pending-result engine extension; only floating summation order differs."
+}

@@ -52,8 +52,8 @@ def _stable_weight(node: str) -> float:
     return 0.5 + (raw % 1501) / 1000.0
 
 
-def load_reference_ensemble(candidate_count: int = 12) -> HydraulicEnsemble:
-    generated = PROCESSED_ROOT / "hydraulic_ensemble.json"
+def load_reference_ensemble(candidate_count: int = 12, generated_path: Path | None = None) -> HydraulicEnsemble:
+    generated = generated_path or PROCESSED_ROOT / "hydraulic_ensemble.json"
     if generated.exists():
         payload = json.loads(generated.read_text(encoding="utf-8"))
         scenarios = [HydraulicScenario(
@@ -101,7 +101,7 @@ def load_reference_ensemble(candidate_count: int = 12) -> HydraulicEnsemble:
         depth += 1
     candidates = tuple(selected)
     return HydraulicEnsemble(
-        network="EPA Net3 public benchmark",
+        network=payload.get("network", "EPA Net3 public benchmark"),
         scenarios=tuple(scenarios),
         candidates=candidates,
         consequence_weights={node: _stable_weight(node) for node in candidates},

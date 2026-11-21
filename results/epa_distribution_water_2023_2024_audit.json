@@ -1,0 +1,43 @@
+{
+  "dataset": "EPA_DISTRIBUTION_WATER_2023_2024",
+  "data_origin": "AUTHENTIC_OBSERVED",
+  "source_url": "https://pasteur.epa.gov/uploads/10.23719/d-hsdm/scihub_Dis_Water_2324_dataset_V2.xlsx",
+  "source_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\EPA_DISTRIBUTION_WATER_2023_2024\\scihub_Dis_Water_2324_dataset_V2.xlsx",
+  "source_sha256": "7add656c034ae1ffd987108b492abb3094f88e9c88074931c62d9df84dc07a60",
+  "records": 144,
+  "date_range": [
+    "2023-01-16",
+    "2024-10-08"
+  ],
+  "utilities": 6,
+  "location_categories": [
+    "DBP",
+    "EP",
+    "MP",
+    "MRT",
+    "TANK",
+    "TCR"
+  ],
+  "ecoli_nonmissing": 144,
+  "ecoli_positive_records": 0,
+  "total_coliform_nonmissing": 144,
+  "total_coliform_positive_records": 5,
+  "available_water_quality_fields": [
+    "pH ",
+    "Temperature",
+    "Nitrite",
+    "Utility Total Chlorine",
+    "Utility Free Chlorine",
+    "Researcher Total Chlorine",
+    "Researcher Free Chlorine",
+    "Free Ammonia",
+    "Hardness",
+    "Disolved Oxygen",
+    "HPC ",
+    "Colilert",
+    "Colilert-E.coli"
+  ],
+  "model_gate": "NOT_SUITABLE_FOR_E_COLI_CLASSIFIER_TRAINING",
+  "gate_reason": "No positive E. coli record is present, so discrimination and sensitivity cannot be estimated.",
+  "usable_role": "Authentic drinking-water domain and prevalence audit; not a topology, forecasting, or branch-localisation dataset."
+}

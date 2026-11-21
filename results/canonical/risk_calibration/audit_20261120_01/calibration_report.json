@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "calibration_rows": 3641,
+  "calibration_dates": [
+    "2024-06-01",
+    "2024-07-15"
+  ],
+  "models": {
+    "logistic": {
+      "threshold_selected_on_calibration": 0.16999999999999998,
+      "calibration_metrics": {
+        "n": 3641,
+        "prevalence": 0.21999450700357046,
+        "threshold": 0.16999999999999998,
+        "f1": 0.6876763875823142,
+        "sensitivity": 0.9126092384519351,
+        "specificity": 0.7908450704225352,
+        "precision": 0.5516981132075471,
+        "npv": 0.9697754749568221,
+        "balanced_accuracy": 0.8517271544372351,
+        "mcc": 0.6056672705029195,
+        "roc_auc": 0.9195266480279931,
+        "pr_auc": 0.7447552694597767,
+        "brier": 0.0936342581562128,
+        "ece_10": 0.025798170331067505,
+        "confusion_matrix": {
+          "tn": 2246,
+          "fp": 594,
+          "fn": 70,
+          "tp": 731
+        }
+      }
+    },
+    "xgboost": {
+      "threshold_selected_on_calibration": 0.3,
+      "calibration_metrics": {
+        "n": 3641,
+        "prevalence": 0.21999450700357046,
+        "threshold": 0.3,
+        "f1": 0.7894736842105263,
+        "sensitivity": 0.8801498127340824,
+        "specificity": 0.9014084507042254,
+        "precision": 0.7157360406091371,
+        "npv": 0.963855421686747,
+        "balanced_accuracy": 0.8907791317191539,
+        "mcc": 0.7287937452527096,
+        "roc_auc": 0.9491362029857044,
+        "pr_auc": 0.8405449112913822,
+        "brier": 0.06897000609484338,
+        "ece_10": 0.015825000366401946,
+        "confusion_matrix": {
+          "tn": 2560,
+          "fp": 280,
+          "fn": 96,
+          "tp": 705
+        }
+      }
+    },
+    "hist_gradient": {
+      "threshold_selected_on_calibration": 0.22499999999999998,
+      "calibration_metrics": {
+        "n": 3641,
+        "prevalence": 0.21999450700357046,
+        "threshold": 0.22499999999999998,
+        "f1": 0.7509293680297398,
+        "sensitivity": 0.8826466916354557,
+        "specificity": 0.8679577464788732,
+        "precision": 0.6534195933456562,
+        "npv": 0.9632669011332552,
+        "balanced_accuracy": 0.8753022190571644,
+        "mcc": 0.6803584494081326,
+        "roc_auc": 0.9401595277030471,
+        "pr_auc": 0.826541042233911,
+        "brier": 0.07442649125534023,
+        "ece_10": 0.013516392976440635,
+        "confusion_matrix": {
+          "tn": 2465,
+          "fp": 375,
+          "fn": 94,
+          "tp": 707
+        }
+      }
+    }
+  },
+  "endpoint": "E_COLI_GE_500_PER_100ML_PROJECT_HIGH_COUNT",
+  "claim_boundary": "Calibration uses a separate chronological environmental-water period; no locked test labels used."
+}

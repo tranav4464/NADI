@@ -1,0 +1,20 @@
+{
+  "dataset": "EA_AUTHENTIC_SITE_ROUNDS_2024",
+  "data_origin": "AUTHENTIC_OBSERVED",
+  "raw_source_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\EA_ECOLI_AUTHENTIC\\ea_ecoli_confirmed_mf_2024.csv",
+  "raw_source_sha256": "7095a77b2bb5a7996108c7b31ab9e19a59e6aca40bd4f9deb2573a83c85c307d",
+  "raw_observations": 14069,
+  "site_day_records": 13405,
+  "unique_sites": 920,
+  "rounds": 285,
+  "rounds_at_least_5_sites": 253,
+  "rounds_at_least_10_sites": 210,
+  "rounds_at_least_20_sites": 147,
+  "positive_prevalence_500": 0.27877657590451327,
+  "date_range": [
+    "2024-01-02",
+    "2024-12-18"
+  ],
+  "feature_contract": "Every history feature excludes all laboratory outcomes from the current round date.",
+  "claim_boundary": "Authentic England surface-water monitoring; not drinking-water pipeline validation."
+}

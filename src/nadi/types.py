@@ -58,6 +58,7 @@ class DecisionCard:
     evidence_labels: list[str]
     model_versions: dict[str, str]
     claim_boundary: str
+    response_guidance: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

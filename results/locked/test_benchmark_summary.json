@@ -1,14 +1,16 @@
 {
   "benchmark_id": "NADI-X2026-LOCKED-V1",
-  "generated_utc": "2026-11-18T11:29:17.689997+00:00",
+  "generated_utc": "2026-11-21T06:45:35.599755+00:00",
   "events_attempted": 2,
   "events_evaluated": 2,
+  "nonempty_events_evaluated": 1,
+  "empty_events_evaluated": 1,
   "abstentions": 0,
   "primary_budget": 3,
   "primary_metric": "coverage_at_k",
   "strongest_fair_baseline": "routine",
-  "strongest_baseline_mean": 0.6875,
-  "adaptive_mean": 0.6875,
+  "strongest_baseline_mean": 0.375,
+  "adaptive_mean": 0.375,
   "comparison": {
     "mean_difference": 0.0,
     "paired_bootstrap_95pct": [
@@ -20,9 +22,10 @@
   "superiority_supported": false,
   "gate": "PASS",
   "config_sha256": "663B14D9CE03FC5D0DC50C455130BD17382C700F0D996E015F1A40B7AF0CC7C2",
-  "event_table_sha256": "C8921C9839D2E78438401950CA126DA1811355F5EC68B711C85175FF6221EE5D",
-  "aggregate_sha256": "4802A105DCBD67D52BF30CBEE26266068A1E6D6AC4690EFE3E6B2A83FB13EB89",
+  "event_table_sha256": "9F19B64317BDE6C7EE631FA37249DBF8FF229E7869075E73236429C40C2060FC",
+  "aggregate_sha256": "E832614AB33BFA2D024CBBDACF9D238786B3259B786A15AE4BC3E9AE6E2C8950",
   "information_contract": "All policies receive the same calibrated risk interval, candidate nodes, reach ensemble, consequence weights, cutoff and budget. Only adaptive_sdaif receives results after\u00e2\u20ac\u201dnot before\u00e2\u20ac\u201deach selected test.",
   "claim_boundary": "Constructed E. coli-referenced risk plus public benchmark hydraulics; no field or municipal validation.",
-  "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately."
+  "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately.",
+  "certificate_boundary": "Initial next-test regret bound only, conditional on enumerated scenarios and risk interval; not a biological or real-world safety certificate."
 }

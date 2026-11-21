@@ -1,0 +1,81 @@
+{
+  "build_id": "NADI-AUTHENTIC-BUILD-V1",
+  "generated_utc": "2026-11-18T16:56:00Z",
+  "status": "AUTHENTIC_TRACKS_TRAINED_WITH_EXPLICIT_DOMAIN_LIMITS",
+  "tracks": {
+    "ea_surface_water_ecoli": {
+      "origin": "AUTHENTIC_OBSERVED",
+      "records": 14069,
+      "endpoint": "laboratory E. coli detected vs non-detect qualifier",
+      "model": "histogram_gradient_boosting",
+      "temporal_test": {
+        "accuracy": 0.7953091684,
+        "precision": 0.8633364750,
+        "recall": 0.8649669499,
+        "f1": 0.8641509434,
+        "roc_auc": 0.8376073855
+      },
+      "use": "authentic surface-water replication baseline",
+      "not_valid_for": "Delhi-NCR drinking-network validation"
+    },
+    "ea_sample_matched_physchem": {
+      "origin": "AUTHENTIC_OBSERVED",
+      "records": 648,
+      "available_features": ["pH", "water_temperature", "conductivity"],
+      "missing_requested_feature": "ammoniacal_nitrogen had no sample-matched observations in the bounded quarter",
+      "physchem_only_detection": {
+        "accuracy": 0.8769230769,
+        "precision": 0.8759689922,
+        "recall": 1.0,
+        "f1": 0.9338842975,
+        "roc_auc": 0.7766788131
+      },
+      "xgb_prior_art_detection": {
+        "accuracy": 0.8769230769,
+        "precision": 0.8759689922,
+        "recall": 1.0,
+        "f1": 0.9338842975,
+        "roc_auc": 0.7532535138
+      },
+      "physchem_only_high_risk_500_cfu": {
+        "accuracy": 0.4923076923,
+        "precision": 0.4838709677,
+        "recall": 0.7142857143,
+        "f1": 0.5769230769,
+        "roc_auc": 0.5848140251
+      },
+      "xgb_prior_art_high_risk_500_cfu": {
+        "accuracy": 0.5615384615,
+        "precision": 0.5326086957,
+        "recall": 0.7777777778,
+        "f1": 0.6322580645,
+        "roc_auc": 0.5440653873
+      },
+      "use": "sample-matched physicochemical evidence benchmark",
+      "not_valid_for": "direct E. coli sensor detection or drinking-water standards"
+    },
+    "gecco_telemetry": {
+      "origin": "AUTHENTIC_OBSERVED",
+      "use": "operational anomaly/event benchmark only",
+      "not_valid_for": "biological E. coli labels"
+    },
+    "bristol_telemetry": {
+      "origin": "AUTHENTIC_OBSERVED",
+      "use": "location-normalisation and anomaly evidence",
+      "not_valid_for": "biological E. coli labels"
+    },
+    "ltown_battledim": {
+      "origin": "AUTHENTIC_OBSERVED",
+      "use": "real network/SCADA hydraulic smoke replication",
+      "not_valid_for": "fecal contamination labels"
+    },
+    "open_ecoli_models": {
+      "origin": "AUTHENTIC_PRIOR_ART_CODE",
+      "status": "SOURCE_FILES_REQUIRED",
+      "use": "method and ETL replication reference",
+      "not_valid_for": "claiming reproduced performance"
+    }
+  },
+  "non_negotiable_gap": "No public row-level dataset found that jointly contains intermittent drinking-network operation, sensor telemetry, independent E. coli truth and verified hydraulic connectivity.",
+  "claim_boundary": "The trained scores are authentic-data benchmarks in their stated domains; they are not a Delhi-NCR or drinking-network performance claim."
+}

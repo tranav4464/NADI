@@ -1,0 +1,81 @@
+{
+  "audit_id": "NADI-PRIOR-ART-REPOSITORIES-V1",
+  "generated_utc": "2026-11-18T16:06:01.450817+00:00",
+  "repositories": {
+    "open_ecoli_models": {
+      "status": "DOWNLOADED",
+      "url": "https://github.com/Cognizant-RDMAI/Open-Ecoli-Models",
+      "commit": "4bca9807a0b62ee83df97d68b52430a3b1cda3b9",
+      "branch": "main",
+      "file_count": 18,
+      "notebooks": [
+        "EColi_ALLUK_v4_light.ipynb",
+        "EColi_data_v4_adv.ipynb",
+        "EColi_data_val_advance.ipynb",
+        "EColi_data_val_light.ipynb",
+        "EColi_model_v4_adv.ipynb",
+        "EColi_model_v4_adv_validation.ipynb",
+        "EColi_model_v4_light_validation.ipynb"
+      ],
+      "readmes": [
+        "README.md"
+      ],
+      "license_files": [
+        "LICENSE"
+      ],
+      "repository_snapshot_sha256": "28D25BF82AF4C0E2B72F50959B2BEB859E3E60B9630A5E8C603DAD4DDB2B6E80",
+      "replication_status": "ACQUIRED_NOT_REPRODUCED"
+    },
+    "wntr": {
+      "status": "DOWNLOADED",
+      "url": "https://github.com/USEPA/WNTR",
+      "commit": "39e6b34f37d4b2d074f107d822752c989bf108aa",
+      "branch": "main",
+      "file_count": 449,
+      "notebooks": [
+        "examples/basics_tutorial.ipynb",
+        "examples/earthquake_tutorial.ipynb",
+        "examples/fire_flow_tutorial.ipynb",
+        "examples/getting_started_tutorial.ipynb",
+        "examples/landslide_tutorial.ipynb",
+        "examples/model_development_tutorial.ipynb",
+        "examples/multispecies_tutorial.ipynb",
+        "examples/pipe_break_tutorial.ipynb",
+        "examples/pipe_segments_tutorial.ipynb",
+        "examples/salt_water_intrusion_tutorial.ipynb"
+      ],
+      "readmes": [
+        ".github/workflows/README.md",
+        "README.md"
+      ],
+      "license_files": [
+        "LICENSE.md",
+        "documentation/license.rst"
+      ],
+      "repository_snapshot_sha256": "28D25BF82AF4C0E2B72F50959B2BEB859E3E60B9630A5E8C603DAD4DDB2B6E80",
+      "replication_status": "ACQUIRED_NOT_REPRODUCED"
+    },
+    "epanet2_2": {
+      "status": "DOWNLOADED",
+      "url": "https://github.com/USEPA/EPANET2.2",
+      "commit": "598ee6cd214de07a0d62e7dafc1bdbf09173645a",
+      "branch": "master",
+      "file_count": 334,
+      "notebooks": [],
+      "readmes": [
+        "Delphi_GUI/Readme_GUI.txt",
+        "Delphi_GUI/components/Readme.txt",
+        "README.md",
+        "SRC_engines/Readme_SRC_Engines.txt",
+        "User_Manual/README.md",
+        "User_Manual/Readme_User_Manual.txt"
+      ],
+      "license_files": [
+        "SRC_engines/LICENSE"
+      ],
+      "repository_snapshot_sha256": "F6F2B945F6C411B02BA3DA9C7ACE88DCF71B6AF65BA2E0D89AA82900042B5A10",
+      "replication_status": "ACQUIRED_NOT_REPRODUCED"
+    }
+  },
+  "claim_boundary": "Downloaded source repositories are prior-art inputs; acquisition is not method reproduction and contains no claim of matching published performance."
+}

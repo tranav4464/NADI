@@ -1,0 +1,12 @@
+{
+  "network": "BattLeDIM L-TOWN",
+  "network_sha256": "A7551B86745F4CC3433C78E60023077FA1386947D4D35372FFD3A0405622B436",
+  "wntr_version": "1.5.0",
+  "source": "R1",
+  "junction_count": 782,
+  "pipe_count": 905,
+  "affected_junctions_1pct_trace": 463,
+  "minimum_pressure_m": -1.56249996052793e-06,
+  "origin": "SIMULATED",
+  "boundary": "One 24-hour trace smoke test on a second public network; no E. coli, calibrated field transport, or decision comparison"
+}

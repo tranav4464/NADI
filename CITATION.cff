@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use NADI in research, please cite this software and the specific datasets listed in its provenance manifest."
+title: "NADI: Network-Adaptive Decision Intelligence for Water Safety"
+type: software
+authors:
+  - family-names: Tyagi
+    given-names: Tranav
+version: 0.1.0
+date-released: 2026-11-21
+repository-code: "https://github.com/tranav4464/NADI"
+url: "https://github.com/tranav4464/NADI"
+abstract: >-
+  Evidence-separated, uncertainty-aware research software for calibrated
+  water-quality risk modelling and fixed-budget confirmatory-testing
+  prioritisation.
+keywords:
+  - water quality
+  - decision intelligence
+  - uncertainty quantification
+  - confirmatory testing
+  - applied mathematics

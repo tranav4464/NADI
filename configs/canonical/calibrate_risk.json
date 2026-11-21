@@ -1,0 +1,11 @@
+{
+  "workflow": "calibrate_risk",
+  "input": "data_processed/ea_authentic_site_rounds_2024.csv",
+  "input_sha256": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+  "training_manifest": "results/canonical/risk_training/audit_20261120_01/run_manifest.json",
+  "output_root": "results/canonical/risk_calibration",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "seed": 2026,
+  "calibration": ["2024-06-01", "2024-07-15"]
+}

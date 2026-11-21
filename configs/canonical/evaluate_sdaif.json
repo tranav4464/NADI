@@ -1,0 +1,15 @@
+{
+  "workflow": "evaluate_sdaif",
+  "input": "results/canonical/authentic/audit_20261120_07/authentic_test_events.csv",
+  "input_sha256": "a90f9a72d953e1545ee37d7be18b50138e7d2c80668ff27d7e7a2139f207266a",
+  "summary": "results/canonical/authentic/audit_20261120_07/authentic_test_summary.csv",
+  "summary_sha256": "b57d90a76d25037011d10d56fdde977374dc773cba067885c17bab8815a110e2",
+  "site_predictions": "results/canonical/authentic/audit_20261120_07/authentic_locked_site_predictions_and_zones.csv",
+  "site_predictions_sha256": "cdf68fb64055f12f5fa88169c5863b81976b157e1c594e18d4377136aa1cd531",
+  "random_permutations": 2000,
+  "output_root": "results/canonical/decision",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "seed": 2026,
+  "budget": 3
+}

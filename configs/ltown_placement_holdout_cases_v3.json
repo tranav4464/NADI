@@ -1,0 +1,12 @@
+{
+  "hidden_cases": [
+    {"source": "R1", "demand_multiplier": 0.9, "tank_fraction": 0.45, "closed_pipe": null},
+    {"source": "R1", "demand_multiplier": 1.1, "tank_fraction": 0.45, "closed_pipe": null},
+    {"source": "R1", "demand_multiplier": 0.9, "tank_fraction": 0.65, "closed_pipe": null},
+    {"source": "R1", "demand_multiplier": 1.1, "tank_fraction": 0.65, "closed_pipe": null},
+    {"source": "R2", "demand_multiplier": 0.9, "tank_fraction": 0.45, "closed_pipe": null},
+    {"source": "R2", "demand_multiplier": 1.1, "tank_fraction": 0.45, "closed_pipe": null},
+    {"source": "R2", "demand_multiplier": 0.9, "tank_fraction": 0.65, "closed_pipe": null},
+    {"source": "R2", "demand_multiplier": 1.1, "tank_fraction": 0.65, "closed_pipe": null}
+  ]
+}

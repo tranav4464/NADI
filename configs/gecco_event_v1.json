@@ -1,0 +1,13 @@
+{
+  "protocol_id": "GECCO-2019-CHRONOLOGICAL-EVENT-V1",
+  "frozen_before_run": "2026-11-18",
+  "endpoint": "GECCO Event boolean: drinking-water sensor event, not E. coli",
+  "features": ["Tp", "pH", "Cond", "Turb", "SAC", "PFM"],
+  "training": "July-September 2017 original train split",
+  "validation": "October-November 8 2017 original validation split; model and threshold selection",
+  "test": "November 8-29 2017 original untouched test split",
+  "models": ["robust_distance", "isolation_forest", "random_forest"],
+  "selection_metric": "validation positive F1",
+  "threshold_grid": "validation score quantiles 0.001 to 0.999 plus predicted-score boundaries",
+  "claim_boundary": "Sensor-event anomaly benchmark only; does not detect or predict E. coli and is not Delhi-NCR data."
+}

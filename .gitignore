@@ -1,13 +1,72 @@
+# Python and local environments
 .venv/
+.venv_clean/
+venv/
+env/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 *.egg-info/
+.coverage
+htmlcov/
+
+# Editors and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter working state
+.ipynb_checkpoints/
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Third-party or locally acquired datasets. Recreate these with the acquisition
+# scripts and verify them against the checked-in manifests.
+data/external/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/simulated/*
+!data/simulated/.gitkeep
 data_interim/*
 !data_interim/.gitkeep
+!data_interim/wqp_marion_weather.csv
+!data_interim/wqp_marion_weather_card.json
 data_processed/*
 !data_processed/.gitkeep
+!data_processed/ea_authentic_site_rounds_2024.csv
+!data_processed/hydraulic_ensemble.json
+!data_processed/ltown_hydraulic_ensemble.json
+!data_processed/risk_bundle.joblib
+!data_processed/risk_model_card.json
+
+# Generated runs and machine-local logs
 results/runs/*
 !results/runs/.gitkeep
 logs/*.log
+results/**/*.log
+results/**/*.stdout.txt
+results/**/*_stdout.txt
+
+# Temporary hydraulic/model artifacts
+temp.*
+*.tmp
+*.bak
+
+# Distribution bundles are generated from canonical artifacts. Keep the human-
+# readable dossier, but not redundant archives.
+dist/*.zip
+dist/*.sha256
+dist/NADI_XYLEM_EVIDENCE_2026-11-19/
+dist/nadi_dossier_render*/
 

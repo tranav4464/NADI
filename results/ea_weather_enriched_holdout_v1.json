@@ -1,0 +1,27 @@
+{
+  "dataset": "EA_ECOLI_AUTHENTIC_PLUS_OPENMETEO",
+  "data_origin": "AUTHENTIC_OBSERVED",
+  "records": 648,
+  "features": [
+    "ph_0061",
+    "temperature_0076",
+    "conductivity_0077",
+    "temperature_2m_mean",
+    "precipitation_sum",
+    "relative_humidity_2m_mean"
+  ],
+  "weather_match_rate": 1.0,
+  "test_sites": 38,
+  "test_records": 140,
+  "split": "deterministic site-hash holdout",
+  "endpoint": "E. coli >= 500 CFU/100 ml",
+  "model": "XGBClassifier adapted from Open E. coli prior-art family",
+  "metrics": {
+    "accuracy": 0.6928571428571428,
+    "precision": 0.6704545454545454,
+    "recall": 0.8082191780821918,
+    "f1": 0.7329192546583851,
+    "roc_auc": 0.7499488857084441
+  },
+  "claim_boundary": "Authentic England surface-water transfer check with observed weather covariates; not drinking-network validation, direct sensor detection or bit-for-bit full Open E. coli reproduction."
+}

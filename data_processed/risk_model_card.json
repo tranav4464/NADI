@@ -1,0 +1,299 @@
+{
+  "schema_version": "0.1.0",
+  "split": {
+    "train": [
+      "2003-01-30",
+      "2018-12-18",
+      1758
+    ],
+    "calibration": [
+      "2019-01-15",
+      "2020-12-16",
+      190
+    ],
+    "untouched_test": [
+      "2021-01-04",
+      "2022-12-29",
+      4186
+    ]
+  },
+  "nowcast": {
+    "mode": "nowcast",
+    "features": [
+      "prcp_prev_1d",
+      "prcp_prev_3d",
+      "prcp_prev_10d",
+      "prcp_prev_15d",
+      "tavg_prev_1d",
+      "tavg_prev_3d",
+      "tavg_prev_10d",
+      "tavg_prev_15d",
+      "month_sin",
+      "month_cos",
+      "prcp_same_day",
+      "tavg_same_day"
+    ],
+    "model_comparison": {
+      "logistic": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11990124699231611,
+        "log_loss": 0.39699366099160693,
+        "roc_auc": 0.7001817768688935,
+        "average_precision": 0.22852870014255391,
+        "ece_10": 0.043970429510782665,
+        "positive_f1": 0.3472222222222222,
+        "f1_threshold": 0.11499999999999999
+      },
+      "random_forest": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11834141182614002,
+        "log_loss": 0.38904807074706027,
+        "roc_auc": 0.667916382640309,
+        "average_precision": 0.22649605269112785,
+        "ece_10": 0.0228264714393106,
+        "positive_f1": 0.36666666666666664,
+        "f1_threshold": 0.135
+      },
+      "extra_trees": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11720414353788361,
+        "log_loss": 0.385371653073157,
+        "roc_auc": 0.696319018404908,
+        "average_precision": 0.24901742725759288,
+        "ece_10": 0.04004213288472759,
+        "positive_f1": 0.36363636363636365,
+        "f1_threshold": 0.21499999999999997
+      },
+      "decision_tree": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.12116422889470803,
+        "log_loss": 0.406190221838333,
+        "roc_auc": 0.4852306294024086,
+        "average_precision": 0.16435305320426077,
+        "ece_10": 2.6336869606014e-06,
+        "positive_f1": 0.25882352941176473,
+        "f1_threshold": 0.135
+      },
+      "gradient_boosting": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.12084690382606086,
+        "log_loss": 0.4022933354745825,
+        "roc_auc": 0.662463076573506,
+        "average_precision": 0.2175780209154298,
+        "ece_10": 0.04034283717435088,
+        "positive_f1": 0.35294117647058826,
+        "f1_threshold": 0.13999999999999999
+      },
+      "xgboost": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11924034029664932,
+        "log_loss": 0.3897954645958044,
+        "roc_auc": 0.6795046580322653,
+        "average_precision": 0.21171658574237784,
+        "ece_10": 0.07139816437673618,
+        "positive_f1": 0.3424657534246575,
+        "f1_threshold": 0.105
+      }
+    },
+    "selected_model": "random_forest",
+    "selected_validation_threshold": 0.135,
+    "calibration": {
+      "n": 190,
+      "positives": 27,
+      "prevalence": 0.14210526315789473,
+      "brier": 0.11834141182614002,
+      "log_loss": 0.38904807074706027,
+      "roc_auc": 0.667916382640309,
+      "average_precision": 0.22649605269112785,
+      "ece_10": 0.0228264714393106
+    },
+    "untouched_test": {
+      "n": 4186,
+      "positives": 1061,
+      "prevalence": 0.2534639273769709,
+      "brier": 0.1890980297388967,
+      "log_loss": 0.5858028623477403,
+      "roc_auc": 0.6838142130065976,
+      "average_precision": 0.4853320085091082,
+      "ece_10": 0.12897281733425656
+    },
+    "untouched_test_thresholded": {
+      "threshold": 0.135,
+      "accuracy": 0.6889632107023411,
+      "precision": 0.41374373657838226,
+      "recall": 0.5447690857681433,
+      "positive_f1": 0.47030105777054515,
+      "n": 4186,
+      "positives": 1061,
+      "prevalence": 0.2534639273769709,
+      "tn": 2306,
+      "fp": 819,
+      "fn": 483,
+      "tp": 578
+    },
+    "probability_uncertainty_radius": 0.09392314395009174,
+    "uncertainty_method": "1.96*sqrt(0.25/n_calibration) + validation ECE; probability uncertainty, not a Bernoulli outcome interval",
+    "claim_boundary": "Surface-water E. coli context model; not direct sensor detection and not drinking-network validation"
+  },
+  "forecast_24h": {
+    "mode": "forecast",
+    "features": [
+      "prcp_prev_1d",
+      "prcp_prev_3d",
+      "prcp_prev_10d",
+      "prcp_prev_15d",
+      "tavg_prev_1d",
+      "tavg_prev_3d",
+      "tavg_prev_10d",
+      "tavg_prev_15d",
+      "month_sin",
+      "month_cos"
+    ],
+    "model_comparison": {
+      "logistic": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11840641205058232,
+        "log_loss": 0.3954680029393918,
+        "roc_auc": 0.6615541922290388,
+        "average_precision": 0.23781889552161725,
+        "ece_10": 0.05286611888832001,
+        "positive_f1": 0.36507936507936506,
+        "f1_threshold": 0.12
+      },
+      "random_forest": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11917417360493796,
+        "log_loss": 0.3955208080462174,
+        "roc_auc": 0.6497386957509658,
+        "average_precision": 0.2379960647277566,
+        "ece_10": 0.021144342478589033,
+        "positive_f1": 0.3380281690140845,
+        "f1_threshold": 0.175
+      },
+      "extra_trees": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11858146052215644,
+        "log_loss": 0.39126631662587313,
+        "roc_auc": 0.6597364235401044,
+        "average_precision": 0.2285117684128962,
+        "ece_10": 0.04345645257901004,
+        "positive_f1": 0.32558139534883723,
+        "f1_threshold": 0.15499999999999997
+      },
+      "decision_tree": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.12131741198516371,
+        "log_loss": 0.4046673159902487,
+        "roc_auc": 0.5357873210633948,
+        "average_precision": 0.16670831809214418,
+        "ece_10": 0.01195963925055473,
+        "positive_f1": 0.26865671641791045,
+        "f1_threshold": 0.09999999999999999
+      },
+      "gradient_boosting": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.12157311496247775,
+        "log_loss": 0.40714817935846426,
+        "roc_auc": 0.5606680299931833,
+        "average_precision": 0.17398821551469704,
+        "ece_10": 3.433137552769083e-05,
+        "positive_f1": 0.3111111111111111,
+        "f1_threshold": 0.14999999999999997
+      },
+      "xgboost": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.120101833774963,
+        "log_loss": 0.3992211536250578,
+        "roc_auc": 0.6095205635082935,
+        "average_precision": 0.1917956035539513,
+        "ece_10": 0.011973296134270077,
+        "positive_f1": 0.30666666666666664,
+        "f1_threshold": 0.13
+      }
+    },
+    "selected_model": "logistic",
+    "selected_validation_threshold": 0.12,
+    "calibration": {
+      "n": 190,
+      "positives": 27,
+      "prevalence": 0.14210526315789473,
+      "brier": 0.11840641205058232,
+      "log_loss": 0.3954680029393918,
+      "roc_auc": 0.6615541922290388,
+      "average_precision": 0.23781889552161725,
+      "ece_10": 0.05286611888832001
+    },
+    "untouched_test": {
+      "n": 4186,
+      "positives": 1061,
+      "prevalence": 0.2534639273769709,
+      "brier": 0.1946590828849988,
+      "log_loss": 0.5910607385341226,
+      "roc_auc": 0.6518491988689916,
+      "average_precision": 0.45562388487124805,
+      "ece_10": 0.12271999786008862
+    },
+    "untouched_test_thresholded": {
+      "threshold": 0.12,
+      "accuracy": 0.5984233158146202,
+      "precision": 0.33987603305785125,
+      "recall": 0.6201696512723845,
+      "positive_f1": 0.43910577243910576,
+      "n": 4186,
+      "positives": 1061,
+      "prevalence": 0.2534639273769709,
+      "tn": 1847,
+      "fp": 1278,
+      "fn": 403,
+      "tp": 658
+    },
+    "probability_uncertainty_radius": 0.12396279139910116,
+    "uncertainty_method": "1.96*sqrt(0.25/n_calibration) + validation ECE; probability uncertainty, not a Bernoulli outcome interval",
+    "claim_boundary": "Surface-water E. coli context model; not direct sensor detection and not drinking-network validation"
+  },
+  "geographic_transfer_audit": {
+    "status": "COMPLETED",
+    "partition_rule": "SHA256(site_id) modulo 5 equals 0; fixed before fitting",
+    "heldout_site_count": 30,
+    "heldout_sites_sha256": "3F5EF69C98ECBA5FDDD904722C8998D8AFE36268215AC952922C4C41A98938FB",
+    "development_rows": 592,
+    "calibration_rows": 77,
+    "test_rows": 1313,
+    "metrics": {
+      "n": 1313,
+      "positives": 287,
+      "prevalence": 0.21858339680121858,
+      "brier": 0.17109386942197644,
+      "log_loss": 0.5271567809397948,
+      "roc_auc": 0.5842536558197663,
+      "average_precision": 0.3492279349179966,
+      "ece_10": 0.05417630159825045
+    },
+    "claim_boundary": "Later samples from unseen Marion County surface-water sites; not cross-city or drinking-network validation"
+  },
+  "negative_result_rule": "A head is not promoted for claims solely because it has higher AUC; calibration and decision value govern."
+}

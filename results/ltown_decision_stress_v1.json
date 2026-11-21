@@ -1,0 +1,542 @@
+{
+  "protocol_id": "LTOWN-DECISION-STRESS-V1",
+  "reference_scenarios": 8,
+  "hidden_cases": 4,
+  "nonempty_cases": 4,
+  "unrepresented_reach_signatures": 3,
+  "sdaif_final_abstentions": 1,
+  "mean_coverage_nonempty": {
+    "random": 0.2967261904761905,
+    "routine": 0.17251984126984127,
+    "hydraulic_only": 0.3592261904761905,
+    "bayesian": 0.3592261904761905,
+    "adaptive_bayesian": 0.3592261904761905,
+    "adaptive_sdaif": 0.256547619047619,
+    "delayed_sdaif_1": 0.22876984126984123
+  },
+  "events": [
+    {
+      "hidden_case": {
+        "source": "R1",
+        "demand_multiplier": 0.95,
+        "tank_fraction": 0.55,
+        "closed_pipe": null
+      },
+      "hidden_scenario_id": "shift-00-src-R1-d-0.95-t-0.55-pipe-None",
+      "affected_candidates": [
+        "n198",
+        "n338",
+        "n395",
+        "n57",
+        "n59",
+        "n61",
+        "n777",
+        "n781",
+        "n90"
+      ],
+      "signature_in_reference_ensemble": true,
+      "initial_sdaif_certificate": false,
+      "final_sdaif_status": "OK",
+      "sdaif_tests_before_stop": 3,
+      "policies": {
+        "random": {
+          "selected": [
+            "n90",
+            "n781",
+            "n395"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 3,
+          "coverage_at_k": 0.3333333333333333,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.21587908585996543
+        },
+        "routine": {
+          "selected": [
+            "n198",
+            "n337",
+            "n338"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 2,
+          "coverage_at_k": 0.2222222222222222,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.28799053082035875
+        },
+        "hydraulic_only": {
+          "selected": [
+            "n198",
+            "n59",
+            "n61"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 3,
+          "coverage_at_k": 0.3333333333333333,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.4405900027314941
+        },
+        "bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 3,
+          "coverage_at_k": 0.3333333333333333,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.44059000273149423
+        },
+        "adaptive_bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 3,
+          "coverage_at_k": 0.3333333333333333,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.44059000273149423
+        },
+        "adaptive_sdaif": {
+          "selected": [
+            "n338",
+            "n59",
+            "n61"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 3,
+          "coverage_at_k": 0.3333333333333333,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3936993535463899
+        },
+        "delayed_sdaif_1": {
+          "selected": [
+            "n338",
+            "n198",
+            "n39"
+          ],
+          "tests": 3,
+          "affected_candidates": 9,
+          "positives_found": 2,
+          "coverage_at_k": 0.2222222222222222,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.28799053082035875
+        }
+      }
+    },
+    {
+      "hidden_case": {
+        "source": "R1",
+        "demand_multiplier": 1.05,
+        "tank_fraction": 0.55,
+        "closed_pipe": null
+      },
+      "hidden_scenario_id": "shift-01-src-R1-d-1.05-t-0.55-pipe-None",
+      "affected_candidates": [
+        "n198",
+        "n338",
+        "n39",
+        "n395",
+        "n57",
+        "n59",
+        "n61",
+        "n777",
+        "n781",
+        "n90"
+      ],
+      "signature_in_reference_ensemble": false,
+      "initial_sdaif_certificate": false,
+      "final_sdaif_status": "OK",
+      "sdaif_tests_before_stop": 3,
+      "policies": {
+        "random": {
+          "selected": [
+            "n338",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 3,
+          "coverage_at_k": 0.3,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3370226032735775
+        },
+        "routine": {
+          "selected": [
+            "n198",
+            "n337",
+            "n338"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 2,
+          "coverage_at_k": 0.2,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.24653156664068587
+        },
+        "hydraulic_only": {
+          "selected": [
+            "n198",
+            "n59",
+            "n61"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 3,
+          "coverage_at_k": 0.3,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3771628994544037
+        },
+        "bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 3,
+          "coverage_at_k": 0.3,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3771628994544038
+        },
+        "adaptive_bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 3,
+          "coverage_at_k": 0.3,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3771628994544038
+        },
+        "adaptive_sdaif": {
+          "selected": [
+            "n338",
+            "n59",
+            "n61"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 3,
+          "coverage_at_k": 0.3,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3370226032735775
+        },
+        "delayed_sdaif_1": {
+          "selected": [
+            "n338",
+            "n198",
+            "n39"
+          ],
+          "tests": 3,
+          "affected_candidates": 10,
+          "positives_found": 3,
+          "coverage_at_k": 0.3,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.39049103663289164
+        }
+      }
+    },
+    {
+      "hidden_case": {
+        "source": "R2",
+        "demand_multiplier": 0.95,
+        "tank_fraction": 0.55,
+        "closed_pipe": null
+      },
+      "hidden_scenario_id": "shift-02-src-R2-d-0.95-t-0.55-pipe-None",
+      "affected_candidates": [
+        "n198",
+        "n395",
+        "n57",
+        "n59",
+        "n61",
+        "n781",
+        "n99"
+      ],
+      "signature_in_reference_ensemble": false,
+      "initial_sdaif_certificate": false,
+      "final_sdaif_status": "ABSTAIN",
+      "sdaif_tests_before_stop": 3,
+      "policies": {
+        "random": {
+          "selected": [
+            "n781",
+            "n59",
+            "n198"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 3,
+          "coverage_at_k": 0.42857142857142855,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.4628491318882777
+        },
+        "routine": {
+          "selected": [
+            "n198",
+            "n337",
+            "n338"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 1,
+          "coverage_at_k": 0.14285714285714285,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.19831769653833708
+        },
+        "hydraulic_only": {
+          "selected": [
+            "n198",
+            "n59",
+            "n61"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 3,
+          "coverage_at_k": 0.42857142857142855,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.5218375930119701
+        },
+        "bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 3,
+          "coverage_at_k": 0.42857142857142855,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.5218375930119702
+        },
+        "adaptive_bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 3,
+          "coverage_at_k": 0.42857142857142855,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.5218375930119702
+        },
+        "adaptive_sdaif": {
+          "selected": [
+            "n338",
+            "n198",
+            "n39"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 1,
+          "coverage_at_k": 0.14285714285714285,
+          "empty_event": false,
+          "first_affected_test_rank": 2,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.19831769653833708
+        },
+        "delayed_sdaif_1": {
+          "selected": [
+            "n338",
+            "n198",
+            "n39"
+          ],
+          "tests": 3,
+          "affected_candidates": 7,
+          "positives_found": 1,
+          "coverage_at_k": 0.14285714285714285,
+          "empty_event": false,
+          "first_affected_test_rank": 2,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.19831769653833708
+        }
+      }
+    },
+    {
+      "hidden_case": {
+        "source": "R2",
+        "demand_multiplier": 1.05,
+        "tank_fraction": 0.55,
+        "closed_pipe": null
+      },
+      "hidden_scenario_id": "shift-03-src-R2-d-1.05-t-0.55-pipe-None",
+      "affected_candidates": [
+        "n198",
+        "n39",
+        "n395",
+        "n57",
+        "n59",
+        "n61",
+        "n781",
+        "n99"
+      ],
+      "signature_in_reference_ensemble": false,
+      "initial_sdaif_certificate": false,
+      "final_sdaif_status": "OK",
+      "sdaif_tests_before_stop": 3,
+      "policies": {
+        "random": {
+          "selected": [
+            "n777",
+            "n57",
+            "n90"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 1,
+          "coverage_at_k": 0.125,
+          "empty_event": false,
+          "first_affected_test_rank": 2,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.1010791366906475
+        },
+        "routine": {
+          "selected": [
+            "n198",
+            "n337",
+            "n338"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 1,
+          "coverage_at_k": 0.125,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.16537769784172662
+        },
+        "hydraulic_only": {
+          "selected": [
+            "n198",
+            "n59",
+            "n61"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 3,
+          "coverage_at_k": 0.375,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.4351618705035971
+        },
+        "bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 3,
+          "coverage_at_k": 0.375,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.43516187050359717
+        },
+        "adaptive_bayesian": {
+          "selected": [
+            "n198",
+            "n61",
+            "n59"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 3,
+          "coverage_at_k": 0.375,
+          "empty_event": false,
+          "first_affected_test_rank": 1,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.43516187050359717
+        },
+        "adaptive_sdaif": {
+          "selected": [
+            "n338",
+            "n198",
+            "n39"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 2,
+          "coverage_at_k": 0.25,
+          "empty_event": false,
+          "first_affected_test_rank": 2,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3314748201438849
+        },
+        "delayed_sdaif_1": {
+          "selected": [
+            "n338",
+            "n198",
+            "n39"
+          ],
+          "tests": 3,
+          "affected_candidates": 8,
+          "positives_found": 2,
+          "coverage_at_k": 0.25,
+          "empty_event": false,
+          "first_affected_test_rank": 2,
+          "missed_positive_event": false,
+          "population_weighted_coverage": 0.3314748201438849
+        }
+      }
+    }
+  ],
+  "claim_boundary": "L-TOWN scenarios and test outcomes are simulated hydraulic tracer reach. This is neither E. coli detection nor field transfer validation."
+}

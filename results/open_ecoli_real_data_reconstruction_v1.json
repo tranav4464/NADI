@@ -1,0 +1,63 @@
+{
+  "reconstruction_id": "OPEN-ECOLI-REAL-MARION-RECONSTRUCTION-V1",
+  "generated_utc": "2026-11-18T16:11:00.270265+00:00",
+  "source": "WQP Marion County E. coli plus NOAA GHCN-D",
+  "method_relation": "Controlled model-family reconstruction: XGBoost is compared with logistic, random forest, ExtraTrees, tree and gradient boosting under a frozen temporal split.",
+  "tracks": {
+    "nowcast": {
+      "selected_model": "random_forest",
+      "xgboost_calibration": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.11924034029664932,
+        "log_loss": 0.3897954645958044,
+        "roc_auc": 0.6795046580322653,
+        "average_precision": 0.21171658574237784,
+        "ece_10": 0.07139816437673618,
+        "positive_f1": 0.3424657534246575,
+        "f1_threshold": 0.105
+      },
+      "untouched_test": {
+        "n": 4186,
+        "positives": 1061,
+        "prevalence": 0.2534639273769709,
+        "brier": 0.1890980297388967,
+        "log_loss": 0.5858028623477403,
+        "roc_auc": 0.6838142130065976,
+        "average_precision": 0.4853320085091082,
+        "ece_10": 0.12897281733425658
+      },
+      "claim_boundary": "Real Marion County surface-water E. coli and NOAA weather reconstruction; not drinking-water or network validation."
+    },
+    "forecast_24h": {
+      "selected_model": "logistic",
+      "xgboost_calibration": {
+        "n": 190,
+        "positives": 27,
+        "prevalence": 0.14210526315789473,
+        "brier": 0.120101833774963,
+        "log_loss": 0.3992211536250578,
+        "roc_auc": 0.6095205635082935,
+        "average_precision": 0.1917956035539513,
+        "ece_10": 0.011973296134270077,
+        "positive_f1": 0.30666666666666664,
+        "f1_threshold": 0.13
+      },
+      "untouched_test": {
+        "n": 4186,
+        "positives": 1061,
+        "prevalence": 0.2534639273769709,
+        "brier": 0.1946590828849988,
+        "log_loss": 0.5910607385341226,
+        "roc_auc": 0.6518491988689916,
+        "average_precision": 0.45562388487124805,
+        "ece_10": 0.12271999786008862
+      },
+      "claim_boundary": "Real Marion County surface-water E. coli and NOAA weather reconstruction; not drinking-water or network validation."
+    }
+  },
+  "original_workflow_status": "NOT_BIT_FOR_BIT_REPRODUCED",
+  "reason": "The Open E. coli repository requires Environment Agency/NRW/SEPA, Open-Meteo, CORINE and MODIS source tables not included in the acquired repository.",
+  "claim_boundary": "Real-data reconstruction only; no direct E. coli sensor detection, Delhi performance or hydraulic-network claim."
+}

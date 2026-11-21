@@ -1,0 +1,4 @@
+site_alias,predicted_probability,model_probability_std,laboratory_confirmation,evidence_origin
+SITE_5F9F46,0.94207327343458,0.0597515208708537,revealed in retrospective replay only,LAB_CONFIRMED + MODEL_ESTIMATE
+SITE_824668,0.8088100701354765,0.0891086946595599,revealed in retrospective replay only,LAB_CONFIRMED + MODEL_ESTIMATE
+SITE_1D6555,0.7855332708046034,0.1169455267087536,revealed in retrospective replay only,LAB_CONFIRMED + MODEL_ESTIMATE

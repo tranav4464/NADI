@@ -1,0 +1,35 @@
+{
+  "source_file_sha256": "77C0444FDFF88FE250CD737B3A112F48A6DE6FEFE09F487C86426A6287B9C597",
+  "data_origin": "AUTHENTIC_OBSERVED",
+  "endpoint": {
+    "name": "E. coli presence",
+    "source_column": "E Coli",
+    "unit": "CFU/100 ml",
+    "binary_rule": "numeric value > 0 is presence; '<1' is below reporting threshold and treated as non-detect",
+    "valid_rows": 56,
+    "positive_rows": 24,
+    "negative_rows": 32,
+    "invalid_or_missing_rows": 0
+  },
+  "rows_in_piped_water_sheet": 56,
+  "available_context_columns": [
+    "Water System ID",
+    "Name of Sample Site",
+    "Latitude of Sample GPS",
+    "Longitude of Sample GPS",
+    "Type of Water System Sample",
+    "Free Chlorine residue",
+    "Total Chlorine residue",
+    "Turbidity",
+    "pH",
+    "Temperature",
+    "Conductivity"
+  ],
+  "system_type_counts": {
+    "Distribution": 44,
+    "Reservoir": 8,
+    "Source": 2,
+    "UNSPECIFIED": 2
+  },
+  "claim_boundary": "Cross-sectional piped-water endpoint/chemistry/GPS data only. No timestamped operations, pipe graph, contamination-source event, downstream samples or response outcome; it cannot validate NADI pipeline localisation or forecasting."
+}

@@ -1,0 +1,15 @@
+{
+  "workflow": "build_manifest",
+  "input": "results/canonical/authentic/audit_20261120_07/run_manifest.json",
+  "input_sha256": "ddd32508497aaa167b57d383cc61cb2f13ddfadb5c6b769e2aa7f8e43cf2c95d",
+  "output_root": "results/canonical/manifest",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "NADI_EVIDENCE_SEPARATED_SYSTEM",
+  "seed": 2026,
+  "include": [
+    "results/canonical/authentic/audit_20261120_07/run_manifest.json",
+    "results/canonical/hydraulics/audit_20261120_01/run_manifest.json",
+    "configs/canonical/authentic_xylem.json",
+    "configs/canonical/evaluate_hydraulics.json"
+  ]
+}

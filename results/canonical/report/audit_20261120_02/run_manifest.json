@@ -1,0 +1,22 @@
+{
+  "command": "build-report",
+  "run_id": "audit_20261120_02",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:53:11.351385+00:00",
+  "finished_utc": "2026-11-20T12:53:11.376087+00:00",
+  "seed": 2026,
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "NADI_EVIDENCE_SEPARATED_SYSTEM",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\authentic\\audit_20261120_07\\run_manifest.json",
+  "input_sha256": "ddd32508497aaa167b57d383cc61cb2f13ddfadb5c6b769e2aa7f8e43cf2c95d",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\build_report.json",
+  "config_sha256": "4bf85d8f11114d19eecd2dc032bcae9f7c4a5c9e5e563321bd730efad4e7e4cf",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "0d01682cf122775d52150f53bcea84a3f1e995c3f748338d057e4997a9b79bca"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\report\\audit_20261120_02",
+  "outputs_sha256": {
+    "canonical_evidence_report.md": "789a7e7d7d48d089fedbc870473f866a7def55ec97c012b685d40a7e88e2fce8"
+  },
+  "hydraulic_manifest_sha256": "e87fa4f594bbba636985e4a6504f95dbe0f13bd3be0333a2b530a26466ff5145"
+}

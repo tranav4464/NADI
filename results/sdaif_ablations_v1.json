@@ -1,0 +1,43 @@
+{
+  "protocol_id": "SDAIF-ABLATION-V1",
+  "events": 120,
+  "variants": {
+    "full": {
+      "nonempty_events": 76,
+      "mean_coverage_at_3": 0.5042934039644568,
+      "mean_worst_case_regret": 0.10450766257640935,
+      "certificate_rate": 1.0
+    },
+    "point_risk": {
+      "nonempty_events": 76,
+      "mean_coverage_at_3": 0.5042934039644568,
+      "mean_worst_case_regret": 0.06040320692778523,
+      "certificate_rate": 1.0
+    },
+    "wide_risk": {
+      "nonempty_events": 76,
+      "mean_coverage_at_3": 0.5042934039644568,
+      "mean_worst_case_regret": 0.2919999999999999,
+      "certificate_rate": 0.0
+    },
+    "uniform_consequence": {
+      "nonempty_events": 76,
+      "mean_coverage_at_3": 0.5042934039644568,
+      "mean_worst_case_regret": 0.059999999999999984,
+      "certificate_rate": 1.0
+    },
+    "single_network_scenario": {
+      "nonempty_events": 76,
+      "mean_coverage_at_3": 0.14856032125768964,
+      "mean_worst_case_regret": 0.0,
+      "certificate_rate": 1.0
+    },
+    "static_robust": {
+      "nonempty_events": 76,
+      "mean_coverage_at_3": 0.2937670881749828,
+      "mean_worst_case_regret": 0.38322893291361837,
+      "certificate_rate": 0.0
+    }
+  },
+  "claim_boundary": "All outcomes are simulated EPANET/WNTR tracer reach; ablations test mathematical components, not E. coli detection or field performance."
+}

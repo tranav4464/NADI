@@ -25,3 +25,18 @@ generated EPANET/WNTR TRACE scenarios. The ensemble varies source, demand,
 tank initial level and one closed pipe and uses pressure-dependent demand.
 V3 retains the V2 fair adaptive Bayesian comparator. V1 and V2 remain preserved.
 
+# V4 decision semantics repair
+
+After inspecting V3, the conditional SDAIF calculation was found to compare
+pre-test and post-test plans under inconsistent budget accounting. The revised
+engine keeps all previously performed tests committed and uses the original
+total budget for both the conditional plan and scenario-specific oracle.
+Hand-case tests cover conditional branches and exhausted budgets. The V3 event
+table, aggregate, and summary remain historical outputs of the old engine.
+They must not be cited as performance evidence for the repaired engine. V4
+requires a newly frozen configuration and independent evaluation.
+
+The V3 `coverage_at_k` implementation assigned 1.0 to events with no affected
+candidate. The revised metric returns null and records `empty_event` instead.
+V4 must report nonempty-event coverage and empty-event behavior separately.
+

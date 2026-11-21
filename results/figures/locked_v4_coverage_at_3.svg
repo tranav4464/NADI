@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="527" viewBox="0 0 900 527">
+<rect width="100%" height="100%" fill="#f8fbfc"/>
+<style>text{font-family:Arial,sans-serif;fill:#12343b}.label{font-size:14px}.value{font-size:13px;font-weight:bold}.title{font-size:20px;font-weight:bold}</style>
+<text x="20" y="28" class="title">Locked V4: Coverage@3 on nonempty simulated events</text>
+<text x="20" y="67" class="label">adaptive_bayesian</text>
+<rect x="250" y="50" width="292.5" height="24" rx="4" fill="#50a684"/>
+<text x="550.5" y="67" class="value">0.504</text>
+<text x="20" y="103" class="label">adaptive_sdaif</text>
+<rect x="250" y="86" width="292.5" height="24" rx="4" fill="#007c91"/>
+<text x="550.5" y="103" class="value">0.504</text>
+<text x="20" y="139" class="label">random</text>
+<rect x="250" y="122" width="190.7" height="24" rx="4" fill="#a8c7cf"/>
+<text x="448.7" y="139" class="value">0.329</text>
+<text x="20" y="175" class="label">bayesian</text>
+<rect x="250" y="158" width="170.4" height="24" rx="4" fill="#a8c7cf"/>
+<text x="428.4" y="175" class="value">0.294</text>
+<text x="20" y="211" class="label">non_adaptive_robust</text>
+<rect x="250" y="194" width="170.4" height="24" rx="4" fill="#a8c7cf"/>
+<text x="428.4" y="211" class="value">0.294</text>
+<text x="20" y="247" class="label">hydraulic_only</text>
+<rect x="250" y="230" width="170.4" height="24" rx="4" fill="#a8c7cf"/>
+<text x="428.4" y="247" class="value">0.294</text>
+<text x="20" y="283" class="label">anomaly_only</text>
+<rect x="250" y="266" width="166.6" height="24" rx="4" fill="#a8c7cf"/>
+<text x="424.6" y="283" class="value">0.287</text>
+<text x="20" y="319" class="label">context_only</text>
+<rect x="250" y="302" width="166.6" height="24" rx="4" fill="#a8c7cf"/>
+<text x="424.6" y="319" class="value">0.287</text>
+<text x="20" y="355" class="label">inverse_probability_weighted</text>
+<rect x="250" y="338" width="166.6" height="24" rx="4" fill="#a8c7cf"/>
+<text x="424.6" y="355" class="value">0.287</text>
+<text x="20" y="391" class="label">risk_only</text>
+<rect x="250" y="374" width="166.6" height="24" rx="4" fill="#a8c7cf"/>
+<text x="424.6" y="391" class="value">0.287</text>
+<text x="20" y="427" class="label">routine</text>
+<rect x="250" y="410" width="166.6" height="24" rx="4" fill="#a8c7cf"/>
+<text x="424.6" y="427" class="value">0.287</text>
+<text x="20" y="463" class="label">population_only</text>
+<rect x="250" y="446" width="86.2" height="24" rx="4" fill="#a8c7cf"/>
+<text x="344.2" y="463" class="value">0.149</text>
+</svg>

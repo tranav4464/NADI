@@ -1,0 +1,23 @@
+{
+  "command": "evaluate-hydraulics",
+  "run_id": "audit_20261120_01",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:37:30.869246+00:00",
+  "finished_utc": "2026-11-20T12:37:30.898408+00:00",
+  "seed": 2026,
+  "evidence_class": "OBSERVED",
+  "domain": "BWFLNET_MEASURED_PRESSURE",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\bwflnet_full_hybrid\\heldout_predictions.csv",
+  "input_sha256": "9869ff82196ada5986b08d0075082446b75968ce9cb3d761e90bf3d574570e9a",
+  "baseline_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\bwflnet_full_hybrid\\per_logger_metrics.csv",
+  "baseline_sha256": "c6bd8bc33c6630100f085eefc918bc2217e7b0ca260271e81ef54279e9daa5fb",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\evaluate_hydraulics.json",
+  "config_sha256": "8d3cce56b752e584b18aa6443db34012f3b19eb42d1958d54450247fb917d4ff",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "de5b4069ae7ae134d8005dc0b042b758e7338a76994d18e49d7dce26765a2832"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\hydraulics\\audit_20261120_01",
+  "outputs_sha256": {
+    "hydraulic_evaluation.json": "7dbaa29ec7270c41d0bbf46ae7bb752556a449eb269a4b48ede579365ddc1f2e"
+  }
+}

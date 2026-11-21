@@ -1,0 +1,31 @@
+{
+  "benchmark_id": "NADI-X2026-LOCKED-V4-CORRECTED-DECISION-METRIC",
+  "generated_utc": "2026-11-18T12:33:29.770845+00:00",
+  "events_attempted": 120,
+  "events_evaluated": 120,
+  "nonempty_events_evaluated": 76,
+  "empty_events_evaluated": 44,
+  "abstentions": 0,
+  "primary_budget": 3,
+  "primary_metric": "coverage_at_k",
+  "strongest_fair_baseline": "adaptive_bayesian",
+  "strongest_baseline_mean": 0.5042934039644568,
+  "adaptive_mean": 0.5042934039644568,
+  "comparison": {
+    "mean_difference": 0.0,
+    "paired_bootstrap_95pct": [
+      0.0,
+      0.0
+    ]
+  },
+  "equivalent_within_margin": true,
+  "superiority_supported": false,
+  "gate": "PASS",
+  "config_sha256": "A14299FBB39D7576B08933E744BADB99833F72A89F21453101142BE855590089",
+  "event_table_sha256": "AF9EFBE5014FD0EDD85F6CC887C6A7CFBC56CB9AF2E24C7EAA49234C2A5723D9",
+  "aggregate_sha256": "60FEF8E9E076438D55DE867F2273FE5F2A155E8DCE008607E0B57C6C7BC1D168",
+  "information_contract": "All policies receive the same risk interval, 12 nodes, 24 scenario ensemble, consequence weights and budget. Adaptive methods receive each simulated binary result only after test selection.",
+  "claim_boundary": "Surface-water microbial context and simulated Net3 reach are separate evidence tracks. No paired drinking-water E. coli, real-city performance, or field validation.",
+  "negative_result_rule": "No superiority claim unless the paired 95% interval is above zero; equivalence is reported separately.",
+  "certificate_boundary": "Initial next-test regret bound only, conditional on enumerated scenarios and risk interval; not a biological or real-world safety certificate."
+}

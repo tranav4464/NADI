@@ -26,6 +26,27 @@ This carries uncertainty into the action itself. The maximum term also returns
 an adversarial witness: the compatible risk/network scenario under which the
 chosen plan performs worst.
 
+## Typed evidence fusion
+
+Independent evidence streams are represented as intervals with reliability,
+support, domain and availability time. The fusion layer uses reliability times
+support weights and widens the combined interval when contributors disagree:
+
+`p_f = sum_j w_j p_j / sum_j w_j`.
+
+An explicit disagreement inflation and dominant-uncertainty label are retained.
+An unsupported intrusion or sensor stream contributes no false confidence; it
+causes wider uncertainty or abstention.
+
+## Protective-action support
+
+For each advisory action `a`, NADI computes an operator-review score:
+
+`U(a) = risk_upper * consequence * coverage(a) - cost(a) - delay_penalty(a)`.
+
+This ranks sampling, inspection, flushing, isolation and precautionary notices;
+it never actuates a utility and remains separate from laboratory confirmation.
+
 ## Adaptive evidence acquisition
 
 For each untested node `j`, SDAIF evaluates both possible revealed results and
@@ -55,17 +76,24 @@ decision chain improves limited testing and remains auditable.
 
 ## Verification map
 
+The precise equation-to-code-and-test map is maintained in
+`docs/MATHEMATICAL_ASSURANCE_CASE.md`. It distinguishes implementation
+properties proved by tests from environmental claims that require field data.
+
 - `microbial_risk/weather_model.py`: temporal and site-held-out calibration.
 - `transfer/gate.py`: support inflation and abstention.
 - `hydraulics/generate.py`: 24 EPANET/WNTR scenario ensemble.
 - `sdaif/engine.py`: loss, oracle, regret, robust plan and adaptive VOI.
+- `sdaif/fusion.py`: typed interval fusion and disagreement inflation.
+- `hazards/intrusion.py`: monotone bounded intrusion-context evidence.
+- `decision/actions.py`: consequence/cost/delay protective-action ranking.
 - `evaluation/benchmark.py`: hidden truth, fair information timing and locked metrics.
 - `tests/`: future-feature exclusion, split integrity, monotonic/hand cases,
   adaptive timing, hydraulic diversity and dashboard abstention.
 
 ## Proven boundary
 
-The V3 benchmark shows equivalence to the strongest fair adaptive baseline,
+The corrected V4 benchmark shows equivalence to the strongest fair adaptive baseline,
 not superiority. The certificate applies to the enumerated uncertainty set.
 The microbial model uses surface-water evidence, and network consequences are
 simulated on public Net3. Confirmatory laboratory testing remains necessary.

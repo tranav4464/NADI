@@ -1,0 +1,29 @@
+{
+  "replication_id": "NADI-AUTHENTIC-PRIOR-ART-SMOKE-V1",
+  "generated_utc": "2026-11-18T16:09:32.590455+00:00",
+  "tracks": {
+    "battledim_wntr": {
+      "status": "REPRODUCED_SMOKE",
+      "network": "L-TOWN.inp",
+      "junctions": 782,
+      "pipes": 905,
+      "pressure_rows": 2017,
+      "claim_boundary": "Real benchmark network and SCADA context; leak/tracer task, not E. coli."
+    },
+    "open_ecoli_models": {
+      "status": "CONTROLLED_SUBSET_ADAPTATION",
+      "adaptation_result": "results/open_ecoli_prior_art_adaptation_v1.json",
+      "notebook_count": 7,
+      "requirements_present": true,
+      "required_external_sources": [
+        "Environment Agency",
+        "Natural Resources Wales",
+        "SEPA",
+        "Open-Meteo",
+        "CORINE",
+        "MODIS"
+      ],
+      "claim_boundary": "Core XGBoost method adapted to an authentic official EA subset; full multi-agency prior-art reproduction remains blocked by unavailable source tables."
+    }
+  }
+}

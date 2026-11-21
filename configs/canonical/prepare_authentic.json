@@ -1,0 +1,9 @@
+{
+  "workflow": "prepare_authentic",
+  "input": "../nadi_resources/datasets/EA_ECOLI_AUTHENTIC/ea_ecoli_confirmed_mf_2024.csv",
+  "input_sha256": "7095a77b2bb5a7996108c7b31ab9e19a59e6aca40bd4f9deb2573a83c85c307d",
+  "output_root": "results/canonical/preparation",
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "seed": 2026
+}

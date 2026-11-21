@@ -4,8 +4,16 @@ import json
 import sys
 from pathlib import Path
 
+import pytest
+
 WORKSPACE = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(WORKSPACE / "nadi_xylem"))
+LEGACY_ROOT = WORKSPACE / "nadi_xylem"
+if not (LEGACY_ROOT / "engine.py").exists():
+    pytest.skip(
+        "the historical nadi_xylem sibling workspace is not bundled with the public repository",
+        allow_module_level=True,
+    )
+sys.path.insert(0, str(LEGACY_ROOT))
 
 from engine import BASELINE, ContextModel, ProxyModel, evaluate  # noqa: E402
 

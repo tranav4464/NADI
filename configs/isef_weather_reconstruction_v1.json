@@ -1,0 +1,15 @@
+{
+  "protocol_id": "ISEF-2024-WEATHER-METHOD-RECONSTRUCTION-V1",
+  "frozen_before_run": "2026-11-18",
+  "source": "Marion County surface-water E. coli joined by date to NOAA Indianapolis daily weather",
+  "endpoint": "E. coli count >=1000 MPN-or-CFU per 100 mL in sampled surface water; project-defined threshold, not drinking-water criterion",
+  "information_cutoff": "Start of sample day; all meteorological rolling windows exclude the sample day",
+  "train_end": "2021-06-30",
+  "validation_end": "2021-12-31",
+  "test_end": "2022-12-31",
+  "model_families": ["logistic_regression", "random_forest", "extra_trees", "decision_tree", "gradient_boosting", "xgb_classifier"],
+  "features": ["prcp_prev_1d", "prcp_prev_3d", "prcp_prev_10d", "prcp_prev_15d", "prcp_max_prev_10d", "prcp_max_prev_15d", "tavg_prev_1d", "tavg_prev_3d", "tavg_prev_10d", "tavg_prev_15d", "cdd10_prev_10d", "cdd10_prev_15d", "month_sin", "month_cos"],
+  "cdd_assumption": "Sum of positive (daily mean Celsius minus 10 C) over previous 10/15 days; ISEF abstract does not specify its degree-day base",
+  "selection": "Choose family and probability threshold on 2021 July-December by positive F1; evaluate once on 2022",
+  "claim_boundary": "Public ISEF abstract names six families, weather features and Marion data but omits exact data filtering, threshold, code and split. This is a method reconstruction, not exact replication. The 2022 period was previously inspected for the original NADI logistic baseline, so this is not an untouched project-wide final test."
+}

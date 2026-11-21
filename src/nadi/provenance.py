@@ -50,6 +50,10 @@ def core_resources() -> list[ResourceRecord]:
         ResourceRecord("WDSEVENTDB", str(d / "existing_verified" / "WDSEventDB_zenodo_17547955.zip"), None, None, "WDSEventDB Zenodo record 17547955", "PHYSICAL_TESTBED", "telemetry/event ingestion", "E. coli detection", "OBSERVED"),
         ResourceRecord("BATTLEDIM_LTOWN", str(d / "BattLeDIM_4017659" / "L-TOWN.inp"), None, None, "BattLeDIM Zenodo record 4017659", "SIMULATED_NETWORK", "hydraulic/anomaly benchmark", "field validation", "SIMULATED"),
         ResourceRecord("GECCO_2019_TRAIN", str(d / "GECCO" / "gecco2019_train_water_quality.csv"), None, None, "GECCO/Zenodo record 4304080", "INDUSTRIAL_WATER_PROCESS", "anomaly benchmark", "microbial truth", "OBSERVED"),
+        ResourceRecord("EA_ECOLI_2024", str(d / "EA_ECOLI_AUTHENTIC" / "ea_ecoli_confirmed_mf_2024.csv"), None, None, "Environment Agency official observation API", "SURFACE_WATER_CONTEXT", "E. coli surface-water replication", "Delhi-NCR drinking-network validation", "LAB_CONFIRMED"),
+        ResourceRecord("EA_ECOLI_PHYSCHEM_PANEL_Q1_2024", str(d / "EA_ECOLI_AUTHENTIC" / "ea_ecoli_physchem_panel_q1_2024.csv"), None, None, "Environment Agency official observation API, sample-URI join", "SURFACE_WATER_CONTEXT", "sample-matched physicochemical benchmark", "direct sensor detection and drinking-network validation", "LAB_CONFIRMED"),
+        ResourceRecord("EA_OPENMETEO_WEATHER_PANEL_Q1_2024", str(d / "EA_ECOLI_AUTHENTIC" / "ea_openmeteo_weather_panel_q1_2024.csv"), None, None, "Open-Meteo historical weather API, coordinates transformed from EA sampling points", "WEATHER", "past-only weather covariates", "microbial truth", "OBSERVED"),
+        ResourceRecord("BRISTOL_POU_TELEMETRY", str(d / "Bristol_POU_Telemetry" / "extracted" / "data" / "pou-dwts_operationaltelemetrydata_uk_nov2019-sep2022_1.csv"), None, None, "Bristol operational telemetry archive", "OPERATIONAL_TELEMETRY", "regime/anomaly evidence", "microbial truth", "OBSERVED"),
     ]
     for key, folder, origin, domain in [
         ("EPANET", "EPANET2.2", "USEPA GitHub", "SOFTWARE"),

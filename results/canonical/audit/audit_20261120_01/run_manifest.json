@@ -1,0 +1,18 @@
+{
+  "command": "verify-data",
+  "run_id": "audit_20261120_01",
+  "created_utc": "2026-11-20T12:29:48.367240+00:00",
+  "status": "PASS",
+  "seed": 2026,
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\authentic_xylem.json",
+  "config_sha256": "b5b69311e1405d4e91336e1f8252350b4bb4b342c6bd450a43175c46156fc43d",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\data_processed\\ea_authentic_site_rounds_2024.csv",
+  "input_sha256": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "73e52220a8bb12b7f286e83a3e045558ea2311c4e541fb77ba7f91608107cf91"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\audit\\audit_20261120_01",
+  "outputs_sha256": {
+    "data_verification.json": "858571ab54303b3c38780ee7aae6b79a7728e48726beeef7b6fb88a77e9581ec"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "dataset": "WDSEventDB",
+  "data_origin": "AUTHENTIC_OBSERVED_TESTBED",
+  "records": 15422,
+  "event_files": 8,
+  "features": [
+    "Pressure 1 Out",
+    "Pressure 2 Out",
+    "Pressure 3 In",
+    "Pressure 4 In",
+    "Water Flow 1",
+    "Water Flow 2",
+    "Water Flow 3",
+    "Water Flow 4",
+    "VFD 1",
+    "VFD 2",
+    "VFD 3",
+    "VFD 4-1",
+    "VFD 4-2",
+    "Analog Valve 1",
+    "Analog Valve 2"
+  ],
+  "split": "event-file holdout",
+  "holdouts": [
+    {
+      "holdout": "Cyberattack\\CyberEvent1-4.xlsx",
+      "rows": 5869,
+      "positive_rate": 0.12182654626001023,
+      "accuracy": 0.17992843755324586,
+      "precision": 0.06142979452054795,
+      "recall": 0.4013986013986014,
+      "f1": 0.10655281232596993,
+      "roc_auc": 0.24024031847081906
+    },
+    {
+      "holdout": "Leakage\\LeakEvent1.xlsx",
+      "rows": 1368,
+      "positive_rate": 0.6052631578947368,
+      "accuracy": 0.3815789473684211,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.8699521381284666
+    },
+    {
+      "holdout": "Leakage\\LeakEvent2.xlsx",
+      "rows": 1385,
+      "positive_rate": 0.4433212996389892,
+      "accuracy": 0.628158844765343,
+      "precision": 1.0,
+      "recall": 0.16123778501628663,
+      "f1": 0.2776998597475456,
+      "roc_auc": 0.8758856259268177
+    },
+    {
+      "holdout": "Leakage\\LeakEvent3.xlsx",
+      "rows": 1355,
+      "positive_rate": 0.5136531365313654,
+      "accuracy": 0.9520295202952029,
+      "precision": 0.9449929478138223,
+      "recall": 0.9626436781609196,
+      "f1": 0.9537366548042705,
+      "roc_auc": 0.9753806708178536
+    },
+    {
+      "holdout": "Sensor Failure\\SensorEvent1.xlsx",
+      "rows": 1360,
+      "positive_rate": 0.13014705882352942,
+      "accuracy": 0.8683823529411765,
+      "precision": 0.25,
+      "recall": 0.005649717514124294,
+      "f1": 0.011049723756906077,
+      "roc_auc": 0.7852247708831802
+    },
+    {
+      "holdout": "Sensor Failure\\SensorEvent23.xlsx",
+      "rows": 1362,
+      "positive_rate": 0.11160058737151249,
+      "accuracy": 0.8876651982378855,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.9141583297085689
+    },
+    {
+      "holdout": "Sensor Failure\\SensorEvent45.xlsx",
+      "rows": 1361,
+      "positive_rate": 0.11682586333578251,
+      "accuracy": 0.8824393828067597,
+      "precision": 0.3333333333333333,
+      "recall": 0.006289308176100629,
+      "f1": 0.012345679012345678,
+      "roc_auc": 0.4941816050816773
+    },
+    {
+      "holdout": "Sensor Failure\\SensorEvent67.xlsx",
+      "rows": 1362,
+      "positive_rate": 0.08957415565345081,
+      "accuracy": 0.8891336270190896,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.870134849286092
+    }
+  ],
+  "macro_f1": 0.17017309120587973,
+  "macro_roc_auc": 0.7531447885379344,
+  "use": "operational anomaly and sensor-failure robustness benchmark",
+  "claim_boundary": "WDSEventDB labels are leakage/cyberattack/sensor-failure testbed events, not E. coli or fecal contamination labels."
+}

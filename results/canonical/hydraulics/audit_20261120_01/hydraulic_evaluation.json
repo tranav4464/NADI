@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "domain": "BWFLNET_MEASURED_PRESSURE",
+  "observed_pressure_evidence": true,
+  "predicted_pressure_evidence_class": "MODEL_ESTIMATE",
+  "prediction_rows": 18171,
+  "timestamps": 673,
+  "internal_loggers": 27,
+  "median_internal_logger_mae_m": 0.2782157800823955,
+  "aggregate_prediction_mae_m": 0.41474783236183266,
+  "training_mean_baseline_median_logger_mae_m": 0.8265779478102353,
+  "relative_median_mae_improvement": 0.663412530155876,
+  "stored_interval_coverage": 0.8486049199273568,
+  "limitations": [
+    "Recalculation from stored predictions; this command does not retrain the hydraulic estimator.",
+    "The validation week was previously inspected in model development.",
+    "Measured pressure does not validate E. coli presence, source or pipe contamination."
+  ]
+}

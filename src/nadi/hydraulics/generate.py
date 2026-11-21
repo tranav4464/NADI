@@ -17,8 +17,12 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest().upper()
 
 
-def _simulate(source: str, demand_multiplier: float, tank_fraction: float, closed_pipe: str | None) -> dict:
-    model = wntr.network.WaterNetworkModel(str(NETWORK))
+def _simulate(
+    source: str, demand_multiplier: float, tank_fraction: float,
+    closed_pipe: str | None, label_override: str | None = None,
+    network: Path = NETWORK,
+) -> dict:
+    model = wntr.network.WaterNetworkModel(str(network))
     model.options.time.duration = 24 * 3600
     model.options.time.report_timestep = 3600
     # Pressure-dependent demand avoids the physically impossible implication
@@ -41,7 +45,7 @@ def _simulate(source: str, demand_multiplier: float, tank_fraction: float, close
         model.get_link(closed_pipe).initial_status = wntr.network.LinkStatus.Closed
     run_dir = INTERIM_ROOT / "hydraulic_runs"
     run_dir.mkdir(parents=True, exist_ok=True)
-    label = f"src-{source}_d-{demand_multiplier:.1f}_tank-{tank_fraction:.1f}_close-{closed_pipe or 'none'}"
+    label = label_override or f"src-{source}_d-{demand_multiplier:.1f}_tank-{tank_fraction:.1f}_close-{closed_pipe or 'none'}"
     result = wntr.sim.EpanetSimulator(model).run_sim(file_prefix=str(run_dir / label))
     quality = result.node["quality"]
     pressure = result.node["pressure"][model.junction_name_list]

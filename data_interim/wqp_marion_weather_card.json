@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1.0",
+  "rows": 6134,
+  "sites": 128,
+  "date_min": "2003-01-30",
+  "date_max": "2022-12-29",
+  "endpoint": "E. coli count >= 1000 per 100 mL; non-regulatory surface-water context endpoint",
+  "positive_rate": 0.22399739158787088,
+  "missing_weather_fraction": 0.0,
+  "raw_hashes": {
+    "wqp": "4C042D6AD80481EEF044783BFC247ADBA74F6E9F77E4DDF740A9BAD1202701B0",
+    "noaa": "E672719A4564C8A4C0EFE6FB489C200C911B8DC151A4688FD25D05C7E41B05EE"
+  },
+  "processed_sha256": "CCFC63E5539CECE25425E01B2B2E8D6B650E085748AC3816C03E4C2838E72A03",
+  "evidence_boundary": "LAB_CONFIRMED surface-water E. coli joined to OBSERVED weather by date; not drinking-network field validation"
+}

@@ -1,0 +1,23 @@
+{
+  "command": "train-risk",
+  "run_id": "audit_20261120_01",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:42:19.578664+00:00",
+  "finished_utc": "2026-11-20T12:42:23.073027+00:00",
+  "seed": 2026,
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\data_processed\\ea_authentic_site_rounds_2024.csv",
+  "input_sha256": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\train_risk.json",
+  "config_sha256": "8a78aeb16a6bc6b5fe1986f0e91a06dfd8ebd3c5c49e08329fc27c5f25a09a3f",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "13493566559886d90d97133acbeed6e1a325e91a421c5e0393a005d7a42e3da6",
+    "src/nadi/authentic/models.py": "bb50084efe0441ba558ac912d53641da8f2dd15860e59873aaf4e853db6a6698"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\risk_training\\audit_20261120_01",
+  "outputs_sha256": {
+    "uncalibrated_models.joblib": "74c80b2b2834037882b1d6af8a1f703aec7b88f38cde8dfc8155aee5c51f0f5b",
+    "training_report.json": "45c1879893d6c28cd2fbf1668f0f5e093d3e8fe314825a29be1c78193b41bfd0"
+  }
+}

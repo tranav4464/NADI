@@ -1,0 +1,18 @@
+{
+  "protocol_id": "NET3-OUT-OF-ENSEMBLE-V1",
+  "frozen_before_run": "2026-11-18",
+  "purpose": "Test decision robustness when hidden hydraulic parameters were excluded from the 24-scenario reference ensemble",
+  "candidate_count": 12,
+  "budget": 3,
+  "risk_mode": "unit_reach_only_no_biological_claim",
+  "hidden_cases": [
+    {"source": "101", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "101", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "151", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "151", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"},
+    {"source": "121", "demand_multiplier": 0.95, "tank_fraction": 0.55, "closed_pipe": "105"},
+    {"source": "121", "demand_multiplier": 1.05, "tank_fraction": 0.55, "closed_pipe": "109"}
+  ],
+  "comparators": ["random", "routine", "hydraulic_only", "bayesian", "adaptive_bayesian", "adaptive_sdaif"],
+  "claim_boundary": "All hidden results are EPANET/WNTR tracer reach, not E. coli observations. No field transport, city or health validation."
+}

@@ -1,0 +1,23 @@
+{
+  "command": "prepare-authentic",
+  "run_id": "audit_20261120_01",
+  "status": "PASS",
+  "started_utc": "2026-11-20T12:33:30.222705+00:00",
+  "finished_utc": "2026-11-20T12:33:31.322369+00:00",
+  "seed": 2026,
+  "evidence_class": "LAB_CONFIRMED",
+  "domain": "UK_EA_MIXED_ENVIRONMENTAL_WATER_ECOLI",
+  "input_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi_resources\\datasets\\EA_ECOLI_AUTHENTIC\\ea_ecoli_confirmed_mf_2024.csv",
+  "input_sha256": "7095a77b2bb5a7996108c7b31ab9e19a59e6aca40bd4f9deb2573a83c85c307d",
+  "config_path": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\configs\\canonical\\prepare_authentic.json",
+  "config_sha256": "18f65568911519a3b9653594adac4f690f3e1f4bbe1ec6b6bf402adaec13703e",
+  "source_sha256": {
+    "src/nadi/canonical_cli.py": "19509a715de1707b62821c13d1ebc3a298772943c6c7d5bd49f732623ffcf391",
+    "src/nadi/authentic/site_rounds.py": "413d21f6e154aca75029c0d3c135219c87e3fa9b5bfe7aa12ae326a8b58d2fdc"
+  },
+  "output_dir": "C:\\Users\\TRANAV\\OneDrive\\Desktop\\STEM PROJECT\\nadi\\results\\canonical\\preparation\\audit_20261120_01",
+  "outputs_sha256": {
+    "ea_authentic_site_rounds_2024.csv": "5b2b9f0388a2a713eb31c961f05dc1f64142a65b06ad267714a60d38acf295da",
+    "preparation_report.json": "caa502a4fa517363418182681aa100cebea4200e62ba3f52b646cf8700c1604a"
+  }
+}

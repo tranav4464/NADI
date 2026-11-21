@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "rounds": 41,
+  "budget": 3,
+  "policies": [
+    "adaptive_bayesian",
+    "adaptive_sdaif",
+    "best_single_model",
+    "fixed_ensemble",
+    "historical_positive_rate",
+    "random",
+    "routine_sampling_frequency"
+  ],
+  "total_positives_found": {
+    "adaptive_bayesian": 114,
+    "adaptive_sdaif": 114,
+    "best_single_model": 114,
+    "fixed_ensemble": 114,
+    "historical_positive_rate": 111,
+    "random": 80,
+    "routine_sampling_frequency": 84
+  },
+  "sdaif_ties_best_single": true,
+  "sdaif_ties_adaptive_bayesian": true,
+  "sdaif_vs_random_difference": 34,
+  "sdaif_vs_routine_difference": 30,
+  "random_permutation_distribution": {
+    "permutations": 2000,
+    "seed": 2026,
+    "mean_total_positives_found": 82.62,
+    "standard_deviation": 4.042000604211016,
+    "lower_95": 75.0,
+    "upper_95": 90.0,
+    "minimum": 67,
+    "maximum": 97,
+    "probability_random_matches_or_exceeds_sdaif": 0.0,
+    "data_origin": "AUTHENTIC_OBSERVED",
+    "interpretation": "Permutation uncertainty for the random baseline; it does not alter the frozen deterministic random comparator."
+  },
+  "errors": [],
+  "limitations": [
+    "This is retrospective replay using a same-round outcome-reveal assumption.",
+    "It does not establish superiority: SDAIF ties the best single model and adaptive Bayesian policy on total positives.",
+    "The frozen deterministic random order is retained for reproducibility; the attached multi-permutation distribution quantifies its random-baseline uncertainty."
+  ]
+}
