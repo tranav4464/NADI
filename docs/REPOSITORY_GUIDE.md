@@ -36,6 +36,11 @@ run manifest, records hashes and refuses to overwrite an existing run.
 5. Run `python -m pytest -q`.
 6. Inspect the generated run manifest and claim-boundary audit.
 
+The GitHub Actions workflow runs the reproducible public semantic suite. The
+repository also contains broader tests for data-dependent historical workflows;
+those require the separately acquired `nadi_resources` directory and are not
+pretended to be runnable from a source-only public clone.
+
 ## Historical material
 
 Historical configurations, reports and results are retained for traceability.
